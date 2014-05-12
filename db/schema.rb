@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512194952) do
+ActiveRecord::Schema.define(version: 20140512195348) do
 
   create_table "contracts", force: true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140512194952) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "contract_id"
+    t.integer  "device_id"
   end
 
 end
