@@ -1,4 +1,5 @@
 require_relative 'bell'
+require_relative "rogers"
 
 namespace :scrape do
   desc "Get data from bell's website"
@@ -7,11 +8,8 @@ namespace :scrape do
     bell.run
   end
 
-end
-
-namespace :scrape do
 	desc "Get data from Roger's website"
-	task rogers:, :environment do 
+	task rogers: :environment do 
 		rogers = Rogers.new
 		rogers.run
 	end
