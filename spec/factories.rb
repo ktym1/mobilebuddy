@@ -4,6 +4,10 @@ FactoryGirl.define do
     retailer_id 2
     promotion_link "www.robford.com"
     device_id 1
-    contract_id 1
+    association :contract, factory: :contract
+  end
+
+  factory :contract do
+    name "Bell"
   end
 end
