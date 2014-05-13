@@ -28,7 +28,8 @@ gem 'spring',        group: :development
 
 gem 'rspec-rails'
 
-gem 'factory_girl'
+gem "factory_girl", "~> 4.0"
+gem "factory_girl_rails", "~> 4.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Summary do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+  	@summary = FactoryGirl.create :summary
+  end
+
+  it "should have a price" do
+  	@summary.price.should be == 10.00
+  end
+  
 end
