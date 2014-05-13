@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe Contract do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "has a name"
+  it "matches Bell or Rogers"
+  it "returns a name as a string"
+
 end
