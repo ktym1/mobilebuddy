@@ -3,8 +3,8 @@ require_relative 'scraper'
 class Bell < Scraper
 
 	def initialize
-	    @retailer = Retailer.where(name: 'Test')
-	    @contract = Contract.where(name: 'Bell')
+	    @retailer = Retailer.where(name: 'Test').take
+	    @contract = Contract.find_by_name('Bell')
 	end
 
 
@@ -21,32 +21,36 @@ class Bell < Scraper
 			                                   :prov => 'ON'
 			                                  })
 
-			promotion_link = page.links_with(:dom_class => "headingType4")[0].text
+			promotion_link = page.links_with(:dom_class => "headingType4")[0].uri()
 
 			new_page = page.links_with(:dom_class => "headingType4")[0].click()
+
+			# form = new_page.form_with(:name => "demoCustomRadios")
+			# options = form.radiobuttons_with(:id => 'memory_element')
+			# options.each do |o|
+			# 	o.check()
+			# 	x_page = form.submit
+      
+   #             array = x_page.search('.priceGroup').children()
+   #             price = array[3].text.delete('$')
+   #             puts price
+   #             o.uncheck
+               
+			# end
+
+
 			description = new_page.at('#mainDescription').text.delete('')
-			array = new_page.search('.priceGroup').children()
+		    array = new_page.search('.priceGroup').children()
             price = array[3].text.delete('$')
+            
+            puts price
 
-
-			# Summary.create(price: price, 
-			# 	           contract_id: @contract.id, 
-			# 	           device_id: dev.id,
-			# 	           retailer_id: @retailer.id,
-			# 	           promotion_link: promotion_link 
-			# 	           )
-			# price = array[3].text.delete('$')
-			# puts "array length "+array.length.to_s
-			# puts "0 "+array[0].text
-			# puts "1 "+array[1].text
-			# puts "2 "+array[2].text
-			# puts "3 "+array[3].text
-			# puts "4 "+array[4].text
-			# puts "5 "+array[5].text
-			# puts "6 "+array[6].text
-			# puts "7 "+array[7].text
+			Summary.create(price: price, 
+				           contract_id: @contract.id, 
+				           device_id: dev.id,
+				           retailer_id: @retailer.id,
+				           promotion_link: promotion_link.to_s 
+				           )
 		end
-
-
 	end
 end
