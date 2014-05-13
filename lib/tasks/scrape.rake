@@ -8,3 +8,11 @@ namespace :scrape do
   end
 
 end
+
+namespace :scrape do
+	desc "Get data from Roger's website"
+	task rogers:, :environment do 
+		rogers = Rogers.new
+		rogers.run
+	end
+end
