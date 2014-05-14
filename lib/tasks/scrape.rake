@@ -9,7 +9,8 @@ namespace :scrape do
     bell.run
   end
 
-  desc "Get data from Roger's website"
+
+	desc "Get data from Roger's website"
 	task rogers: :environment do 
 		rogers = Rogers.new
 		rogers.run
