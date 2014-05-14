@@ -31,6 +31,7 @@ gem 'rspec-rails'
 gem "factory_girl", "~> 4.0"
 gem "factory_girl_rails", "~> 4.0"
 gem 'mechanize'
+gem 'watir-webdriver'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

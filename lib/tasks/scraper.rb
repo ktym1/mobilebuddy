@@ -1,5 +1,6 @@
 require 'mechanize'
 require 'open-uri'
+require 'watir-webdriver'
 require 'logger'
 require File.expand_path('../../../config/environment',  __FILE__)
 
