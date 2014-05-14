@@ -1,7 +1,7 @@
 class SummariesController < ApplicationController
 
 def index
-	@summaries = Summaries.all
+	@summaries = Summary.all
 end
 
 def show
