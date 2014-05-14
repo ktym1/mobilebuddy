@@ -1,0 +1,19 @@
+
+<h1> Summary of Cell Phones </h1>
+
+<%= link_to "Add a Device", new_summary_path %>
+
+<% @summaries.each do |summary| %>
+
+<div class="container">
+	<div class="item">
+		<ul> Model: <%= link_to (summary.device.name + " " + summary.device.model), summary_path(summary) %>
+			<li> Price: <%= summary.price %> </li>
+			<li> Carrier: <%= summary.contract.name %>	</li>
+			<li> Retailer: <%= summary.retailer.name %> </li>
+			<li> Link: <%= summary.retailer.website %> </li>
+		</ul>	
+	</div>	
+</div>
+<% end %>
+
