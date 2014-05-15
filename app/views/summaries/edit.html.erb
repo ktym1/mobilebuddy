@@ -1,0 +1,8 @@
+<h1> Edit Summary </h1>
+
+<%= render "form" %>
+
+<%= link_to "Show", summary_path(@summary) %> |
+<%= link_to "Back", summaries_path %> |
+<%= link_to "Delete", @summary, :confirm => "Are you sure you want to delete this product?", :method => :delete %>
+

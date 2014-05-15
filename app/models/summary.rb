@@ -6,4 +6,10 @@ class Summary < ActiveRecord::Base
 	validates :contract, presence: true
 	validates :device, presence: true
 	validates :retailer, presence: true
+
+
+	# def self.search(query)
+ #  		Summary.joins(:device).where("name like ?", "%#{query}%") 
+	# end
+	
 end
