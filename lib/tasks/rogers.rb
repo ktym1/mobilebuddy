@@ -3,7 +3,7 @@ require_relative "scraper"
 class Rogers < Scraper
 
 	def initialize 
-		@retailer = Retailer.where(name: "Test").take
+		@retailer = Retailer.where(name: "Rogers").take
 		@contract = Contract.find_by_name("Rogers")
 	end
 
@@ -18,41 +18,19 @@ class Rogers < Scraper
            	 price = browser.div(:id => 'NetPriceBig').text.to_s.delete('$')
            	 promotion_link = browser.url
            	 price = (price.to_f / 100)
-    
-           	 Summary.create(price: price, 
-				           contract_id: @contract.id, 
-				           device_id: dev.id,
-				           retailer_id: @retailer.id,
-				           promotion_link: promotion_link.to_s 
-				           )
+           	 
+           	 save_summary(price, dev.id, promotion_link)
+
            end
 		end
+	end
 
-		# browser.goto "http://www.rogers.com/web/Rogers.portal?_nfpb=true&_pageLabel=search&Ntt=iphone+5s+16gb"
-        
-        # puts browser.title
-        # puts browser.url
-        # cost = browser.div(:id => 'NetPriceBig').text.to_s.delete('$')
-        # price = BigDecimal.new(cost)
-       # puts sprintf('%D',cost)
-
-
-
-		# devices.each do |dev| 
-
-			# page = get_agent.get("http://www.rogers.com/web/Rogers.portal", {
-			# 	:_nfpb => "true",
-			# 	:_pageLabel => "search",
-			# 	:Ntt => "{dev.name}+{dev.model}+16gb" 
-			# 	})
-
-			# puts page.body
-
-			# promotion_link = page.links_with(:dom_class => "search_result")[0].click()
-			# new_page = page.links_with(:dom_class => "search_result")[0].click()
-			# puts new_page
-		# end
+	def save_summary(price,dev_id,link)
+		 Summary.create(price: price, 
+				           contract_id: @contract.id, 
+				           device_id: dev_id,
+				           retailer_id: @retailer.id,
+				           promotion_link: link.to_s 
+				           )
 	end
 end
-
-# /web/Rogers.portal?_nfpb=true&_pageLabel=search
