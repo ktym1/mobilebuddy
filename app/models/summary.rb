@@ -8,8 +8,8 @@ class Summary < ActiveRecord::Base
 	validates :retailer, presence: true
 
 
-	def self.search(query)
-  		Summary.joins(:device).where("name like ?", "%#{query}%") 
-	end
+	# def self.search(query)
+ #  		Summary.joins(:device).where("name like ?", "%#{query}%") 
+	# end
 	
 end

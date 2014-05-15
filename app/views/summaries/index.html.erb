@@ -1,14 +1,14 @@
-<%= form_tag(summaries_path, :method => "get", id: "search-form") do %>
+<%= form_tag(summaries_path, :method => "get", authentication: false, id: "search-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search Devices" %>
   <%= submit_tag "Search", :name => nil %>
 <% end %>
 
 <h2> Summary of Devices </h2>
 
-<%= link_to "Add a Device", new_summary_path %>
 
 
-<%= render @summaries %>
-
+<div id="summaries">
+	<%= render @summaries %>
+</div>
 	
 
