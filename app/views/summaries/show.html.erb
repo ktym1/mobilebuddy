@@ -1,0 +1,16 @@
+
+<h2> Summary </h2>
+<div class="wrapper">
+	<p>
+		<br> <b> Device: </b> <%= @summary.device.name + " " + @summary.device.model %>
+		<br> <b> Price: </b> <%= @summary.price %> 
+		<br> <b> Carrier: </b> <%= @summary.contract.name %>	
+		<br> <b> Retailer: </b> <%= @summary.retailer.name %> 
+		<br> <b> Link: </b> <%= @summary.retailer.website %> 
+	</p>
+
+</div>
+
+<%= link_to 'Edit', edit_summary_path(@summary) %> |
+<%= link_to 'Back', summaries_path %> |
+<%= link_to "Delete", @summary, :confirm => "Are you sure you want to delete this product?", :method => :delete %>
