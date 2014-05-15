@@ -1,20 +1,14 @@
+<%= form_tag(summaries_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Devices" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
 
 <h2> Summary of Devices </h2>
 
 <%= link_to "Add a Device", new_summary_path %>
 
-<% @summaries.each do |summary| %>
 
-	<div class="container">
-		<div class="item">
-			<ul> <b> Model: </b> 
-					<%= link_to (summary.device.name + " " + summary.device.model), summary_path(summary) %>
-				<br> <b> Price: </b> <%= summary.price %> 
-				<br> <b> Carrier: </b> <%= summary.contract.name %>	
-				<br> <b> Retailer: </b> <%= summary.retailer.name %> 
-				<br> <b> Link: </b> <%= summary.retailer.website %> 
-			</ul>	
-		</div>	
-	</div>
-<% end %>
+<%= render @summaries %>
+
+	
 

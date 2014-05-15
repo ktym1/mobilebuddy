@@ -1,7 +1,11 @@
 class SummariesController < ApplicationController
 
 def index
-	@summaries = Summary.all
+	if params[:search]
+		@summaries = Summary.search(params[:search]).order("created_at DESC")
+	else
+		@summaries = Summary.all
+	end
 end
 
 def show
@@ -14,6 +18,11 @@ end
 
 def create
 	@summary = Summary.new(summary_params)
+	respond_to do |format|
+		if @review.save
+			format.html {redirect_to summary_path(@summary.id), notice:"Summary "}
+		end
+	end
 end
 
 def edit
