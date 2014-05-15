@@ -6,6 +6,11 @@ def index
 		else
 			Summary.all
 		end
+
+		respond_to do |format|
+			format.html
+			format.js
+		end
 end
 
 	
@@ -13,5 +18,4 @@ def show
 	@summary = Summary.find(params[:id])
 end
 
-	
 end
