@@ -17,6 +17,8 @@ class Rogers < Scraper
            	 browser.goto "http://www.rogers.com/web/link/wirelessBuyFlow?forwardTo=PhoneThenPlan&productType=normal&productId_Detailed="+m.detail
            	 price = browser.div(:id => 'NetPriceBig').text.to_s.delete('$')
            	 promotion_link = browser.url
+           	 price = (price.to_f / 100)
+    
            	 Summary.create(price: price, 
 				           contract_id: @contract.id, 
 				           device_id: dev.id,
