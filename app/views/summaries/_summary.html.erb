@@ -1,12 +1,25 @@
 	<div class="container">
-		<div class="item">
-			<ul> <b> Model: </b> 
-					<%= link_to (summary.device.name + " " + summary.device.model), summary_path(summary) %>
-				<br> <b> Price: </b> <%= number_to_currency(summary.price) %> 
-				<br> <b> Carrier: </b> <%= summary.contract.name %>	
-				<br> <b> Retailer: </b> <%= summary.retailer.name %> 
-				<br> <b> Link: </b> <%= summary.retailer.website %> 
-			</ul>	
-		</div>	
+		<table>
+			<tr> 
+				<td> Model: 
+					<%= link_to (summary.device.name + " " + summary.device.model), summary_path(summary) %> </td>
+			</tr>
+			<tr>	
+				<td> <b> Price: </b> </td> 
+				<td> <%= number_to_currency(summary.price) %> </td>
+			</tr>	
+			<tr>
+				<td> <b> Carrier: </b> </td> 
+				<td> <%= summary.contract.name %> </td> 
+			</tr>	
+			<tr>
+				<td> <b> Retailer: </b> </td>
+				<td> <%= summary.retailer.name %> </td> 
+			</tr>
+			<tr>
+				<td> <b> Link: </b> <%= summary.retailer.website %> </td>
+			</tr>
+		</table>		
+		
 	</div>
 
