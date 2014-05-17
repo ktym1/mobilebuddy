@@ -6,7 +6,13 @@ element.style {
 display: block;
 }
 
-#header {
+.sticky{
+	height: 100px;
+	z-index: -1;
+}
+
+#h3 {
+	font-color: white;
 }
 
 #header .navbar-inner {
