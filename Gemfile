@@ -35,6 +35,8 @@ gem 'watir-webdriver'
 
 gem 'foundation-rails'
 
+gem 'hirb'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
