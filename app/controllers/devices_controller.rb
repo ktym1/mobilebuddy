@@ -1,6 +1,17 @@
 class DevicesController < ApplicationController
   def index
-    @devices = Device.all
+    
+    @devices = if params[:search]
+      Device.where("devices like ?", "%#{params[:search]}%") 
+    else
+      Device.all
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+
   end
 
   def show
