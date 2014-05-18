@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514200615) do
+ActiveRecord::Schema.define(version: 20140518215051) do
 
   create_table "contracts", force: true do |t|
     t.string   "name"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20140514200615) do
     t.string   "name"
     t.string   "description"
     t.string   "model"
+    t.boolean  "active",      default: false
   end
 
   create_table "metadata", force: true do |t|
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140514200615) do
     t.integer  "contract_id"
     t.integer  "device_id"
     t.integer  "retailer_id"
+    t.string   "gift_card"
   end
 
 end
