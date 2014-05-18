@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
+  # get 'devices/index'
+
+  # get 'devices/show'
+
+  # get 'devices/new'
+
+  # get 'devices/create'
+
+  # get 'devices/edit'
+
+  # get 'devices/update'
+
+  # get 'devices/destroy'
+
   resources :summaries
+  resources :devices
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
