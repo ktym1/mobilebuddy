@@ -1,2 +1,36 @@
-<h1>Devices#index</h1>
-<p>Find me in app/views/devices/index.html.erb</p>
+<div class="sticky" style="background-image: url('assets/black-Linen.png')">
+ 	<div class="contain-to-grid">
+  		<nav>
+			<div id="header" class="navbar">
+				<div class="navbar-inner">
+				</div>
+			</div>
+		</nav>
+ 	</div>
+</div>
+
+
+<div id="hero" style="display:block;">
+	<div class= "background-image" style="background-image: url('assets/brushed.png')">
+		<div class="input-wrapper">
+					<%= form_tag(devices_path, :method => "get", authentication: false, id: "search-form") do %>
+					  <%= text_field_tag :search, params[:search], placeholder: "Search Devices" %>
+
+					  	<div class="submit-button">
+					  		<%= submit_tag "Search", :name => nil %>
+						</div>
+					<% end %>
+
+		</div>
+	</div>
+</div>
+
+
+
+
+<h2> Choose Your Devices </h2>
+
+
+<div id="devices">
+	<%= render @devices %>
+</div>

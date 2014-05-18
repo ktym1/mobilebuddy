@@ -7,5 +7,4 @@ class Device < ActiveRecord::Base
 		price
 	end
 
-
 end
