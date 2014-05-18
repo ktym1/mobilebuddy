@@ -29,6 +29,11 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     childprocess (0.5.3)
       ffi (~> 1.0, >= 1.0.11)
     coffee-rails (4.0.1)
@@ -49,6 +54,9 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffi (1.9.3)
+    foundation-rails (5.2.2.0)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     hike (1.2.3)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -103,6 +111,7 @@ GEM
     rake (10.3.1)
     rdoc (4.1.1)
       json (~> 1.4)
+    rmagick (2.13.2)
     rspec-collection_matchers (0.0.4)
       rspec-expectations (>= 2.99.0.beta1)
     rspec-core (3.0.0.beta2)
@@ -174,13 +183,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  carrierwave
   coffee-rails (~> 4.0.0)
   factory_girl (~> 4.0)
   factory_girl_rails (~> 4.0)
+  foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
   mechanize
   rails (= 4.1.0)
+  rmagick (= 2.13.2)
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

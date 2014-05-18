@@ -1,9 +1,29 @@
-<%= form_tag(summaries_path, :method => "get", authentication: false, id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Devices" %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
+<div class="sticky" style="background-image: url('assets/black-Linen.png')">
+ 	<div class="contain-to-grid">
+  		<nav>
+			<div id="header" class="navbar">
+				<div class="navbar-inner">
+				</div>
+			</div>
+		</nav>
+ 	</div>
+</div>
 
-<h2> Summary of Devices </h2>
+
+<div id="hero" style="display:block;">
+	<div class= "background-image" style="background-image: url('assets/brushed.png')">
+		<div class="input-wrapper">
+					<%= form_tag(summaries_path, :method => "get", authentication: false, id: "search-form") do %>
+					  <%= text_field_tag :search, params[:search], placeholder: "Search Devices" %>
+					  <%= submit_tag "Search", :name => nil %>
+					<% end %>
+		</div>
+	</div>
+</div>
+
+
+
+<h2> Choose Your Devices </h2>
 
 
 

@@ -32,6 +32,10 @@ gem "factory_girl", "~> 4.0"
 gem "factory_girl_rails", "~> 4.0"
 gem 'mechanize'
 gem 'watir-webdriver'
+
+gem 'foundation-rails'
+gem 'rmagick', '2.13.2'
+gem 'carrierwave'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

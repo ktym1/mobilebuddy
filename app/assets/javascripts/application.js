@@ -12,8 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require foundation
 //= require turbolinks
 //= require_tree .
+//= require foundation
+
+$(document).foundation();
 
 $(document).ready(function(){
 	$('#search-form').submit(function(event) {
@@ -23,3 +27,5 @@ $(document).ready(function(){
 	$.getScript('/summaries?search=' + searchValue);
 	});
 });
+
+$(function(){ $(document).foundation(); });
