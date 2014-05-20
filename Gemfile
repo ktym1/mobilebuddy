@@ -35,7 +35,7 @@ gem 'watir-webdriver'
 
 gem 'foundation-rails'
 
-gem 'rmagick', '2.13.2'
+gem 'mini_magick'
 gem 'carrierwave'
 
 

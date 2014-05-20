@@ -1,10 +1,12 @@
-	<div class="container">
+<div class="container">
 		<table>
 			<tr> 
 				<td> Model: 
 					<%= link_to (device.name + " " + device.model), device_path(device) %> 
 				</td>
 			</tr>
+
+
 			<tr>	
 				<td> <b> Price: </b> </td> 
 				<td> <%= device.minimum_price %> </td>
@@ -12,5 +14,6 @@
 			
 		</table>		
 		
-	</div>
+		
+</div>
 

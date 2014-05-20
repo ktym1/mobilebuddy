@@ -1,2 +1,54 @@
-<h1>Devices#new</h1>
-<p>Find me in app/views/devices/new.html.erb</p>
+<h1>Add a Device </h1>
+
+
+<%= form_for @device, html: {multipart: true} do |f| %>
+
+<% if @device.errors.any? %>
+	<div id="error explanation">
+		<h2><%= pluralize(@device.errors.count, "error") %> could not be saved: </h2>
+
+		<% @device.errors.full_messages.each do |msg| %>
+			<%= msg %>
+		<%end%>
+<%end%>
+
+	<div class="field">
+		<p>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+	</div>
+
+
+	<div class = "model">
+		<p>
+			<%= f.label :model %>
+			<%= f.text_field :model %>
+		</p>
+	</div>
+
+	<div class="field">
+		<p>
+			<%= f.label :description %>
+			<%= f.text_field :description %>
+		</p>
+	</div>
+
+	<div class="field">
+		<p>
+			<%= f.label :active %>
+			<%= f.check_box :active, {}, "true", "false" %>
+		</p>
+	</div>
+
+	<!-- how to do price? retailer? -->
+	<div class="field">
+		<p>
+		<%= f.file_field :image %>
+		</p>
+	</div>
+
+	<div class="field">
+		<%= f.submit %>
+	</div>
+
+<%end%>

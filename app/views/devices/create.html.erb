@@ -1,2 +1,30 @@
 <h1>Devices#create</h1>
 <p>Find me in app/views/devices/create.html.erb</p>
+
+
+<div class="image">
+	<%= image_tag @device.image_url(:thumb).to_s %>
+</div>
+
+<h1>Device</h1>
+
+<p>
+  <b>Name:</b>
+  <%= @device.name %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @device.model %>
+</p>
+
+<p>
+  <b>Minimum Price:</b>
+  <%= @device.minimum_price %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @device.description %>
+</p>
+
