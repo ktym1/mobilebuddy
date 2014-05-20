@@ -48,7 +48,7 @@ class DevicesController < ApplicationController
   def destroy
     @device = Device.find(params[:id])
     @device.destroy
-    redirect_to device_path
+    redirect_to devices_path
   end
 
   private
