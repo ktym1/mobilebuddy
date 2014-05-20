@@ -9,35 +9,23 @@ class Bell < Scraper
 
 
 	def run
-		devices = Device.all
-		devices.each do | dev |
+		devices = Device.where(active: true)
+		devices.each do | dev | 
 
-			page =	get_agent.get('http://www.bell.ca/Search',{:q => "#{dev.name} #{dev.model}",
-			                                   :lob =>'consumerBoost',
-			                                   :support =>'false',
-			                                   :faq => 'false',
-			                                   :personal =>'on',
-			                                   :initial =>'true',
-			                                   :prov => 'ON'
-			                                  })
+		   metadatas =  Metadata.where(retailer_id: @retailer.id, device_id: dev.id)
 
-			promotion_link = page.links_with(:dom_class => "headingType4")[0].uri()
-
-			new_page = page.links_with(:dom_class => "headingType4")[0].click()
-
-
-			description = new_page.at('#mainDescription').text.delete('')
-		    array = new_page.search('.priceGroup').children()
-            price = array[3].text.delete('$')
-            
-           
-
-			Summary.create(price: price, 
-				           contract_id: @contract.id, 
-				           device_id: dev.id,
-				           retailer_id: @retailer.id,
-				           promotion_link: promotion_link.to_s 
-				           )
+           metadatas.each do |m|
+           	 page =	get_agent.get(m.detail)
+           	 array = page.search('.priceGroup').children()
+             price = array[3].text.delete('$')
+             puts dev.name + " "+ dev.model
+       	 	Summary.create(price: price, 
+			           contract_id: @contract.id, 
+			           device_id: dev.id,
+			           retailer_id: @retailer.id,
+			           promotion_link: m.detail 
+			           )
+           end
 		end
 	end
 end

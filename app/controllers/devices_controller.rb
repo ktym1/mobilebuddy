@@ -2,7 +2,7 @@ class DevicesController < ApplicationController
   def index
     
     @devices = if params[:search]
-      Device.where("devices like ?", "%#{params[:search]}%") 
+     Device.where("name like ? or model like ?", "%#{params[:search]}%", "%#{params[:search]}%") 
     else
       Device.all
     end

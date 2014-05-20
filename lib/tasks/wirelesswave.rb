@@ -8,7 +8,7 @@ class WirelessWave < Scraper
 
 	def run
 		
-		devices = Device.all
+		devices = Device.where(active: true)
 
 		devices.each do |dev|
            metadatas =  Metadata.where(retailer_id: @retailer.id, device_id: dev.id)
@@ -27,10 +27,10 @@ class WirelessWave < Scraper
 	def get_contract(contract_name)
 		if(contract_name.include? "bell")
 			@contract = Contract.find_by_name('Bell')
-			puts "bell"
+			# puts "bell"
 		elsif (contract_name.include? "rogers")
 			@contract = Contract.find_by_name('Rogers')
-			puts "Rogers"
+			# puts "Rogers"
 		end	
 	end
 
