@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140518215051) do
+ActiveRecord::Schema.define(version: 20140520153534) do
 
   create_table "contracts", force: true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140518215051) do
     t.string   "description"
     t.string   "model"
     t.boolean  "active",      default: false
+    t.string   "image"
   end
 
   create_table "metadata", force: true do |t|
