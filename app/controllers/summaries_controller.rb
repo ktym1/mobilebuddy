@@ -1,6 +1,7 @@
 class SummariesController < ApplicationController
 
 def index
+	@summaries = Summary.all
 	@summaries = if params[:search]
 			Summary.joins(:device).where("devices.name like ?", "%#{params[:search]}%") 
 		else

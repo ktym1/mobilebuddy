@@ -15,11 +15,9 @@
 		<div class="input-wrapper">
 					<%= form_tag(devices_path, :method => "get", authentication: false, id: "search-form") do %>
 					  <%= text_field_tag :search, params[:search], placeholder: "Search Devices" %>
-
-					  	<div class="submit-button">
-					  		<%= submit_tag "Search", :name => nil %>
-						</div>
+					  <%= submit_tag "Search", :name => nil %>
 					<% end %>
+		</div>
 
 		</div>
 	</div>
