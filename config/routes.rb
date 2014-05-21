@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :devices
   get "device/search" => 'devices#search', :as => :search
   root :to            => 'devices#index'
+  resources :summaries
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

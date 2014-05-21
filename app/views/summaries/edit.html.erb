@@ -42,21 +42,23 @@
 	<div class="field">
 		<p>
 			<%= f.label :contract_id %>
-			<%= f.text_field :contract_id %>
+			
+
+			<%= collection_select(:summary, :contract_id, Contract.all, :id, :name) %>
 		</p>
 	</div>
 
 	<div class="field">
 		<p>
 			<%= f.label :device_id %>
-			<%= f.text_field :device_id %>
+			<%= collection_select(:summary, :device_id, Device.all, :id, :display_name) %>
 		</p>
 	</div>	
 
 	<div class="field">
 		<p>
 			<%= f.label :retailer_id %>
-			<%= f.text_field :retailer_id %>
+			<%= collection_select(:summary, :retailer_id, Retailer.all, :id, :name) %>
 		</p>
 	</div>
 

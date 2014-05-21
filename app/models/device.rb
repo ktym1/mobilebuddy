@@ -9,5 +9,9 @@ class Device < ActiveRecord::Base
 		price
 	end
 
+	def display_name
+		"#{name} #{model}"
+	end
+
 end
 	
