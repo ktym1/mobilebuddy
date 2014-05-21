@@ -1,16 +1,20 @@
-	<div class="container">
-		<table>
-			<tr> 
-				<td> Model: 
-					<%= link_to (device.name + " " + device.model), device_path(device) %> 
-				</td>
-			</tr>
-			<tr>	
-				<td> <b> Price: </b> </td> 
-				<td> <%= device.minimum_price %> </td>
-			</tr>	
-			
-		</table>		
+<div class="container" id="dev">
+	<table>
+		<tr> 
+			<td> Model: 
+				<%= link_to device.name+" "+ device.model , search_url(:dev => device.id),  {:remote => true} %>
+				<input id="token" name="token" type="hidden" value="<%= device.id %>" />
+			</td>
+		</tr>
+		<tr>	
+			<td> <b> Price: </b> </td> 
+			<td> <%= device.minimum_price %> </td>
+		</tr>	
 		
-	</div>
+	</table>		
+	
+</div>
+
+
+
 

@@ -1,25 +1,25 @@
-	<div class="container">
-		<table>
-			<tr> 
-				<td> Model: 
-					<%= link_to (summary.device.name + " " + summary.device.model), summary_path(summary) %> </td>
-			</tr>
-			<tr>	
-				<td> <b> Price: </b> </td> 
-				<td> <%= number_to_currency(summary.price) %> </td>
-			</tr>	
-			<tr>
-				<td> <b> Carrier: </b> </td> 
-				<td> <%= summary.contract.name %> </td> 
-			</tr>	
-			<tr>
-				<td> <b> Retailer: </b> </td>
-				<td> <%= summary.retailer.name %> </td> 
-			</tr>
-			<tr>
-				<td> <b> Link: </b> <%= summary.retailer.website %> </td>
-			</tr>
-		</table>		
-		
-	</div>
-
+<table>
+  <thead>
+    <tr>
+      <th width="200"><%= summary.retailer.name %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= number_to_currency(summary.price) %></td>
+    </tr>
+    <tr>
+      <td><%= summary.contract.name %></td>
+    </tr>
+    <tr>
+      <td><%= summary.gift_card %></td>
+    </tr>
+    <tr>
+      <td>Link: </b>
+          <%= link_to summary.retailer.website, :target => "_blank" do %>
+               website
+          <% end %>  
+      </td>
+    </tr>
+  </tbody>
+</table>

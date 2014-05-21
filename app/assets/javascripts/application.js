@@ -17,15 +17,26 @@
 //= require_tree .
 //= require foundation
 
-$(document).foundation();
-
 $(document).ready(function(){
+	$(document).foundation(); 
+
 	$('#search-form').submit(function(event) {
 		event.preventDefault();
 		var searchValue = $('#search').val();
-
-	$.getScript('/summaries?search=' + searchValue);
+		$.getScript('/devices?search=' + searchValue);
 	});
+
+
+	$('#dev a').bind('click', function(e) {
+		e.preventDefault();
+		$('#myModal').foundation('reveal', 'open');
+    });
+
+    $(document).on('opened', '[data-reveal]', function (event) {
+    	console.log(document.getElementById('token').value);
+	    $.getScript('/summary/' + $('#token').val());
+    });
+    
 });
 
-$(function(){ $(document).foundation(); });
+

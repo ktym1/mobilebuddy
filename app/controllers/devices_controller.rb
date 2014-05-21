@@ -1,6 +1,5 @@
 class DevicesController < ApplicationController
   def index
-    
     @devices = if params[:search]
      Device.where("name like ? or model like ?", "%#{params[:search]}%", "%#{params[:search]}%") 
     else
@@ -28,6 +27,14 @@ class DevicesController < ApplicationController
 
   def edit
     @device = Device.find(params[:id])
+  end
+
+  def search
+    @summaries = Summary.where(device_id: params[:dev]).group(:contract_id,:retailer_id)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def update

@@ -1,20 +1,8 @@
 Rails.application.routes.draw do
-  # get 'devices/index'
-
-  # get 'devices/show'
-
-  # get 'devices/new'
-
-  # get 'devices/create'
-
-  # get 'devices/edit'
-
-  # get 'devices/update'
-
-  # get 'devices/destroy'
-
-  resources :summaries
+  # resources :summaries
   resources :devices
+  get "device/search" => 'devices#search', :as => :search
+  root :to            => 'devices#index'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

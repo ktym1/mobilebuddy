@@ -14,6 +14,14 @@ def index
 		end
 end
 
+  def summary
+    @summaries = Summary.where(device_id: params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
 	
 def show
 	@summary = Summary.find(params[:id])
