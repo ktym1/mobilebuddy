@@ -3,13 +3,19 @@
 		<tr> 
 			<td> Model: 
 				<%= link_to device.name+" "+ device.model , search_url(:dev => device.id),  {:remote => true} %>
-				<input id="token" name="token" type="hidden" value="<%= device.id %>" />
 			</td>
 		</tr>
 		<tr>	
 			<td> <b> Price: </b> </td> 
 			<td> <%= device.minimum_price %> </td>
-		</tr>	
+		</tr>
+		<tr>
+		<td>
+			<div class="image">
+				<%= image_tag device.image_url(:main) %>
+			</div>
+		</td>
+	</tr>		
 		
 	</table>		
 	

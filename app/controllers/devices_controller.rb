@@ -23,6 +23,11 @@ class DevicesController < ApplicationController
 
   def create
     @device = Device.new(device_params)
+      if @device.save
+        redirect_to devices_url
+      else
+        render :new
+      end
   end
 
   def edit
@@ -50,13 +55,13 @@ class DevicesController < ApplicationController
   def destroy
     @device = Device.find(params[:id])
     @device.destroy
-    redirect_to device_path
+    redirect_to devices_path
   end
 
   private
 
   def device_params
-    params.require(:device).permit(:name, :description, :model)
+    params.require(:device).permit(:name, :description, :model, :image)
   end
 
 end
