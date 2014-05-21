@@ -35,10 +35,12 @@ class DevicesController < ApplicationController
   end
 
   def search
-    @summaries = Summary.where(device_id: params[:dev]).group(:contract_id,:retailer_id)
-    respond_to do |format|
-      format.html
-      format.js
+    if params[:dev]
+      @summaries = Summary.where(device_id: params[:dev]).group(:contract_id,:retailer_id)
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 

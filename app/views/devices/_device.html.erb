@@ -12,7 +12,7 @@
 		<tr>
 		<td>
 			<div class="image">
-				<%= image_tag device.image_url(:main) %>
+				<%= image_tag device.image_url(:thumb) if device.image? %>
 			</div>
 		</td>
 	</tr>		

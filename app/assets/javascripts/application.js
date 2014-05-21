@@ -31,11 +31,6 @@ $(document).ready(function(){
 		e.preventDefault();
 		$('#myModal').foundation('reveal', 'open');
     });
-
-    $(document).on('opened', '[data-reveal]', function (event) {
-    	console.log(document.getElementById('token').value);
-	    $.getScript('/summary/' + $('#token').val());
-    });
     
 });
 

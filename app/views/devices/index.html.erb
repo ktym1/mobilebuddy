@@ -13,12 +13,10 @@
 <div id="hero" style="display:block;">
 	<div class= "background-image" style="background-image: url('assets/brushed.png')">
 		<div class="input-wrapper">
-						<%= form_tag(devices_path, :method => "get", authentication: false, id: "search-form") do %>
-					  <%= text_field_tag :search, params[:search], placeholder: "Search Devices" %>
-					  <%= submit_tag "Search", :name => nil %>
-					<% end %>
-		</div>
-
+			<%= form_tag(devices_path, :method => "get", authentication: false, id: "search-form") do %>
+			  <%= text_field_tag :search, params[:search], placeholder: "Search Devices" %>
+			  <%= submit_tag "Search", :name => nil %>
+			<% end %>
 		</div>
 	</div>
 </div>
@@ -29,13 +27,15 @@
 <h2> Choose Your Devices </h2>
 
 
-<div id="devices">
+<div id="devices" class="row">
 	<%= render @devices %>
 </div>
 
 <div id="myModal" class="reveal-modal" data-reveal>
-	<div id="summaries">
+
+	<div id="summaries" class="row">
 	 
 	</div>
+
 	<a class="close-reveal-modal">&#215;</a>
 </div>
