@@ -1,25 +1,10 @@
-<table>
-  <thead>
-    <tr>
-      <th width="200"><%= summary.retailer.name %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= number_to_currency(summary.price) %></td>
-    </tr>
-    <tr>
-      <td><%= summary.contract.name %></td>
-    </tr>
-    <tr>
-      <td><%= summary.gift_card %></td>
-    </tr>
-    <tr>
-      <td>Link: </b>
-          <%= link_to summary.retailer.website, :target => "_blank" do %>
-               website
-          <% end %>  
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="small-3 columns">
+
+<ul class="pricing-table">
+    <li class="title"><%= summary.device.name %> <%= summary.device.model %></li>
+    <li class="price"><%= number_to_currency(summary.price) %></li>
+    <li class="description"><%= summary.gift_card %></li>
+    <li class="bullet-item"><%= summary.carrier %></li>
+    <li class="cta-button"><a class="button round" href="<%= summary.retailer.website %>">Buy Now</a></li>
+</ul>
+</div>
