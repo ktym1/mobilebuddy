@@ -1,7 +1,6 @@
 class SummariesController < ApplicationController
 
 def index
-	@summaries = Summary.all
 	@summaries = if params[:search]
 			Summary.joins(:device).where("devices.name like ?", "%#{params[:search]}%") 
 		else
@@ -21,10 +20,10 @@ end
 
 def edit
     @summary = Summary.find(params[:id])
-  end
+end
 
 def update
-@summary = Summary.find(params[:id])
+	@summary = Summary.find(params[:id])
 
 	if @summary.update_attributes(summary_params)
 	  redirect_to summary_path(@summary)
