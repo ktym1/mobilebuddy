@@ -1,10 +1,8 @@
 <div class="small-3 columns">
-
-<ul class="pricing-table">
-    <li class="title"><%= summary.device.name %> <%= summary.device.model %></li>
+<ul class="pricing-table" data-equalizer-watch>
     <li class="price"><%= number_to_currency(summary.price) %></li>
     <li class="description"><%= summary.gift_card %></li>
     <li class="bullet-item"><%= summary.carrier %></li>
-    <li class="cta-button"><a class="button round" href="<%= summary.retailer.website %>">Buy Now</a></li>
+    <li class="cta-button"><a class="button round" href="<%= summary.retailer.website %>">web site</a></li>
 </ul>
 </div>

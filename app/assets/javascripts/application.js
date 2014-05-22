@@ -29,8 +29,11 @@ $(document).ready(function(){
 
 	$('#dev a').bind('click', function(e) {
 		e.preventDefault();
+		$('#myModal').attr('data-equalizer','');
+		$('#summaries').attr('data-equalizer','');
 		$('#myModal').foundation('reveal', 'open');
     });
+
     
 });
 
