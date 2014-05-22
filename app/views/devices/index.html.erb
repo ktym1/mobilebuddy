@@ -3,7 +3,11 @@
 	<h2> Choose Your Devices </h2>
 
 	<div id="devices" class="row">
-		<%= render @devices %>
+		<div class="small-12 columns">
+			<ul class="small-block-grid-4">
+				<%= render @devices %>
+			</ul>
+		</div>
 	</div>
 
 	<div id="myModal" class="reveal-modal" data-reveal>
