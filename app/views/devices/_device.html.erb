@@ -1,26 +1,13 @@
-<div class="container" id="dev">
-	<table>
-		<tr> 
-			<td> Model: 
-				<%= link_to device.name+" "+ device.model , search_url(:dev => device.id),  {:remote => true} %>
-			</td>
-		</tr>
-		<tr>	
-			<td> <b> Price: </b> </td> 
-			<td> <%= device.minimum_price %> </td>
-		</tr>
-		<tr>
-		<td>
-			<div class="image">
-				<%= image_tag device.image_url(:thumb) if device.image? %>
-			</div>
-		</td>
-	</tr>		
-		
-	</table>		
+
+
+
+	<div class="large-3 columns small-6 columns"> 
+
+		<%= link_to device.name+" "+ device.model , search_url(:dev => device.id),  {:remote => true} %> 
+			Price: <%= device.minimum_price %> 
+				<div class="image">
+					<%= image_tag device.image_url(:thumb) if device.image? %>
+				</div>
+	</div>
 	
-</div>
-
-
-
 
