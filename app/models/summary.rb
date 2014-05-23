@@ -7,20 +7,12 @@ class Summary < ActiveRecord::Base
 	validates :device, presence: true
 	validates :retailer, presence: true
 
-
-	# def carrier
-	# 	carrier = ""
-	# 	if self.retailer.name == self.contract.name
- #           carrier = self.retailer.name
- #        else
- #           carrier = self.contract.name
- #        end
- #        carrier
-	# end
-
-
-	# def self.search(query)
- #  		Summary.joins(:device).where("name like ?", "%#{query}%") 
-	# end
+	def has_gift_card?
+		result = self.gift_card == nil
+		if result
+			self.gift_card = "Sorry, Chris! :( Maybe next time."
+		end
+		result
+	end
 	
 end
