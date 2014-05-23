@@ -1,12 +1,16 @@
+
 <li>
 	<div class="device-block" id="dev"> 
+		<%= link_to search_url(:dev => device.id),  {:remote => true} do %> 
 		<h4>
-			<%= link_to device.name+" "+ device.model , search_url(:dev => device.id),  {:remote => true} %> 
+			<%= device.name + " " + device.model %> 
 		</h4>	
-		<ul class="clearing-thumbs" data-clearing>
-			<li><%= image_tag device.image_url(:thumb) if device.image? %></li>
-		</ul>
+		<div class="device-image">
+			<%= image_tag device.image_url(:thumb) if device.image? %>
+		</div>
 		<h5> Price: <%= device.minimum_price %> </h5>
+		<% end %>
+	</div>
 </li>
 	
 
