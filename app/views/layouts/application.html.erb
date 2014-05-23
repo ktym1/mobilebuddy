@@ -11,15 +11,26 @@
     <%= csrf_meta_tags %>
     
   </head>
-    
-    <body>
-      <%= render partial: "shared/header" %>
-         
-            <%= yield %>
-           <div>
+
+  <body>
+    <%= render partial: "shared/header" %>
+       <div class="row">
+         <div class="large-12 columns">
+          <%= yield %>
+         <div>
+            <footer class="row">
+            <div class="large-12 columns">
+            <hr>
+            <div class="row">
+              <div class="large-6 columns">
+              <p>© Mobile Buddy</p>
+              </div>
+              </div>
+            </div>
+            </footer>
          </div>
-   
-      <%= javascript_include_tag "application" %>
-    </body>
-  
+ 
+    <%= javascript_include_tag "application" %>
+  </body>
+
 </html>
