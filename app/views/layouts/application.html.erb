@@ -11,15 +11,15 @@
     <%= csrf_meta_tags %>
     
   </head>
-
-  <body>
-    <%= render partial: "shared/header" %>
-       <div class="row">
-         <div class="large-12 columns">
-          <%= yield %>
-         <div>
-       </div>
- 
-    <%= javascript_include_tag "application" %>
-  </body>
+    
+    <body>
+      <%= render partial: "shared/header" %>
+         
+            <%= yield %>
+           <div>
+         </div>
+   
+      <%= javascript_include_tag "application" %>
+    </body>
+  
 </html>
