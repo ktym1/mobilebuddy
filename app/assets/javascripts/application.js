@@ -34,6 +34,11 @@ $(document).ready(function(){
 		$('#myModal').foundation('reveal', 'open');
     });
 
+  //   $("#dev").click(function(){
+  //      $(this).find("a").attr("href");
+  //   return false;
+  // });
+
     
 });
 

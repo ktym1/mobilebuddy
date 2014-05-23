@@ -1,21 +1,11 @@
-<!-- <div class="small-3 columns">
-<ul class="pricing-table" data-equalizer-watch>
-    <li class="price"><%= number_to_currency(summary.price) %></li>
-    <li class="description"><%= summary.gift_card %></li>
-    <li class="bullet-item"><%= summary.carrier %></li>
-    <li class="cta-button"><a class="button round" href="<%= summary.retailer.website %>">web site</a></li>
-</ul>
-</div> -->
-
- <div class="large-3 columns">
- 	<div class="panel" >
- 		<h4><%= summary.retailer.name %></h4>
- 	    <hr>
- 		<p></p>
-
- 		<h6><small><%= summary.gift_card %></small></h6>
-
-	    <h6 class="subheader"><%= number_to_currency(summary.price) %></h6>
-	
-	</div>
- </div>
+<div class="large-3 columns [radius round]">
+	<div class="panel callout radius" >
+		<h5><%= summary.retailer.name %></h5>
+	    <hr>
+	    <h6 class="subheader">Carrier: <%= summary.contract.name %></h6>
+		<h6 style="height:40px">Gift Card: <small><%= summary.gift_card %></small></h6>
+		<hr>
+        <h4 class="subheader"><%= number_to_currency(summary.price) %></h4>
+        <a href="<%= summary.promotion_link %>" class="button round"> Website</a>        
+   </div>
+</div>

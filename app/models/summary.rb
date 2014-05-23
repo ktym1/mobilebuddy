@@ -8,15 +8,15 @@ class Summary < ActiveRecord::Base
 	validates :retailer, presence: true
 
 
-	def carrier
-		carrier = ""
-		if self.retailer.name == self.contract.name
-           carrier = self.retailer.name
-        else
-           carrier = self.retailer.name + " | " +self.contract.name
-        end
-        carrier
-	end
+	# def carrier
+	# 	carrier = ""
+	# 	if self.retailer.name == self.contract.name
+ #           carrier = self.retailer.name
+ #        else
+ #           carrier = self.contract.name
+ #        end
+ #        carrier
+	# end
 
 
 	# def self.search(query)
