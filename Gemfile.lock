@@ -47,6 +47,7 @@ GEM
     domain_name (0.5.18)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
+    excon (0.33.0)
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
@@ -71,6 +72,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    mailchimp-api (2.0.4)
+      excon (>= 0.16.0)
+      json (>= 1.7.7)
     mechanize (2.7.2)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0.0)
@@ -184,6 +188,7 @@ DEPENDENCIES
   foundation-rails
   jbuilder (~> 2.0)
   jquery-rails
+  mailchimp-api
   mechanize
   mini_magick
   rails (= 4.1.0)

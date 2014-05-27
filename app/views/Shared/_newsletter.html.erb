@@ -1,0 +1,13 @@
+<%= form_tag('newsletter', method: "POST", remote: true) do %>
+  <%= label_tag(:email, "Email:") %>
+  <%= email_field_tag 'email', nil, placeholder: 'Email address' %>
+  <ul>
+  <% @devices.each do |dev| %>
+      <li>
+        <%= check_box_tag 'dev_name[]', dev.name + dev.model -%>
+        <%= h dev.name -%> <%= h dev.model -%>
+      </li>
+  <% end %>
+</ul>
+  <%= submit_tag("Submit") %>
+<% end %>

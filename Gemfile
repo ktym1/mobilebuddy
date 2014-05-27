@@ -37,6 +37,7 @@ gem 'foundation-rails'
 
 gem 'mini_magick'
 gem 'carrierwave'
+gem 'mailchimp-api', require: 'mailchimp'
 
 
 # Use ActiveModel has_secure_password
