@@ -39,11 +39,6 @@ $(document).ready(function(){
 	  $( "#contentDrop" ).toggle();
 	});
 
-  //   $("#dev").click(function(){
-  //      $(this).find("a").attr("href");
-  //   return false;
-  // });
-
     
 });
 
