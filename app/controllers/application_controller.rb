@@ -17,4 +17,13 @@ class ApplicationController < ActionController::Base
     @mailchimp
   end
 
+  def gb
+    begin
+     gb ||= Gibbon::API.new('f77765433fbdd33e01783cfde4e367b8-us8')
+   rescue => e
+     puts = 'There was a problem connecting to MailChimp'
+   end
+   gb
+  end 
+
 end

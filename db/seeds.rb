@@ -11,13 +11,13 @@ Contract.create(name: "Rogers")
 Contract.create(name: "Bell")
 
 #creating the devices
-galaxy_5 = Device.create(name: "Galaxy",model:"s5", active: true)
-iphone_5s = Device.create(name: "Iphone",model:"5s", active: true)
-iphone_5c = Device.create(name: "Iphone", model:"5c", active: true)
+galaxy_5 = Device.create(name: "Galaxy",model:"S5", active: true)
+iphone_5s = Device.create(name: "Iphone",model:"5S", active: true)
+iphone_5c = Device.create(name: "Iphone", model:"5C", active: true)
 note3 = Device.create(name: "Galaxy", model: "Note 3", active: true)
 galaxy_4 = Device.create(name: "Galaxy", model:"s4", active: true)
-galaxy_4_mini = Device.create(name: "Galaxy", model:"s4 mini", active: true)
-htc8_m8 = Device.create(name: "HTC", model: "one m8", active: true)
+galaxy_4_mini = Device.create(name: "Galaxy", model:"S4 mini", active: true)
+htc8_m8 = Device.create(name: "HTC", model: "ONE M8", active: true)
 nexus_5 = Device.create(name: "Nexus", model: "5", active: true)
 xperia_z1 = Device.create(name: "Xperia", model: "Z1", active: true)
 

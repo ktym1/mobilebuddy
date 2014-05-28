@@ -4,7 +4,6 @@ class DevicesController < ApplicationController
      Device.where("name like ? or model like ?", "%#{params[:search]}%", "%#{params[:search]}%") 
     else
       Device.where(active: true)
-      # @groups = @mailchimp.lists.interest_groupings('6ae858fa9a')
     end
 
     respond_to do |format|
@@ -50,7 +49,6 @@ class DevicesController < ApplicationController
     @device = Device.find(params[:id])
 
     if @device.update_attributes(device_params)
-      add_group_mailchimp
       redirect_to device_path(@device)
     else
       render :edit
@@ -65,7 +63,6 @@ class DevicesController < ApplicationController
 
   private 
   def add_group_mailchimp
-    # @mailchimp.lists.interest_grouping_add('a7a1fb57d5','Dev', "checkboxes", ['Default'])
     @mailchimp.lists.interest_group_add('6ae858fa9a',@device.name+@device.model)
   end
 

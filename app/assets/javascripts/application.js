@@ -33,6 +33,11 @@ $(document).ready(function(){
 		$('#summaries').attr('data-equalizer','');
 		$('#myModal').foundation('reveal', 'open');
     });
+    
+
+    $( "#news" ).click(function() {
+	  $( "#contentDrop" ).toggle();
+	});
 
   //   $("#dev").click(function(){
   //      $(this).find("a").attr("href");
