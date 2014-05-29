@@ -3,7 +3,7 @@ class DevicesController < ApplicationController
     @devices = if params[:search]
      Device.where("name like ? or model like ?", "%#{params[:search]}%", "%#{params[:search]}%") 
     else
-      Device.all
+      Device.where(active: true)
     end
 
     respond_to do |format|
@@ -24,6 +24,7 @@ class DevicesController < ApplicationController
   def create
     @device = Device.new(device_params)
       if @device.save
+        add_group_mailchimp
         redirect_to devices_url
       else
         render :new
@@ -60,8 +61,13 @@ class DevicesController < ApplicationController
     redirect_to devices_path
   end
 
-  private
+  private 
+  def add_group_mailchimp
+    @mailchimp.lists.interest_group_add('6ae858fa9a',@device.name+@device.model)
+  end
 
+
+  private
   def device_params
     params.require(:device).permit(:name, :description, :model, :image)
   end

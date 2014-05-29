@@ -10,7 +10,7 @@ class Summary < ActiveRecord::Base
 	def has_gift_card?
 		result = self.gift_card == nil
 		if result
-			self.gift_card = "Sorry, Chris! :( Maybe next time."
+			self.gift_card = "None."
 		end
 		result
 	end

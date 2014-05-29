@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520153534) do
+ActiveRecord::Schema.define(version: 20140525204954) do
 
   create_table "contracts", force: true do |t|
     t.string   "name"
@@ -53,6 +53,13 @@ ActiveRecord::Schema.define(version: 20140520153534) do
     t.integer  "device_id"
     t.integer  "retailer_id"
     t.string   "gift_card"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.boolean  "mailchimp"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

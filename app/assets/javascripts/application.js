@@ -33,11 +33,11 @@ $(document).ready(function(){
 		$('#summaries').attr('data-equalizer','');
 		$('#myModal').foundation('reveal', 'open');
     });
+    
 
-  //   $("#dev").click(function(){
-  //      $(this).find("a").attr("href");
-  //   return false;
-  // });
+    $( "#news" ).click(function() {
+	  $( "#contentDrop" ).toggle();
+	});
 
     
 });

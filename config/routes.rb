@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get "device/search" => 'devices#search', :as => :search
   root :to            => 'devices#index'
   resources :summaries
+  post "newsletter" => 'newsletter#create'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
