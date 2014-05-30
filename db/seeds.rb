@@ -9,7 +9,7 @@
 #creating the contracts(carriers)
 Contract.create(name: "Rogers")
 Contract.create(name: "Bell")
-
+Contract.create(name: "Telus")
 #creating the devices
 galaxy_5 = Device.create(name: "Galaxy",model:"S5", active: true)
 iphone_5s = Device.create(name: "Iphone",model:"5S", active: true)
