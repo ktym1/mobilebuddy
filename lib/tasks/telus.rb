@@ -16,7 +16,9 @@ class Telus < Scraper
 			metadatas.each do |m|
 				page = get_agent.get(m.detail)
 				array = page.search('.nobr price').children()
-
+				price = array[]	
+			
+			end
 		end
 	end
 
