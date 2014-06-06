@@ -3,8 +3,8 @@ require_relative "scraper"
 class Rogers < Scraper
 
 	def initialize 
-		@retailer = Retailer.where(name: "Rogers").take
-		@contract = Contract.find_by_name("Rogers")
+		@retailer = get_retailer('Rogers')
+	    @contract = get_contract('Rogers')
 	end
 
 	def run
@@ -18,19 +18,8 @@ class Rogers < Scraper
            	 price = browser.div(:id => 'NetPriceBig').text.to_s.delete('$')
            	 promotion_link = browser.url
            	 price = (price.to_f / 100)
-           	 
-           	 save_summary(price, dev.id, promotion_link)
-
+           	 save_summary(@contract.id, @retailer.id,price,dev.id,promotion_link)
            end
 		end
-	end
-
-	def save_summary(price,dev_id,link)
-		 Summary.create(price: price, 
-				           contract_id: @contract.id, 
-				           device_id: dev_id,
-				           retailer_id: @retailer.id,
-				           promotion_link: link.to_s 
-				           )
 	end
 end
