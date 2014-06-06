@@ -3,8 +3,8 @@ require_relative "scraper"
 class Telus < Scraper
 
 	def initialize
-		@retailer = Retailer.where(name: "Telus").take
-		@contract = Contract.find_by_nae("Telus")
+		@retailer = get_retailer("Telus")
+		@contract = get_contract("Telus")
 	end
 
 	def run
@@ -15,10 +15,10 @@ class Telus < Scraper
 
 			metadatas.each do |m|
 				page = get_agent.get(m.detail)
-				array = page.search('.nobr price').children()
-				price = array[]	
-			
+				price = page.at('.price span').text.delete('$')
+				save_summary(@contract.id, @retailer.id,price,dev.id,m.detail)
 			end
+
 		end
 	end
 

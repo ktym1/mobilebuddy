@@ -1,6 +1,7 @@
 require_relative 'bell'
 require_relative "rogers"
 require_relative 'wirelesswave'
+require_relative 'telus'
 
 namespace :scrape do
   
@@ -22,5 +23,10 @@ namespace :scrape do
 		w.run
 	end
 
+	desc "Get data from Telus' website"
+	task telus: :environment do
+		telus = Telus.new
+		telus.run     
+	end
 
 end
