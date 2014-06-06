@@ -2,7 +2,7 @@ require_relative 'scraper'
 class WirelessWave < Scraper
 
 	def initialize
-	    @retailer = Retailer.find_by_name('Wireless Wave')
+	    @retailer = get_retailer('Wireless Wave')
 	    @contract = "" 
 	end
 
@@ -16,33 +16,23 @@ class WirelessWave < Scraper
            metadatas.each do |m|
            	 page =	get_agent.get(m.detail)
            	 price = page.at("#contractprice-lg").text.delete('$')
-           	 get_contract(m.detail)
+           	 get_carrier(m.detail)
            	 gift_card = page.at("#contractbonus").text if page.at("#contractbonus") != nil
-             save_summary(price, dev.id, m.detail,gift_card)
+
+             save_summary(@contract.id, @retailer.id,price,dev.id,m.detail,gift_card)
            end
 		end
 	end
 
 
-	def get_contract(contract_name)
+	def get_carrier(contract_name)
 		if(contract_name.include? "bell")
-			@contract = Contract.find_by_name('Bell')
+			@contract = get_contract('Bell')
 			# puts "bell"
 		elsif (contract_name.include? "rogers")
-			@contract = Contract.find_by_name('Rogers')
+			@contract = get_contract('Rogers')
 			# puts "Rogers"
 		end	
-	end
-
-
-	def save_summary(price,dev_id,link, gift_card = "")
-		 Summary.create(price: price, 
-				           contract_id: @contract.id, 
-				           device_id: dev_id,
-				           retailer_id: @retailer.id,
-				           gift_card: gift_card,
-				           promotion_link: link.to_s 
-				           )
 	end
 
 end

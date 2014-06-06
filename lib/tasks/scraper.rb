@@ -7,7 +7,7 @@ require File.expand_path('../../../config/environment',  __FILE__)
 
 class Scraper
 	
-
+    protected
 	def get_agent
 		agent_aliases = Mechanize::AGENT_ALIASES.to_a
 		# agent_aliases[Random.rand(Mechanize::AGENT_ALIASES.length)][0]
@@ -18,5 +18,51 @@ class Scraper
 		agent.log = Logger.new('log/scraping.log')
 	    agent
 	end
+
+    protected
+	def save_summary(contract_id, retailer_id,price,dev_id,link, gift_card = "")
+		begin 
+
+			s =	Summary.create(   price: price, 
+						           contract_id: contract_id, 
+						           device_id: dev_id,
+						           retailer_id: retailer_id,
+						           gift_card: gift_card,
+						           promotion_link: link.to_s 
+						       )
+			puts " Saved: #{s.device.name} #{s.device.model}"
+
+		rescue => ex
+           puts e.message 
+		   puts e.code
+		end
+	end
+
+
+	protected
+	def get_retailer(name)
+	    retailer = nil
+		begin
+	        retailer = Retailer.find_by_name(name)
+		rescue => ex
+			puts e.message 
+		    puts e.code
+		end
+		retailer
+	end
+
+	
+
+	def get_contract(name)
+	    contract = nil
+		begin
+	        contract = Contract.find_by_name(name)
+		rescue => ex
+		    puts e.message 
+		    puts e.code
+		end
+		contract
+	end
+
 
 end
