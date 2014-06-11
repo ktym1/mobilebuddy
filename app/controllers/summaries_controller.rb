@@ -43,7 +43,7 @@ end
 private
 
 def summary_params
-	params.require(:summary).permit(:price, :promotion_link, :contract_id, :device_id, :retailer_id, :gift_card)
+	params.require(:summary).permit(:price, :promotion_link, :contract_id, :device_id, :retailer, :gift_card)
 end
 
 end

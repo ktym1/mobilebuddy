@@ -4,7 +4,7 @@ class DevicesController < ApplicationController
   def index
     @devices = Device.where(active: true)
     respond_to do |format|
-         format.json { render :json => @devices.to_json }
+         format.json { render :json => @devices.to_json(:methods => :minimum_price) }
          format.html
       end
     
@@ -34,10 +34,10 @@ class DevicesController < ApplicationController
 
   def search
     if params[:dev]
-      @summaries = Summary.where(device_id: params[:dev]).group(:contract_id,:retailer_id)
+      @summaries = Summary.includes(:contract).where(device_id: params[:dev]).group(:contract_id,:retailer_id)
       respond_to do |format|
         format.html
-        format.json { render :json => @summaries.to_json }
+        format.json { render :json => @summaries.to_json(:include => [:contract, :retailer]) }
       end
     end
   end
@@ -66,7 +66,7 @@ class DevicesController < ApplicationController
 
   private
   def device_params
-    params.require(:device).permit(:name, :description, :model, :image)
+    params.require(:device).permit(:name, :description, :model, :image, :minimum_price)
   end
 
 end

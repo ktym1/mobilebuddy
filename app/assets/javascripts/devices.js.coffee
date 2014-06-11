@@ -1,7 +1,3 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
 app = angular.module("Device",[ 'ngResource', 'ng-rails-csrf' ])
 
 app.factory "Device", ($resource) -> 
@@ -13,6 +9,9 @@ app.factory "Summary", ($resource) ->
 
 @DeviceCtrl = ($scope, Device, Summary)->
    $scope.devices = Device.query()
+ 
+
+
    $scope.openModal = (device) ->
      $scope.deviceName = device.name + device.model if device
      $scope.deviceImgUrl = device.image['thumb']['url'] if device
