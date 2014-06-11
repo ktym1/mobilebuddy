@@ -37,7 +37,7 @@ class DevicesController < ApplicationController
       @summaries = Summary.includes(:contract).where(device_id: params[:dev]).group(:contract_id,:retailer_id)
       respond_to do |format|
         format.html
-        format.json { render :json => @summaries.to_json(:include => [:contract, :retailer], :methods => :has_gift_card?) }
+        format.json { render :json => @summaries.to_json(:include => [:contract, :retailer], :methods => :has_gift_card) }
       end
     end
   end

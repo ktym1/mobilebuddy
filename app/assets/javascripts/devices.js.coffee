@@ -13,8 +13,8 @@ app.factory "Summary", ($resource) ->
 
 
    $scope.openModal = (device) ->
-     $scope.deviceName = device.name + device.model if device
-     $scope.deviceName = device.description  if device
+     $scope.deviceName = device.display_name if device
+     $scope.deviceDescription = device.description  if device
      $scope.deviceImgUrl = device.image['thumb']['url'] if device
      $scope.summaries = Summary.query(dev: device.id) if device
      $('#myModal').foundation('reveal', 'open') if device

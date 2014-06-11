@@ -36,15 +36,20 @@
 			<div id="myModal" class="reveal-modal" data-reveal data-equalizer>
 
 				<div id="summaries" class="row">
-					<div class="large-12 columns">
-					{{deviceName}} {{deviceDescription}}
-					<img src="{{deviceImgUrl}}">
+					<div class="row">
+						<div class="large-12 columns">
+							<div class="large-2 columns"><img src="{{deviceImgUrl}}" class="th"></div>
+	                        <div class="large-10 columns" style="color:white">
+                              <h4 style="color:white">{{deviceName}}</h4>
+	                         <p>{{deviceDescription}}</p>
+	                        </div>
+					   </div>
 				   </div>
-                   <div class="small-12 columns" data-equalizer>
-						<div class="large-3 columns [radius round]" ng-repeat="summary in summaries"  data-equalizer-watch>
-							<div class="panel callout radius" >
-								
-								<h5 ng-class="{highlight: summary.gift_card == '' }">{{summary.retailer.name}}</h5>
+                   <div style="height:20px"></div>
+                   <div class="row">
+						<div class="large-3 columns [radius round] left" ng-repeat="summary in summaries"  data-equalizer-watch >
+							<div class="panel callout radius" ng-class="{highlight: summary.gift_card != ''}">
+								<h5>{{summary.retailer.name}}</h5>
 							    <hr>
 							    <h6 class="subheader">Carrier: {{summary.contract.name}}</h6>
 								<h6 style="height:100px">Gift Card: <small>{{summary.gift_card}}</small></h6>
@@ -53,7 +58,8 @@
 						        <a href="{{summary.promotion_link}}" class="button round"> Website</a>        
 						   </div>
 						</div>
-                    </div>
+				    </div>
+                  
 				</div>
 
 				<a class="close-reveal-modal">&#215;</a>
