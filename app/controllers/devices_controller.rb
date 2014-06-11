@@ -35,8 +35,6 @@ class DevicesController < ApplicationController
   def search
     if params[:dev]
       @summaries = Summary.where(device_id: params[:dev]).group(:contract_id,:retailer_id)
-      puts "here caralho"
-      puts @summaries.length.to_s
       respond_to do |format|
         format.html
         format.json { render :json => @summaries.to_json }

@@ -16,11 +16,20 @@
 		<div id="devices_" class="row" ng-controller="DeviceCtrl">
 			<div class="small-12 columns">
 				<ul class="small-block-grid-4">
-					<li ng-repeat="device in devices">
-						<div ng-click="openModal(device)">
-							{{device.name}} {{device.model}}
-					    </div>
-                    </li>
+				
+                    <li  ng-repeat="device in devices | orderBy:'name' ">
+						<div class="device-block" ng-click="openModal(device)"> 
+							
+							<h4>
+								{{device.name}} {{device.model}}
+							</h4>	
+							<div class="device-image">
+								 <img src="{{device.image['thumb']['url']}}"> 
+							</div>
+							<h5> Price: {{device.minimum_price}} </h5>
+							
+						</div>
+					</li>
 				</ul>
 			</div>
 
@@ -28,6 +37,7 @@
 
 				<div id="summaries" class="row">
 					{{deviceName}}
+					<img src="{{deviceImgUrl}}">
                  <ul class="small-block-grid-4">
 
 					<li ng-repeat="summary in summaries">
