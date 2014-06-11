@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="Device">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
@@ -12,9 +11,9 @@
     
   </head>
 
-  <body>
+  <body ng-controller="DeviceCtrl">
     <%= render partial: "shared/header" %>
-       <div class="row">
+       <div class="row" ng-view>
          <div class="large-12 columns">
           <%= yield %>
          <div>

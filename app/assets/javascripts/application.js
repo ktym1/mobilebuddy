@@ -10,14 +10,18 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require angular
+//= require angular-resource
+//= require ng-rails-csrf
 //= require jquery
 //= require jquery_ujs
-//= require foundation
-//= require turbolinks
-//= require_tree .
+//= require_tree
 //= require foundation
 
+
+
 $(document).ready(function(){
+
 	$(document).foundation(); 
 
 	$('#search-form').submit(function(event) {

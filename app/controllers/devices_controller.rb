@@ -1,16 +1,13 @@
 class DevicesController < ApplicationController
+
+
   def index
-    @devices = if params[:search]
-     Device.where("name like ? or model like ?", "%#{params[:search]}%", "%#{params[:search]}%") 
-    else
-      Device.where(active: true)
-    end
-
+    @devices = Device.where(active: true)
     respond_to do |format|
-      format.html
-      format.js
-    end
-
+         format.json { render :json => @devices.to_json }
+         format.html
+      end
+    
   end
 
   def show
@@ -38,9 +35,11 @@ class DevicesController < ApplicationController
   def search
     if params[:dev]
       @summaries = Summary.where(device_id: params[:dev]).group(:contract_id,:retailer_id)
+      puts "here caralho"
+      puts @summaries.length.to_s
       respond_to do |format|
         format.html
-        format.js
+        format.json { render :json => @summaries.to_json }
       end
     end
   end

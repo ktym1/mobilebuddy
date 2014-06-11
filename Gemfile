@@ -30,6 +30,8 @@ gem 'rspec-rails'
 
 gem "factory_girl", "~> 4.0"
 gem "factory_girl_rails", "~> 4.0"
+
+#scraping stuff
 gem 'mechanize'
 gem 'watir-webdriver'
 
@@ -37,9 +39,13 @@ gem 'foundation-rails'
 
 gem 'mini_magick'
 gem 'carrierwave'
+
+#mailchimp
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'gibbon'
 
+gem 'angularjs-rails'
+gem 'ng-rails-csrf'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

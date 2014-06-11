@@ -7,24 +7,33 @@
 		<span class="free"> free.</span>
 
 <a href="#contentDrop" id='news'>newsletter</a>
- <%= render partial: "shared/newsletter" %>
 
 	<div class="wrapper">
 		<% content_for :title ,"Mobile Buddy" %>
 		<div id="hero">
 			<h2> Choose Your Phone  </h2>
 
-		<div id="devices" class="row">
+		<div id="devices_" class="row" ng-controller="DeviceCtrl">
 			<div class="small-12 columns">
 				<ul class="small-block-grid-4">
-					<%= render @devices %>
+					<li ng-repeat="device in devices">
+						<div ng-click="openModal(device)">
+							{{device.name}} {{device.model}}
+					    </div>
+                    </li>
 				</ul>
 			</div>
 
 			<div id="myModal" class="reveal-modal" data-reveal>
 
 				<div id="summaries" class="row">
+					{{deviceName}}
+                 <ul class="small-block-grid-4">
 
+					<li ng-repeat="summary in summaries">
+						{{summary.price}}
+                    </li>
+				</ul>
 				</div>
 
 				<a class="close-reveal-modal">&#215;</a>
