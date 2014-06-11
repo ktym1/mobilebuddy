@@ -4,7 +4,7 @@ class DevicesController < ApplicationController
   def index
     @devices = Device.where(active: true)
     respond_to do |format|
-         format.json { render :json => @devices.to_json(:methods => :minimum_price) }
+         format.json { render :json => @devices.to_json(:methods => [:minimum_price, :display_name]) }
          format.html
       end
     
@@ -37,7 +37,7 @@ class DevicesController < ApplicationController
       @summaries = Summary.includes(:contract).where(device_id: params[:dev]).group(:contract_id,:retailer_id)
       respond_to do |format|
         format.html
-        format.json { render :json => @summaries.to_json(:include => [:contract, :retailer]) }
+        format.json { render :json => @summaries.to_json(:include => [:contract, :retailer], :methods => :has_gift_card?) }
       end
     end
   end
