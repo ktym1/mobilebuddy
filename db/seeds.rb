@@ -81,14 +81,14 @@ virgin = Retailer.create(name: "Virgin", website: "http://www.virginmobile.ca/")
 #the URL end "SP9" refers to device price, deoending on the rate plan selection. 
 #e.g. SP7 = Device price on Silver plans, SP8 = Device price on Gold plans, SP9 = Device price on Platinum plans
 #note premium phones iphones & GS5 are only available on Platinum plans
-Metadata.create(device_id: iphone_5s.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=iphone5s&colour=Gold&memory=16&contractTerm=SP9")
-Metadata.create(device_id: iphone_5c.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=iphone5c&colour=Blue&memory=16&contractTerm=SP9")
-Metadata.create(device_id: galaxy_5.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=galaxys5&colour=White&contractTerm=SP9")
-Metadata.create(device_id: galaxy_4.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=galaxys4&colour=Red&contractTerm=SP9")
-Metadata.create(device_id: nexus_5.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=nexus5&colour=Black&contractTerm=SP9")
-Metadata.create(device_id: moto_g.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=motog&colour=Black&contractTerm=SP7")
-Metadata.create(device_id: galaxy_3.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=galaxysIII&colour=Blue&memory=16&contractTerm=SP8")
-Metadata.create(device_id: galaxy_ace2, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=samsungace&colour=Black&contractTerm=SP7")
-Metadata.create(device_id: htc_desire, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=htcdesire601&colour=Black&contractTerm=SP8")
+# Metadata.create(device_id: iphone_5s.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=iphone5s&colour=Gold&memory=16&contractTerm=SP9")
+Metadata.create(device_id: iphone_5c.id, retailer_id: virgin.id, detail: "iphone5c&colour=Blue&memory=16&contractTerm=SP8")
+# Metadata.create(device_id: galaxy_5.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=galaxys5&colour=White&contractTerm=SP9")
+# Metadata.create(device_id: galaxy_4.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=galaxys4&colour=Red&contractTerm=SP9")
+# Metadata.create(device_id: nexus_5.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=nexus5&colour=Black&contractTerm=SP9")
+# Metadata.create(device_id: moto_g.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=motog&colour=Black&contractTerm=SP7")
+# Metadata.create(device_id: galaxy_3.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=galaxysIII&colour=Blue&memory=16&contractTerm=SP8")
+# Metadata.create(device_id: galaxy_ace2, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=samsungace&colour=Black&contractTerm=SP7")
+# Metadata.create(device_id: htc_desire, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=htcdesire601&colour=Black&contractTerm=SP8")
 
 
