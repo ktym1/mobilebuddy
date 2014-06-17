@@ -90,10 +90,10 @@ Metadata.create(device_id: xperia_z1.id, retailer_id: telus.id, detail: "http://
 
 # Fido
 fido = Retailer.create(name: "Fido", website: "www.fido.ca")
-Metadata.create(device_id: iphone_5s.id, retailer_id: fido.id, detail: "iphone5s_tab")
-Metadata.create(device_id: galaxy_5.id, retailer_id: fido.id, detail: "GS5WHT")
-Metadata.create(device_id: galaxy_4.id, retailer_id: fido.id, detail: "GS416BLK")
-Metadata.create(device_id: galaxy_4_mini.id, retailer_id: fido.id, detail: "GS4MINIWHT")
-Metadata.create(device_id: iphone_5c.id, retailer_id: fido.id, detail: "iPhones#iphone5c_tab")
-Metadata.create(device_id: nexus_5.id, retailer_id: fido.id, detail: "NEXUS5BLK")
-Metadata.create(device_id: htc_desire.id, retailer_id: fido.id, detail: "DESIREWHT")
+Metadata.create(device_id: iphone_5s.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/iPhones#iphone5s_tab")
+Metadata.create(device_id: galaxy_5.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=GS5WHT")
+Metadata.create(device_id: galaxy_4.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=GS416BLK")
+Metadata.create(device_id: galaxy_4_mini.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=GS4MINIWHT")
+Metadata.create(device_id: iphone_5c.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/iPhones#iphone5c_tab")
+Metadata.create(device_id: nexus_5.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=NEXUS5BLK")
+Metadata.create(device_id: htc_desire.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=DESIREWHT")
