@@ -12,6 +12,9 @@
   </head>
 
   <body ng-controller="DeviceCtrl">
+     <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
     <%= render partial: "shared/header" %>
        <div class="row" ng-view>
          <div class="large-12 columns">

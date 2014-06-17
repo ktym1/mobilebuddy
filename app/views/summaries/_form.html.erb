@@ -1,17 +1,25 @@
-<%= form_for(@summary) do |form| %>
-	<% if @summary.errors.any? %>
-		
-			<div id="error_explanation">
-				<h2> <%= pluralize(@summary.errors.count, "error")%> prohibited this Summary from being saved: </h2>
-
-				<ul>
-					<% @errors.full_messages.each do |msg| %>
-					<li> <%= msg %> </li>
-					<% end %>
-				</ul>
-			</div>
-	<% end %>
-
-	
-
-<%end%>
+<%= form_tag(metadatas_path, method: "POST") do %>
+     <div class="row">
+     	<div class="large-12 columns">
+     		<%= label_tag :detail %>
+     		<%= text_field_tag :detail %>
+     	</div>
+     </div>
+     <div class="row">
+     	
+     		<div class="large-6 columns">
+ 	    		<%= label_tag :retailer %>
+ 	    		<%= select_tag "retailer", 
+ 	    		    options_from_collection_for_select(@retailers , "id", "name") %>
+     	    </div>
+     	    <div class="large-6 columns">
+     	    	<%= label_tag :device %>
+     	    	<%= select_tag "device", 
+     		    options_from_collection_for_select(@devices , "id", "display_name") %>
+     	    </div>
+ 
+     </div>
+ 	<div>
+ 		<%= submit_tag "Save" %>
+ 	</div>
+ <% end %>

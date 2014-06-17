@@ -10,6 +10,7 @@ class NewsletterController < ApplicationController
 				                :double_optin => false,:update_existing => true})
 			flash[:success] = "#{email} subscribed successfully"
 		    puts "#{email} subscribed successfully"
+    end
 
 		rescue Gibbon::MailChimpError => e
 		  puts e.message 

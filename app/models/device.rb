@@ -6,7 +6,7 @@ class Device < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 
 	def minimum_price
-		price = Summary.where(device_id: self.id, created_at: (Time.now-2.day)..Time.now).minimum(:price)
+		price = Summary.where(device_id: self.id, created_at: (Time.now-1.day)..Time.now).minimum(:price)
 		price
 	end
 

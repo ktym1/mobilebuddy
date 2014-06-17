@@ -7,7 +7,7 @@ class Summary < ActiveRecord::Base
 	validates :device, presence: true
 	validates :retailer, presence: true
 
-	def has_gift_card
+	def has_gift_card?
 		result = self.gift_card == nil
 		if result
 			self.gift_card = "None."
