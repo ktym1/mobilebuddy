@@ -21,6 +21,10 @@ galaxy_4_mini = Device.create(name: "Galaxy", model:"S4 mini", active: true)
 htc8_m8 = Device.create(name: "HTC", model: "ONE M8", active: true)
 nexus_5 = Device.create(name: "Nexus", model: "5", active: true)
 xperia_z1 = Device.create(name: "Xperia", model: "Z1", active: true)
+moto_g = Device.create(name: "Moto", model: "G", active: true)
+galaxy_3 = Device.create(name: "Galaxy", model: "S3", active: true)
+galaxy_ace2 = Device.create(name: "Galaxy", model: "Ace II x",active: true)
+htc_desire = Device.create(name: "HTC", model: "Desire", active: true)
 
 retailer = Retailer.create(name: "Rogers", website: "www.rogers.com")
 Metadata.create(device_id: galaxy_5.id, retailer_id: retailer.id, detail: "GS5WHT")
@@ -84,4 +88,12 @@ Metadata.create(device_id: htc8_m8.id, retailer_id: telus.id, detail: "http://ww
 Metadata.create(device_id: nexus_5.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/nexus-5/?INTCMP=BetaCatalogCardNexus5")
 Metadata.create(device_id: xperia_z1.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/sony-xperia-z1/?INTCMP=BetaCatalogCardXperiaZ1")
 
-
+# Fido
+fido = Retailer.create(name: "Fido", website: "www.fido.ca")
+Metadata.create(device_id: iphone_5s.id, retailer_id: fido.id, detail: "iphone5s_tab")
+Metadata.create(device_id: galaxy_5.id, retailer_id: fido.id, detail: "GS5WHT")
+Metadata.create(device_id: galaxy_4.id, retailer_id: fido.id, detail: "GS416BLK")
+Metadata.create(device_id: galaxy_4_mini.id, retailer_id: fido.id, detail: "GS4MINIWHT")
+Metadata.create(device_id: iphone_5c.id, retailer_id: fido.id, detail: "iPhones#iphone5c_tab")
+Metadata.create(device_id: nexus_5.id, retailer_id: fido.id, detail: "NEXUS5BLK")
+Metadata.create(device_id: htc_desire.id, retailer_id: fido.id, detail: "DESIREWHT")
