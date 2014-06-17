@@ -22,27 +22,11 @@
 
 $(document).ready(function(){
 
+ //    $( "#news" ).click(function() {
+	//   $( "#contentDrop" ).toggle();
+	// });
+
 	$(document).foundation(); 
-
-	$('#search-form').submit(function(event) {
-		event.preventDefault();
-		var searchValue = $('#search').val();
-		$.getScript('/devices?search=' + searchValue);
-	});
-
-
-	// $('#dev a').bind('click', function(e) {
-	// 	e.preventDefault();
-	// 	$('#myModal').attr('data-equalizer','');
-	// 	$('#summaries').attr('data-equalizer','');
-	// 	$('#myModal').foundation('reveal', 'open');
- //    });
-    
-
-    $( "#news" ).click(function() {
-	  $( "#contentDrop" ).toggle();
-	});
-
     
 });
 

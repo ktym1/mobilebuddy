@@ -1,12 +1,43 @@
-<h1 class="intro-text"> <strong> It's easy to get you the best phone price.</strong></h1>
 
+<div class="row">
+    <div class="large-12 columns">
+    
+      <div class="panel">
+        <h4>Get in touch!</h4>
+            
+        <div class="row">
+          <%= form_tag('newsletter', method: "POST", remote: true) do %>
+	          <div class="large-8 columns">
+	          	<p><strong> It's easy to get you the best phone price.</strong> When you are looking for a new phone.
+	            Mobile Buddy does all the work of showing you where to get the best deal. Best of all, it's free
+				</p>
+	            
+			     <p>Select the phone the you would like to get news:</p>
+			        <ul class="inline-list">
+			          <% @devices.each do |dev| %>
+			              <li>
+			                <span>
+			                  <%= h dev.name -%> <%= h dev.model -%>
+			                  <%= check_box_tag 'dev_name[]', dev.name + dev.model -%> 
+			                </span>
+			              </li>
+			          <% end %>
+			        </ul>
+	    
+			  </div>
+		      <div class="large-4 columns">
+			      <%= email_field_tag 'email', nil, placeholder: 'Email address' %> 
+			      <%= submit_tag("Get updates!",:class => "button postfix") %>
+		      </div>
+           </div>
+         <% end %>
+      </div>
+      
+    </div>
+</div>
+		
 
-<div class="row" >
-	<p class="intro-par">
-		Looking for a new phone? Mobile Buddy does all the work of showing you where to get the best deal. Best of all, it's 
-		<span class="free"> free.</span>
-
-<a href="#contentDrop" id='news'>newsletter</a>
+		
 
 	<div class="wrapper">
 		<% content_for :title ,"Mobile Buddy" %>
@@ -48,7 +79,7 @@
                    <div style="height:20px"></div>
                    <div class="row">
 						<div class="large-3 columns [radius round] left" ng-repeat="summary in summaries"  data-equalizer-watch >
-							<div class="panel callout radius" ng-class="{highlight: summary.gift_card != ''}">
+							<div class="panel callout radius" >
 								<h5>{{summary.retailer.name}}</h5>
 							    <hr>
 							    <h6 class="subheader">Carrier: {{summary.contract.name}}</h6>

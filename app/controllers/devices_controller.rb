@@ -6,6 +6,7 @@ class DevicesController < ApplicationController
     respond_to do |format|
          format.json { render :json => @devices.to_json(:methods => [:minimum_price, :display_name]) }
          format.html
+         format.js
       end
     
   end
