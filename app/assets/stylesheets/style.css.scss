@@ -69,7 +69,7 @@
 .wrapper {
 	margin-left: auto;
 	margin-right: auto;
-	background: url("brushed.png") no-repeat center center center;
+	background: url("black-Linen.png") no-repeat center center center;
 	-webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -95,12 +95,13 @@
 }
 
 .hero {
-	 background: url("hero.png"); 
-  	-webkit-background-size: 100%;
-  	-moz-background-size: 100%;
-  	-o-background-size: 100%;
-  	background-size: 100%;
-  	padding: 0%;
+	background: url("Hero3.jpg"); 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	width: 100%;
+  	height: 85%;
   	margin-top: 0px;
   	background-repeat: no-repeat;
 }
