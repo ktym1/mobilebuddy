@@ -1,0 +1,18 @@
+<table class="responsive">
+	<thead>
+	    <tr>
+	      <th width="150">Retailer</th>
+	      <th width="150">Device</th>
+	      <th >Detail</th>
+	    </tr>
+  </thead>
+  <tbody>
+	<% @metadatas.each do |data| %>
+		<tr>
+	      <td><%= link_to  data.retailer.name, edit_metadata_path(data) %></td>
+	      <td><%= data.device.name %> <%= data.device.model %></td>
+	      <td><%= data.detail %></td>
+	    </tr>
+	<% end %>
+  </tbody>
+</table>

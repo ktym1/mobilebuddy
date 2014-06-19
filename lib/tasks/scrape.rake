@@ -26,7 +26,7 @@ namespace :scrape do
 	desc "Get data from Telus' website"
 	task telus: :environment do
 		telus = Telus.new
-		Telus.run     
+		telus.run     
 	end
 
 end
