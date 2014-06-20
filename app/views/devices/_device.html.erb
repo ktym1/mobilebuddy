@@ -3,7 +3,7 @@
 		<%= link_to search_url(:dev => device.id),  {:remote => true} do %> 
 		
 		<div class="device-image">
-			<%= image_tag device.image_url(:thumb) if device.image? %>
+			<%= image_tag device.image_url(:main) if device.image? %>
 		</div>
 
 			<h4 class="device-name"> <%= device.name + " " + device.model %> </h4>
