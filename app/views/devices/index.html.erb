@@ -1,3 +1,4 @@
+<%= render partial: "shared/header" %>
 
 <div class="row">
     <div class="large-12 columns">
@@ -36,12 +37,30 @@
     </div>
 </div>
 		
+<div class = 'navbar'>
 
+
+       
+</div>
+
+<div class = "hero">
+	<h1 class="intro-text"> <strong> It's easy to get you the best phone price.</strong></h1>
+
+	<div class="row" >
+		<p class="intro-par">
+			Looking for a new phone? Mobile Buddy does all the work of showing you where to get the best deal. Best of all, it's 
+			<span class="free"> free.</span>
+		</p>
 		
+
+		</div> -->
+	</div>
+</div>	
+
 
 	<div class="wrapper">
 		<% content_for :title ,"Mobile Buddy" %>
-		<div id="hero">
+		<div id="device_select">
 			<h2> Choose Your Phone  </h2>
 
 		<div id="devices_" class="row" ng-controller="DeviceCtrl">
@@ -98,4 +117,17 @@
 		</div>
 	</div>
 
+
+	<div>
+        <footer class="row">
+            <div class="large-12 columns">
+	            <hr>
+	            <div class="row">
+	              <div class="large-6 columns">
+	              <p>© Mobile Buddy</p>
+	              </div>
+	              </div>
+            </div>
+        </footer>
+    </div>
 </div>
