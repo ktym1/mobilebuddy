@@ -1,7 +1,9 @@
 require_relative 'bell'
 require_relative "rogers"
 require_relative 'wirelesswave'
+require_relative 'virgin'
 require_relative 'telus'
+
 
 namespace :scrape do
   
@@ -21,6 +23,13 @@ namespace :scrape do
 	task wave: :environment do
 		w = WirelessWave.new
 		w.run
+	end
+
+
+	desc "Get data from Virgin's website"
+	task virgin: :environment do
+		virgin = Virgin.new
+		virgin.run
 	end
 
 	desc "Get data from Telus' website"
