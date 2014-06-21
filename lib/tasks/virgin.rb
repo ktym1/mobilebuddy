@@ -1,24 +1,25 @@
 require_relative "scraper"
 
-class Telus < Scraper
+class Virgin < Scraper
 
 	def initialize
-		@retailer = get_retailer("Telus")
-		@contract = get_contract("Telus")
+		@retailer = get_retailer('Virgin')
+		@contract = get_contract('Virgin')
 	end
 
 	def run
+		browser = Watir::Browser.new :phantomjs
 		devices = Device.where(active: true)
+
 		devices.each do |dev|
-
 			metadatas = Metadata.where(retailer_id: @retailer.id, device_id: dev.id)
-
 			metadatas.each do |m|
-				page = get_agent.get(m.detail)
-
-				price = page.at('.price span').text.delete('$')
+				browser.goto m.detail
+				price = browser.element(:xpath => '//*[@id="priceDisplayforSale"]/div/div[2]').text
 				save_summary(@contract.id, @retailer.id,price,dev.id,m.detail)
 			end
 		end
 	end
+
+
 end

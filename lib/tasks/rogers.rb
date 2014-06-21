@@ -9,7 +9,7 @@ class Rogers < Scraper
 
 	def run
 		browser = Watir::Browser.new :phantomjs
-		devices = Device.all
+		devices = Device.where(active: true)
 
 		devices.each do |dev|
            metadatas =  Metadata.where(retailer_id: @retailer.id, device_id: dev.id)

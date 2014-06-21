@@ -9,8 +9,11 @@
 #creating the contracts(carriers)
 Contract.create(name: "Rogers")
 Contract.create(name: "Bell")
+
 Contract.create(name: "Telus")
 Contract.create(name: "Fido")
+Contract.create(name: "Virgin")
+
 #creating the devices
 galaxy_5 = Device.create(name: "Galaxy",model:"S5", active: true)
 iphone_5s = Device.create(name: "Iphone",model:"5S", active: true)
@@ -76,17 +79,20 @@ Metadata.create(device_id: htc8_m8.id, retailer_id: wave.id, detail: "http://www
 Metadata.create(device_id: nexus_5.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/rogers-phones-and-smartphones/phone.asp?Phone=657")
 Metadata.create(device_id: xperia_z1.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/rogers-phones-and-smartphones/phone.asp?Phone=635")
 
-telus = Retailer.create(name: "Telus", website: "http://www.telus.com/en/on/index.jsp")
+virgin = Retailer.create(name: "Virgin", website: "http://www.virginmobile.ca/")
 
-Metadata.create(device_id: iphone_5s.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/iphone-5s/?INTCMP=BetaCatalogCardiPhone5s")
-Metadata.create(device_id: galaxy_5.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/samsung-galaxy-s5/?INTCMP=BetaCatalogCardS5")
-Metadata.create(device_id: note3.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/samsung-galaxy-note-3/?INTCMP=BetaCatalogCardNote3")
-Metadata.create(device_id: galaxy_4.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/samsung-galaxy-s4/?INTCMP=BetaCatalogCardS4")
-Metadata.create(device_id: galaxy_4_mini.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/samsung-galaxy-s4-mini/?INTCMP=BetaCatalogCardGalaxyS4Mini")
-Metadata.create(device_id: iphone_5c.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/iphone-5c/?INTCMP=BetaCatalogCardiPhone5c")
-Metadata.create(device_id: htc8_m8.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/new-htc-one/?INTCMP=BetaCatalogCardNewHTCOne")
-Metadata.create(device_id: nexus_5.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/nexus-5/?INTCMP=BetaCatalogCardNexus5")
-Metadata.create(device_id: xperia_z1.id, retailer_id: telus.id, detail: "http://www.telus.com/en/on/mobility/devices/sony-xperia-z1/?INTCMP=BetaCatalogCardXperiaZ1")
+#the URL end "SP9" refers to device price, deoending on the rate plan selection. 
+#e.g. SP7 = Device price on Silver plans, SP8 = Device price on Gold plans, SP9 = Device price on Platinum plans
+#note premium phones iphones & GS5 are only available on Platinum plans
+# Metadata.create(device_id: iphone_5s.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=iphone5s&colour=Gold&memory=16&contractTerm=SP9")
+Metadata.create(device_id: iphone_5c.id, retailer_id: virgin.id, detail: "iphone5c&colour=Blue&memory=16&contractTerm=SP8")
+# Metadata.create(device_id: galaxy_5.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=galaxys5&colour=White&contractTerm=SP9")
+# Metadata.create(device_id: galaxy_4.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=galaxys4&colour=Red&contractTerm=SP9")
+# Metadata.create(device_id: nexus_5.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=nexus5&colour=Black&contractTerm=SP9")
+# Metadata.create(device_id: moto_g.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=motog&colour=Black&contractTerm=SP7")
+# Metadata.create(device_id: galaxy_3.id, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=galaxysIII&colour=Blue&memory=16&contractTerm=SP8")
+# Metadata.create(device_id: galaxy_ace2, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=samsungace&colour=Black&contractTerm=SP7")
+# Metadata.create(device_id: htc_desire, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=htcdesire601&colour=Black&contractTerm=SP8")
 
 # Fido
 fido = Retailer.create(name: "Fido", website: "www.fido.ca")

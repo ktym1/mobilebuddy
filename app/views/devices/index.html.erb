@@ -1,35 +1,61 @@
-<h1 class="intro-text"> <strong> It's easy to get you the best phone price.</strong></h1>
+<div class = 'navbar'>
 
+<%= render partial: "shared/header" %>
+       
+</div>
 
-<div class="row" >
-	<p class="intro-par">
-		Looking for a new phone? Mobile Buddy does all the work of showing you where to get the best deal. Best of all, it's 
-		<span class="free"> free.</span>
+<div class = "hero">
+	<h1 class="intro-text"> <strong> It's easy to get you the best phone deal.</strong></h1>
 
-<a href="#contentDrop" id='news'>newsletter</a>
- <%= render partial: "shared/newsletter" %>
+	<div class="row" >
+		<p class="intro-par">
+			Looking for a new phone? Mobile Buddy does all the work of getting you the best deal in Canada.
+		</p>
+		<!-- <div class = "newsletter">
+		<h2>Get alerts when your favorite devices go on sale!</h2>
+		 <%= render partial: "shared/newsletter" %>
+
+		</div> -->
+	</div>
+</div>	
 
 	<div class="wrapper">
 		<% content_for :title ,"Mobile Buddy" %>
-		<div id="hero">
+		<div id="device_select">
 			<h2> Choose Your Phone  </h2>
-
-		<div id="devices" class="row">
-			<div class="small-12 columns">
-				<ul class="small-block-grid-4">
-					<%= render @devices %>
-				</ul>
-			</div>
-
-			<div id="myModal" class="reveal-modal" data-reveal>
-
-				<div id="summaries" class="row">
-
-				</div>
-
-				<a class="close-reveal-modal">&#215;</a>
-			</div>		
 		</div>
-	</div>
 
+			<div class="text-lead">
+				<span class="subtitle"> <p> Popular phones recommended for you. </p> </span>
+			</div>
+					<div id="devices" class="row">
+						<div class="small-12 columns">
+							<ul class="small-block-grid-4">
+								<%= render @devices %>
+							</ul>
+						</div>
+
+						<div id="myModal" class="reveal-modal" data-reveal>
+
+							<div id="summaries" class="row">
+
+							</div>
+
+							<a class="close-reveal-modal">&#215;</a>
+						</div>		
+					</div>
+
+
+	<div>
+        <footer class="row">
+            <div class="large-12 columns">
+	            <hr>
+	            <div class="row">
+	              <div class="large-6 columns">
+	              <p>© Mobile Buddy</p>
+	              </div>
+	              </div>
+            </div>
+        </footer>
+    </div>
 </div>
