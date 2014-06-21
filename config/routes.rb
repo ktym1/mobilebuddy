@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   root :to            => 'devices#index'
   resources :summaries
   post "newsletter" => 'newsletter#create'
+  resources :metadatas
+  
+  # get 'metadata'  => 'metadata#index'
+  # get 'metadata/new' => 'metadata#new'
+  # post 'metadata/create' => 'metadata#create'
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

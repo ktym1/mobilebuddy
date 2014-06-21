@@ -1,9 +1,5 @@
-body { 
-  background: url("hero.png") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.navbar {
+	margin-bottom: 0;
 }
 
 .title-area {
@@ -17,11 +13,16 @@ body {
 }
 
 .device-block {
-	padding:20px;
+	padding: 30px;
 	background-color: white;
 	border-radius: 15px;
 	-moz-border-radius: 15px;
 	-webkit-border-radius: 15px;
+}
+
+.device-image {
+	padding-top: 10%;
+	padding-bottom: 10%;
 }
 
 .summary{
@@ -47,18 +48,25 @@ body {
 .intro-text {
 	text-align: center;
 	padding: 5px;
-	color: white;
+	color: 255, 236, 236;
 	font-family: Helvetica, Times, serif;
 	font-size: 60px;
-	margin-top:7%;
+	font-weight: heavy;
+	margin-top:0%;
+	padding-top: 10%;
+	padding-right: 40%;
+	font-family: ProximaNovaRegular, Arial, Times, serif;
 }		
 .intro-par{
-	text-align: center;
+	text-align: left;
+	position: relative;
+	right: 500px;
 	padding-bottom:6%;
 	padding-top: 4%;
+	padding-right: 10%;
 	font-size: 30px;
-	font-weight: 100;
-	font-family: Helvetica, Arial, Times, serif;
+	font-weight: 250;
+	font-family: ProximaNovaRegular, Arial, Times, serif;
 	color:white;
 }
 
@@ -73,9 +81,21 @@ body {
 .wrapper {
 	margin-left: auto;
 	margin-right: auto;
+	background: url("black-Linen.png") no-repeat center center center;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-#hero {
+.newsletter {
+	margin-left: auto;
+	margin-righ: auto;
+	text-align: center;
+
+}
+
+#device_select {
 	h2 {
 	color: black;
 	font-size: 40px;
@@ -85,6 +105,51 @@ body {
 	padding-top:2%;
 	}
 }
+
+.hero {
+	background: url("Hero3.jpg"); 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	width: 100%;
+	height: 85%;
+  	margin-top: 0px;
+  	background-repeat: no-repeat;
+}
+
+.top-bar {
+	height: 65px;
+}
+
+.device-name {
+	text-align: centre;
+}
+
+.from {
+	color: #999;
+	font-size: 15px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.device-price{
+	color: #008cba;
+	margin: 0;
+	padding: 0;
+	border: 0;	
+	font-size: 30px;
+}
+
+.contract {
+	color: #999;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 10px;
+}
+
 
 
 

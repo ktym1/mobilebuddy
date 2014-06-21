@@ -1,0 +1,23 @@
+<%= form_tag(metadata_path, method: "PUT") do %>
+    <div class="row">
+    	<div class="large-12 columns">
+    		<%= label_tag :detail %>
+    		<%= text_field_tag :detail,  @metadata.detail %>
+    	</div>
+    </div>
+    <div class="row">
+    	
+    		<div class="large-6 columns">
+	    		<%= label_tag :retailer %>
+	    		<%= label_tag @metadata.retailer.name %>
+    	    </div>
+    	    <div class="large-6 columns">
+    	    	<%= label_tag :device %>
+    	    	<%= label_tag @metadata.device.display_name %>
+    	    </div>
+
+    </div>
+	<div>
+		<%= submit_tag "Save" %>
+	</div>
+<% end %>
