@@ -35,7 +35,9 @@ class DevicesController < ApplicationController
 
   def search
     if params[:dev]
-      @summaries = Summary.includes(:contract).where(device_id: params[:dev]).group(:contract_id,:retailer_id)
+      
+      @summaries = Summary.includes(:contract, :retailer).where(device_id: params[:dev]).group(:contract_id,:retailer_id)
+
       respond_to do |format|
         format.html
         format.json { render :json => @summaries.to_json(:include => [:contract, :retailer], :methods => :has_gift_card) }

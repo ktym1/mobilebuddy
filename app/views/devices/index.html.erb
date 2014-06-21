@@ -1,6 +1,18 @@
-<%= render partial: "shared/header" %>
+<% content_for :title ,"Mobile Buddy" %>
+<div class="large-12 columns">
+	<div class = "hero">
+		<h1 class="intro-text"> <strong> It's easy to get you the best phone deal.</strong></h1>
 
-<div class="row">
+		<div class="row" >
+			<p class="intro-par">
+				Looking for a new phone? Mobile Buddy does all the work of getting you the best deal in Canada.
+			</p>
+			</div> 
+		</div>
+	</div>
+</div>
+
+
     <div class="large-12 columns">
     
       <div class="panel">
@@ -35,33 +47,18 @@
       </div>
       
     </div>
-</div>
-		
-<div class = 'navbar'>
 
 
-       
-</div>
 
-<div class = "hero">
-	<h1 class="intro-text"> <strong> It's easy to get you the best phone price.</strong></h1>
-
-	<div class="row" >
-		<p class="intro-par">
-			Looking for a new phone? Mobile Buddy does all the work of showing you where to get the best deal. Best of all, it's 
-			<span class="free"> free.</span>
-		</p>
-		
-
-		</div> -->
-	</div>
-</div>	
+	
 
 
 	<div class="wrapper">
-		<% content_for :title ,"Mobile Buddy" %>
+		
 		<div id="device_select">
 			<h2> Choose Your Phone  </h2>
+		</div>
+
 
 		<div id="devices_" class="row" ng-controller="DeviceCtrl">
 			<div class="small-12 columns">
@@ -81,41 +78,42 @@
 						</div>
 					</li>
 				</ul>
-			</div>
+            </div>
+			
 
-			<div id="myModal" class="reveal-modal" data-reveal data-equalizer>
+			
 
-				<div id="summaries" class="row">
-					<div class="row">
-						<div class="large-12 columns">
-							<div class="large-2 columns"><img src="{{deviceImgUrl}}" class="th"></div>
-	                        <div class="large-10 columns" style="color:white">
-                              <h4 style="color:white">{{deviceName}}</h4>
-	                         <p>{{deviceDescription}}</p>
-	                        </div>
-					   </div>
+
+	<div id="myModal" class="reveal-modal" data-reveal>
+
+		<div id="summaries" class="row">
+			<div class="row">
+				<div class="large-12 columns">
+					<div class="large-2 columns"><img src="{{deviceImgUrl}}" class="th"></div>
+                    <div class="large-10 columns" style="color:white">
+                      <h4 style="color:white">{{deviceName}}</h4>
+                     <p>{{deviceDescription}}</p>
+                    </div>
+			   </div>
+		   </div>
+           <div style="height:20px"></div>
+           <div class="row">
+				<div class="large-3 columns [radius round] left" ng-repeat="summary in summaries"  data-equalizer-watch >
+					<div class="panel callout radius" >
+						<h5>{{summary.retailer.name}}</h5>
+					    <hr>
+					    <h6 class="subheader">Carrier: {{summary.contract.name}}</h6>
+						<h6 style="height:100px">Gift Card: <small>{{summary.gift_card}}</small></h6>
+						<hr>
+				        <h4 class="subheader">{{summary.price | currency}}</h4>
+				        <a href="{{summary.promotion_link}}" class="button round"> Website</a>        
 				   </div>
-                   <div style="height:20px"></div>
-                   <div class="row">
-						<div class="large-3 columns [radius round] left" ng-repeat="summary in summaries"  data-equalizer-watch >
-							<div class="panel callout radius" >
-								<h5>{{summary.retailer.name}}</h5>
-							    <hr>
-							    <h6 class="subheader">Carrier: {{summary.contract.name}}</h6>
-								<h6 style="height:100px">Gift Card: <small>{{summary.gift_card}}</small></h6>
-								<hr>
-						        <h4 class="subheader">{{summary.price | currency}}</h4>
-						        <a href="{{summary.promotion_link}}" class="button round"> Website</a>        
-						   </div>
-						</div>
-				    </div>
-                  
 				</div>
-
-				<a class="close-reveal-modal">&#215;</a>
-			</div>		
+		    </div>
+          <a class="close-reveal-modal">&#215;</a>
 		</div>
-	</div>
+
+	</div>	
 
 
 	<div>

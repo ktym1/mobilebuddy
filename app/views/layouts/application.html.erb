@@ -19,11 +19,13 @@
       <%= content_tag :div, msg, class: name %>
     <% end -%>
     <%= render partial: "shared/header" %>
-       <div class="row" ng-view>
-         <div class="large-12 columns">
+       <div ng-view>
+         
 
           <%= yield %>
+       </div>
     <%= javascript_include_tag "application" %>
+
   </body>
 
 </html>
