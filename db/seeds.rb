@@ -77,7 +77,17 @@ Metadata.create(device_id: nexus_5.id, retailer_id: wave.id, detail: "http://www
 Metadata.create(device_id: xperia_z1.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/rogers-phones-and-smartphones/phone.asp?Phone=635")
 
 # Virgin Wave Prices
+Metadata.create(device_id: iphone_5s.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-phones-and-smartphones/phone.asp?Phone=685")
+Metadata.create(device_id: galaxy_5.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-phones-and-smartphones/phone.asp?Phone=685")
+Metadata.create(device_id: moto_g.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-phones-and-smartphones/phone.asp?Phone=673") 
+Metadata.create(device_id: galaxy_4_mini.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-phones-and-smartphones/phone.asp?Phone=669")
+Metadata.create(device_id: galaxy_ace2.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-phones-and-smartphones/phone.asp?Phone=476")
+Metadata.create(device_id: htc_desire.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-phones-and-smartphones/phone.asp?Phone=653")
+Metadata.create(device_id: galaxy_3.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-phones-and-smartphones/phone.asp?Phone=421")
+Metadata.create(device_id: nexus_5.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-phones-and-smartphones/phone.asp?Phone=655")
+Metadata.create(device_id: iphone_5c.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-apple-iphones/phone.asp?Phone=605")
 
+#Virgin Prices
 virgin = Retailer.create(name: "Virgin", website: "http://www.virginmobile.ca/")
 
 #the URL end "SP9" refers to device price, deoending on the rate plan selection. 
