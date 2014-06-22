@@ -40,7 +40,7 @@
 // Global
 
 // We use these to control various global styles
- $body-bg: #fffefd;
+//$body-bg: #fffefd;
  $body-font-color: #975345;
  $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -64,7 +64,7 @@
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
+ $global-radius: 5px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -909,7 +909,7 @@
 // $reveal-overlay-bg-old: #000;
 
 // We use these to control the style of the modal itself.
- $reveal-modal-bg: #f27a5e;
+// $reveal-modal-bg: #f27a5e;
 // $reveal-position-top: rem-calc(100);
 // $reveal-default-width: 80%;
 // $reveal-modal-padding: rem-calc(20);

@@ -18,10 +18,7 @@
      <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name %>
     <% end -%>
-    <%= render partial: "shared/header" %>
        <div ng-view>
-         
-
           <%= yield %>
        </div>
     <%= javascript_include_tag "application" %>

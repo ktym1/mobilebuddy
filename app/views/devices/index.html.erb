@@ -1,5 +1,5 @@
 <% content_for :title ,"Mobile Buddy" %>
-<div class="large-12 columns">
+
 	<div class = "hero">
 		<h1 class="intro-text"> <strong> It's easy to get you the best phone deal.</strong></h1>
 
@@ -10,7 +10,7 @@
 			</div> 
 		</div>
 	</div>
-</div>
+
 
 
     <div class="large-12 columns">
@@ -55,7 +55,7 @@
 
 	<div class="wrapper">
 		
-		<div id="device_select">
+		<div id="device_select" itemscope itemtype="http://data-vocabulary.org/Product" >
 			<h2> Choose Your Phone  </h2>
 		</div>
 
@@ -67,11 +67,12 @@
                     <li  ng-repeat="device in devices | orderBy:'display_name' ">
 						<div class="device-block" ng-click="openModal(device)"> 
 							
-							<h4>
-								{{device.name}} {{device.model}}
+							<h4 itemprop="itemCondition" content="new">
+								<span itemprop="brand">{{device.name}}</span> 
+								<span itemprop="model">{{device.model}}</span>
 							</h4>	
 							<div class="device-image">
-								 <img src="{{device.image['thumb']['url']}}"> 
+								 <img itemprop="image" src="{{device.image['thumb']['url']}}"> 
 							</div>
 							<h5> Price:  {{device.minimum_price | currency}} </h5>
 							
@@ -100,13 +101,13 @@
            <div class="row">
 				<div class="large-3 columns [radius round] left" ng-repeat="summary in summaries"  data-equalizer-watch >
 					<div class="panel callout radius" >
-						<h5>{{summary.retailer.name}}</h5>
+						<h5 itemprop="seller">{{summary.retailer.name}}</h5>
 					    <hr>
-					    <h6 class="subheader">Carrier: {{summary.contract.name}}</h6>
+					    <h6 itemprop="carrier" class="subheader">Carrier: {{summary.contract.name}}</h6>
 						<h6 style="height:100px">Gift Card: <small>{{summary.gift_card}}</small></h6>
 						<hr>
-				        <h4 class="subheader">{{summary.price | currency}}</h4>
-				        <a href="{{summary.promotion_link}}" class="button round"> Website</a>        
+				        <h4 itemprop="price" class="subheader">{{summary.price | currency}}</h4>
+				        <a itemprop="offerURL" href="{{summary.promotion_link}}" class="button round"> Website</a>        
 				   </div>
 				</div>
 		    </div>
