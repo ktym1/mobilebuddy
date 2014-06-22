@@ -87,6 +87,16 @@ Metadata.create(device_id: galaxy_3.id, retailer_id: wave.id, detail: "http://wi
 Metadata.create(device_id: nexus_5.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-phones-and-smartphones/phone.asp?Phone=655")
 Metadata.create(device_id: iphone_5c.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/virgin-mobile-apple-iphones/phone.asp?Phone=605")
 
+# Fido Wave Prices
+Metadata.create(device_id: iphone_5s.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/fido-apple-iphones/phone.asp?Phone=609")
+Metadata.create(device_id: galaxy_5.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/fido-phones-and-smartphones/phone.asp?Phone=682")
+Metadata.create(device_id: galaxy_4.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/fido-phones-and-smartphones/phone.asp?Phone=535")
+Metadata.create(device_id: galaxy_4_mini.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/fido-phones-and-smartphones/phone.asp?Phone=659")
+Metadata.create(device_id: galaxy_ace2.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/fido-phones-and-smartphones/phone.asp?Phone=507")
+Metadata.create(device_id: htc_desire.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/fido-phones-and-smartphones/phone.asp?Phone=652")
+Metadata.create(device_id: iphone_5c.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/fido-apple-iphones/phone.asp?Phone=601")
+Metadata.create(device_id: nexus_5.id, retailer_id: wave.id, detail: "http://wirelesswave.ca/fido-phones-and-smartphones/phone.asp?Phone=656")
+
 #Virgin Prices
 virgin = Retailer.create(name: "Virgin", website: "http://www.virginmobile.ca/")
 
