@@ -32,6 +32,12 @@ class WirelessWave < Scraper
 		elsif (contract_name.include? "rogers")
 			@contract = get_contract('Rogers')
 			# puts "Rogers"
+		elsif (contract_name.include? "virgin")
+			@contract = get_contract('Virgin')
+			# puts "Virgin"
+		# elsif (contract_name.include? "fido")
+		# 	@contract = get_contract('Fido')	
+		# 	# puts "Fido"
 		end	
 	end
 
