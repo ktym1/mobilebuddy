@@ -55,7 +55,7 @@ Metadata.create(device_id: nexus_5.id, retailer_id: bell.id, detail: "http://www
 Metadata.create(device_id: xperia_z1.id, retailer_id: bell.id, detail: "http://www.bell.ca/Mobility/Products/Sony-Xperia-Z")
 
 wave = Retailer.create(name: "Wireless Wave", website: "http://www.wirelesswave.ca")
-
+# Bell Wave Prices
 Metadata.create(device_id: iphone_5s.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/bell-apple-iphones/phone.asp?Phone=612")
 Metadata.create(device_id: galaxy_5.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/bell-phones-and-smartphones/phone.asp?Phone=681")
 Metadata.create(device_id: note3.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/bell-phones-and-smartphones/phone.asp?Phone=623")
@@ -65,7 +65,7 @@ Metadata.create(device_id: iphone_5c.id, retailer_id: wave.id, detail: "http://w
 Metadata.create(device_id: htc8_m8.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/bell-phones-and-smartphones/phone.asp?Phone=679")
 Metadata.create(device_id: nexus_5.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/bell-phones-and-smartphones/phone.asp?Phone=648")
 Metadata.create(device_id: xperia_z1.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/bell-phones-and-smartphones/phone.asp?Phone=636")
-
+# Rogers Wave Prices
 Metadata.create(device_id: galaxy_5.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/rogers-phones-and-smartphones/phone.asp?Phone=683")
 Metadata.create(device_id: iphone_5s.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/rogers-apple-iphones/phone.asp?Phone=606")
 Metadata.create(device_id: note3.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/rogers-phones-and-smartphones/phone.asp?Phone=624")
@@ -75,6 +75,8 @@ Metadata.create(device_id: iphone_5c.id, retailer_id: wave.id, detail: "http://w
 Metadata.create(device_id: htc8_m8.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/rogers-phones-and-smartphones/phone.asp?Phone=678")
 Metadata.create(device_id: nexus_5.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/rogers-phones-and-smartphones/phone.asp?Phone=657")
 Metadata.create(device_id: xperia_z1.id, retailer_id: wave.id, detail: "http://www.wirelesswave.ca/rogers-phones-and-smartphones/phone.asp?Phone=635")
+
+# Virgin Wave Prices
 
 virgin = Retailer.create(name: "Virgin", website: "http://www.virginmobile.ca/")
 
