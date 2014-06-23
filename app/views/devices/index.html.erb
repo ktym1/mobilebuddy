@@ -1,5 +1,5 @@
 <% content_for :title ,"Mobile Buddy" %>
-
+   <section>
 	<div class = "hero">
 		<h1 class="intro-text"> <strong> It's easy to get you the best phone deal.</strong></h1>
 
@@ -10,10 +10,11 @@
 			</div> 
 		</div>
 	</div>
-
+</section>
 
 
     <div class="large-12 columns">
+    	<section></section>
     
       <div class="panel">
         <h4>Get in touch!</h4>
@@ -72,7 +73,7 @@
 								<span itemprop="model">{{device.model}}</span>
 							</h4>	
 							<div class="device-image">
-								 <img itemprop="image" src="{{device.image['thumb']['url']}}"> 
+								 <img itemprop="image" ng-src="{{device.image['thumb']['url']}}"> 
 							</div>
 							<h5> Price:  {{device.minimum_price | currency}} </h5>
 							
@@ -97,9 +98,11 @@
                     </div>
 			   </div>
 		   </div>
-           <div style="height:20px"></div>
+           <div style="height:40px; margin-bottom:20px">
+             Search: <input ng-model="query">
+           </div>
            <div class="row">
-				<div class="large-3 columns [radius round] left" ng-repeat="summary in summaries"  data-equalizer-watch >
+				<div class="large-3 columns [radius round] left" ng-repeat="summary in summaries | filter:query  " >
 					<div class="panel callout radius" >
 						<h5 itemprop="seller">{{summary.retailer.name}}</h5>
 					    <hr>

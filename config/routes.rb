@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  # resources :summaries
-  resources :devices
-  get "device/search" => 'devices#search', :as => :search
   root :to            => 'devices#index'
+  resources :devices
   resources :summaries
-  post "newsletter" => 'newsletter#create'
   resources :metadatas
+  get "device/search" => 'devices#search', :as => :search
+  post "newsletter" => 'newsletter#create'
+ 
   
   # get 'metadata'  => 'metadata#index'
   # get 'metadata/new' => 'metadata#new'

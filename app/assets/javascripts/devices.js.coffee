@@ -1,5 +1,8 @@
 app = angular.module("Device",[ 'ngResource', 'ng-rails-csrf' ])
 
+
+   
+
 app.factory "Device", ($resource) -> 
   $resource("/devices/:id",{id: "@id"}, {update: {method: "PUT"}})
 
