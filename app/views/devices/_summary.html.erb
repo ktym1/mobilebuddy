@@ -1,0 +1,35 @@
+<%= render partial: "shared/newsletter" %>
+
+<table class="responsive" style="text-align:center;">	
+  <tr style="border:2px solid black">
+	<% summaries.each do |contract, infos| %>
+		<th colspan="<%= infos.length %>"><%= contract.name %></th>	
+	<% end %>
+  </tr>
+  <tr>
+  	<% summaries.each do |contract, infos| %>
+  	  <%=  render partial: 'info', locals: { summaries:  infos } %>
+  	<% end %>
+  </tr>
+  <tr>
+  	<% summaries.each do |contract, infos| %>
+  	  <% infos.each do |i| %>
+  	   <td> <%= number_to_currency(i.price) %> </td>
+  	  <% end %>
+  	<% end %>
+  </tr>
+  <tr>
+  	<% summaries.each do |contract, infos| %>
+  	  <% infos.each do |i| %>
+  	   <td> <small><%= i.gift_card %><small> </td>
+  	  <% end %>
+  	<% end %>
+  </tr>
+   <tr>
+  	<% summaries.each do |contract, infos| %>
+  	  <% infos.each do |i| %>
+  	   <td> <a href="<%= i.promotion_link %>" class="button round"> Website</a>  </td>
+  	  <% end %>
+  	<% end %>
+  </tr>
+</table>
