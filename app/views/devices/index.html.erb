@@ -21,7 +21,7 @@
 
 	<div class="wrapper">
 		<% content_for :title ,"Mobile Buddy" %>
-		<div id="device_select">
+		<div class="heading">
 			<h2> Choose Your Phone  </h2>
 		</div>
 
@@ -45,17 +45,66 @@
 						</div>		
 					</div>
 
+	</div>
+	
+	<div class="wrapper-about">
+		<div class="heading">
+			<h2> About Us </h2>
+		</div>
 
-	<div>
-        <footer class="row">
+		<div class="text-lead">
+				<span class="subtitle"> <p> Our Story  </p> </span>
+		</div>
+
+		<div class="about-body">
+			<p>
+				Mobile Buddy was created because we believe that buying a cell phone in Canada is too complicated. We're here to simplify things for you.
+			</p>
+		<!-- 	<p>
+				Did you know, that you can get the same phone, on the same contract, but at a different price? The price changes regularly, and depends on the store.
+			</p> -->
+			<p>
+				We're still in Beta mode, and looking to add more features! Tell us what you need help with when making a phone purchase. Is it an honest opinion on what phone or plan is best for you? Or maybe it's how to avoid wasting time negotiating with your carrier and not getting anywhere. Let us know.
+			</p>
+			<p>
+				You can reach us by email at <span class="contact-email"> <a href="mailto:support@mobilebuddy.ca">support@mobilebuddy.ca</span>!</a>
+			</p>
+		</div>
+
+    
+
+<div class="wrapper-newsletter">
+    <div class="newsletter-copy">
+      <h5> Be the first to know when there's a great phone deal.</h5>
+    </div>
+
+      
+	     <div class="small-4 columns">
+	        <%= form_tag('newsletter', method: "POST", remote: true) do %>
+	        <%= email_field_tag 'email', nil, placeholder: 'Email address' %>
+	     </div>
+	  
+	  
+	  
+			<div class="newsletter-button">
+				<div class="small-4 columns">
+						<%= submit_tag("Get Updates",:class => "button radius") %>
+				</div>
+			</div>
+      	<% end %>
+	
+
+
+    <footer class="row">
             <div class="large-12 columns">
 	            <hr>
 	            <div class="row">
 	              <div class="large-6 columns">
-	              <p>© Mobile Buddy</p>
+	             	<div class="copyright">
+	              	<p>© Mobile Buddy</p>
+	              	</div>
 	              </div>
-	              </div>
+	            </div>
             </div>
         </footer>
     </div>
-</div>
