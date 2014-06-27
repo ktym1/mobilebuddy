@@ -12,6 +12,12 @@
 	max-height: 40px;
 }
 
+.logo-image {
+	margin: 2%;
+	padding: 0%;
+	max-height: 10px;
+}
+
 .device-block {
 	padding: 30px;
 	background-color: white;
@@ -34,18 +40,46 @@
 	padding-top: 10%;
 }
 
+.hero-image {
+	background: cover;
+  	margin-top: 0px;
+  	margin-bottom: 0px;
+  	background-repeat: no-repeat;
+  	min-width: 100%;
+  	height:80%;
+  	}
+
+.hero-text {
+	position: absolute;
+	top: 200px;
+	margin-bottom: 1000px;
+}
+
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	background: #ffffff;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	margin-top:0%;
+  	padding: 0%;
+}
+
 .intro-text {
 	text-align: center;
-	padding: 5px;
+	padding: 0px;
 	color: 255, 236, 236;
 	font-family: Helvetica, Times, serif;
-	font-size: 60px;
+	font-size: 55px;
 	font-weight: heavy;
 	margin-top:0%;
-	padding-top: 10%;
+	padding-top: 0%;
 	padding-right: 40%;
 	font-family: ProximaNovaRegular, Arial, Times, serif;
 }		
+
 .intro-par{
 	text-align: left;
 	margin-top: 0;
@@ -67,17 +101,7 @@
 	font-weight:500;
 	font-style:italic;
 }
-
-.wrapper {
-	margin-left: auto;
-	margin-right: auto;
-	background: #ffffff;
-	-webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
+	
 .newsletter {
 	margin-left: auto;
 	margin-righ: auto;
@@ -105,17 +129,7 @@
 	}
 }
 
-.hero {
-	background: url("Hero3.jpg"); 
-  	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-  	-o-background-size: cover;
-  	background-size: cover;
-  	width: 100%;
-	height: 85%;
-  	margin-top: 0px;
-  	background-repeat: no-repeat;
-}
+
 
 .top-bar {
 	height: 65px;
@@ -151,6 +165,8 @@
 
 .wrapper-about {
 	background: #f7f7f7;
+	margin: 0;
+	padding: 0;
 }
 
 .about-body{
@@ -169,23 +185,39 @@
 	}
 }
 
+.bottom {
+	background:black;
+}
+
 .wrapper-newsletter {
 	margin: 15px;
-	padding-top: 0%;
+	padding-top: 2%;
 	padding-left: 6%;
+	padding-bottom: 2%;
 }
 
-.columns, #email {
+.newsletter-copy {
+	color: white;
+}
+
+#email {
 	margin: 0;
-	padding: 0;
+	height: 50px;
+	padding-right: 50%;
+
 }
 
-.radius {
-	margin: 5px;
-	padding: 2%;
-	height: 30px;
-}
 
 .copyright {
-	color: black;
+	color: white;
+	padding-right: 10%;
+	font-size: 10px;
+
+}
+
+
+.footer{
+	margin: 0%;
+	padding-top: 1%;
+	padding-bottom: 2px;
 }
