@@ -3,6 +3,7 @@ require_relative "rogers"
 require_relative 'wirelesswave'
 require_relative 'virgin'
 require_relative 'telus'
+require_relative 'fido'
 
 
 namespace :scrape do
@@ -38,4 +39,9 @@ namespace :scrape do
 		telus.run     
 	end
 
+	desc "Get data from Fido's website"
+	task fido: :environment do 
+		fido = Fido.new
+		fido.run
+	end
 end
