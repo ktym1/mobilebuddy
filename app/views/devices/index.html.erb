@@ -4,24 +4,22 @@
        
 </div>
 
-<div class = "hero">
-	<h1 class="intro-text"> <strong> It's easy to get you the best phone deal.</strong></h1>
+	<img class="hero-image" src="https://s3.amazonaws.com/Mobile-Buddy-Home/Hero3.jpg">
+	
+	<div class="hero-text">
+		<h1 class="intro-text"> <strong> It's easy to get you the best phone deal.</strong></h1>
 
-	<div class="row" >
 		<p class="intro-par">
 			Looking for a new phone? Mobile Buddy does all the work of getting you the best deal in Canada.
 		</p>
-		<!-- <div class = "newsletter">
-		<h2>Get alerts when your favorite devices go on sale!</h2>
-		 <%= render partial: "shared/newsletter" %>
-
-		</div> -->
 	</div>
-</div>	
+
+
+		
 
 	<div class="wrapper">
 		<% content_for :title ,"Mobile Buddy" %>
-		<div id="device_select">
+		<div class="heading">
 			<h2> Choose Your Phone  </h2>
 		</div>
 
@@ -45,17 +43,54 @@
 						</div>		
 					</div>
 
+	</div>
+	
+	<div class="wrapper-about">
+		<div class="heading">
+			<h2> About Us </h2>
+		</div>
 
-	<div>
-        <footer class="row">
-            <div class="large-12 columns">
-	            <hr>
-	            <div class="row">
-	              <div class="large-6 columns">
-	              <p>© Mobile Buddy</p>
-	              </div>
-	              </div>
-            </div>
-        </footer>
-    </div>
+			<div class="text-lead">
+					<span class="subtitle"> <p> Our Story  </p> </span>
+			</div>
+
+				<div class="about-body">
+					<p>
+						Mobile Buddy was created because we believe that buying a cell phone in Canada is too complicated. We're here to simplify things for you.
+					</p>
+					
+					<p>
+						We're still in Beta mode, and looking to add more features! Tell us what you need help with when making a phone purchase. Is it an honest opinion on what phone or plan is best for you? Or maybe it's how to avoid wasting time negotiating with your carrier and not getting anywhere. Let us know.
+					</p>
+					<p>
+						You can reach us by email at <span class="contact-email"> <a href="mailto:support@mobilebuddy.ca">contact@mobilebuddy.ca</span>!</a>
+					</p>
+				</div>
+	</div>
+
+    
+<div class="bottom">
+	<div class="wrapper-newsletter">
+	    <h5 class="newsletter-copy">
+	      Be the first to know when there's a great phone deal.
+	    </h5>
+
+		     <div class="small-4 columns">
+		        <%= form_tag('newsletter', method: "POST", remote: true) do %>
+		        <%= email_field_tag 'email', nil, placeholder: 'Email address' %>
+		     </div>
+		  
+				<div class="newsletter-button">
+					<div class="small-4 columns">
+						<div class="submit">
+							<%= submit_tag("Get Updates",:class => "button radius") %>
+						</div>
+					</div>
+				</div>
+	      	<% end %>
+	</div>
+
+	    <footer class="footer">
+	        <p class="copyright"> © Mobile Buddy 2014</p>
+	    </footer>
 </div>
