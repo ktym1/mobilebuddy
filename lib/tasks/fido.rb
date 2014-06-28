@@ -12,22 +12,21 @@ class Fido < Scraper
 		devices.each do |dev|
 
 			metadatas = Metadata.where(retailer_id: @retailer.id, device_id: dev.id)
-
-				# if dev === "Iphone 5C"
-					metadatas.each do |m|
-						page = get_agent.get(m.detail)
-							price = page.at(".price-number show2y5c")
-			           		puts price.inspect
-			    	end
-			  #   else       		
-					# metadatas.each do |m|
-					# 	page = get_agent.get(m.detail)
-					# 		price = page.search(".price_moredetails")
-			  #          		puts price.text.strip
-	    #        		end
-	    #        	end
-           	 # save_summary(@contract.id, @retailer.id,price,dev.id,promotion_link)
-           
+            metadatas.each do |m|
+	            page = get_agent.get(m.detail)
+	            price = 0
+                puts dev.display_name
+				if ((dev.display_name == "Iphone 5C") || (dev.display_name == "Iphone 5S"))
+					browser = Watir::Browser.new :phantomjs
+					device_name = dev.display_name.delete(' ').downcase
+					browser.goto m.detail   
+					path =  "//*[@id='#{device_name}_tab']/div[1]/div[2]/div/div[5]"          
+				    price = browser.element(:xpath => path).text
+			    else       		
+					price = page.search(".price_moredetails")
+	           	end
+	            save_summary(@contract.id, @retailer.id,price,dev.id,m.detail)
+		    end
         end
 	end
 end
