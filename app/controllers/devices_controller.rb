@@ -33,7 +33,7 @@ class DevicesController < ApplicationController
 
   def search
     if params[:dev]
-      @summaries = Summary.includes(:device, :contract, :retailer).where(device_id: params[:dev]).group(:contract_id,:retailer_id, :device_id)
+      @summaries = Summary.where(device_id: params[:dev]).group(:contract_id,:retailer_id, :device_id)
       @summaries = @summaries.group_by { |d| d.contract }
       respond_to do |format|
         format.js
