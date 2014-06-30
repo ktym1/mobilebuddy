@@ -28,10 +28,12 @@ class WirelessWave < Scraper
 	def get_carrier(contract_name)
 		if(contract_name.include? "bell")
 			@contract = get_contract('Bell')
-			# puts "bell"
 		elsif (contract_name.include? "rogers")
 			@contract = get_contract('Rogers')
-			# puts "Rogers"
+		elsif (contract_name.include? "virgin")
+			@contract = get_contract('Virgin')
+		elsif (contract_name.include? "fido")
+			@contract = get_contract('Fido')
 		end	
 	end
 
