@@ -52,6 +52,7 @@ group :production, :staging do
   gem 'pg'
   gem 'taps'
   gem 'thin'
+  gem 'rails_12factor'
 end
 
 gem 'whenever', :require => false
