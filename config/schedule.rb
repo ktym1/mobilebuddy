@@ -18,3 +18,29 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+
+set :output, "#{path}/log/cron.log"
+
+every :day, :at => '07:30am' do
+	rake "scrape:bell" 
+end
+
+every :day, :at => '07:30am' do
+rake "scrape:rogers" 
+end
+
+every :day, :at => '07:30am' do
+rake "scrape:telus" 
+end
+
+every :day, :at => '07:30am' do
+rake "scrape:wave" 
+end
+
+every :day, :at => '07:30am' do
+rake "scrape:virgin" 
+end
+
+every :day, :at => '07:30am' do
+rake "scrape:fido" 
+end
