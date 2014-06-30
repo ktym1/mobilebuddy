@@ -1,6 +1,6 @@
 class DevicesController < ApplicationController
   def index
-   @devices = Device.where(active: true)
+   @devices = Device.where(active: true).order(:name)
     respond_to do |format|
       format.html
       format.js
@@ -33,7 +33,7 @@ class DevicesController < ApplicationController
 
   def search
     if params[:dev]
-      @summaries = Summary.where(device_id: params[:dev]).group(:contract_id,:retailer_id, :device_id)
+      @summaries = Summary.unscoped.where(device_id: params[:dev]).group(:contract_id,:retailer_id, :device_id)
       @summaries = @summaries.group_by { |d| d.contract }
       respond_to do |format|
         format.js
