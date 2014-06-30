@@ -1,6 +1,6 @@
 class DevicesController < ApplicationController
   def index
-    Device.where(active: true)
+   @devices = Device.where(active: true)
     respond_to do |format|
       format.html
       format.js
