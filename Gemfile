@@ -4,7 +4,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development, :test do
+	gem 'sqlite3'
+end
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -46,8 +48,12 @@ gem 'carrierwave'
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'gibbon'
 
-gem 'pg'
-gem 'taps'
+group :production, :staging do
+  gem 'pg'
+  gem 'taps'
+  gem 'thin'
+end
+
 gem 'whenever', :require => false
 
 # Use ActiveModel has_secure_password

@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://foundation.zurb.com/docs/components/grid.html -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid | Foundation Docs</title>
+<script type="text/javascript" async="" data-rocketsrc="http://www.google-analytics.com/ga.js" data-rocketoptimized="true"></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:1400618372,byc:0,owlid:"cf",bag2:1,mirage2:{profile:false},oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok9v=e9cb4febb4/"},atok:"a0a247d638d4fd043ce737b48250bf85",petok:"d3cb9a6b5ea12d3b924ccef69ef0bd764dfafab3-1400783033-1800",zone:"zurb.com",rocket:"a",apps:{}}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/dok9v=97fb4d042e/cloudflare.min.js"><'+'\/script>');}}catch(e){};
+//]]>
+</script><script type="text/javascript" src="./Grid   Foundation Docs_files/cloudflare.min.js"></script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style><script data-module="cloudflare/rocket" id="cfjs_block_1f7a2b7639" onload="CloudFlare.__cfjs_block_1f7a2b7639_load()" onerror="CloudFlare.__cfjs_block_1f7a2b7639_error()" onreadystatechange="CloudFlare.__cfjs_block_1f7a2b7639_readystatechange()" type="text/javascript" src="./Grid   Foundation Docs_files/rocket.js"></script>
+<link rel="icon" href="http://foundation.zurb.com/docs/assets/img/icons/favicon.ico" type="image/x-icon">
+ 
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://foundation.zurb.com/docs/assets/img/icons/apple-touch-icon-144x144-precomposed.png">
+ 
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://foundation.zurb.com/docs/assets/img/icons/apple-touch-icon-114x114-precomposed.png">
+ 
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://foundation.zurb.com/docs/assets/img/icons/apple-touch-icon-72x72-precomposed.png">
+ 
+<link rel="apple-touch-icon-precomposed" href="http://foundation.zurb.com/docs/assets/img/icons/apple-touch-icon-precomposed.png">
+<meta name="description" content="Documentation and reference library for ZURB Foundation. JavaScript, CSS, components, grid and more.">
+<meta name="author" content="ZURB, inc. ZURB network also includes zurb.com">
+<meta name="copyright" content="ZURB, inc. Copyright (c) 2014">
+<link href="http://foundation.zurb.com/docs/assets/css/docs.css" rel="stylesheet">
+<script data-rocketsrc="../assets/js/modernizr.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+<style id="clearly_highlighting_css" type="text/css">/* selection */ html.clearly_highlighting_enabled ::-moz-selection { background: rgba(246, 238, 150, 0.99); } html.clearly_highlighting_enabled ::selection { background: rgba(246, 238, 150, 0.99); } /* cursor */ html.clearly_highlighting_enabled {    /* cursor and hot-spot position -- requires a default cursor, after the URL one */    cursor: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--cursor.png") 14 16, text; } /* highlight tag */ em.clearly_highlight_element {    font-style: inherit !important; font-weight: inherit !important;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow.png");    background-repeat: repeat-x; background-position: top left; background-size: 100% 100%; } /* the delete-buttons are positioned relative to this */ em.clearly_highlight_element.clearly_highlight_first { position: relative; } /* delete buttons */ em.clearly_highlight_element a.clearly_highlight_delete_element {    display: none; cursor: pointer;    padding: 0; margin: 0; line-height: 0;    position: absolute; width: 34px; height: 34px; left: -17px; top: -17px;    background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite.png"); background-repeat: no-repeat; background-position: 0px 0px; } em.clearly_highlight_element a.clearly_highlight_delete_element:hover { background-position: -34px 0px; } /* retina */ @media (min--moz-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {    em.clearly_highlight_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--yellow@2x.png"); }    em.clearly_highlight_element a.clearly_highlight_delete_element { background-image: url("chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/clearly/images/highlight--delete-sprite@2x.png"); background-size: 68px 34px; } } </style><style>[touch-action="none"]{ -ms-touch-action: none; touch-action: none; }[touch-action="pan-x"]{ -ms-touch-action: pan-x; touch-action: pan-x; }[touch-action="pan-y"]{ -ms-touch-action: pan-y; touch-action: pan-y; }[touch-action="scroll"],[touch-action="pan-x pan-y"],[touch-action="pan-y pan-x"]{ -ms-touch-action: pan-x pan-y; touch-action: pan-x pan-y; }</style><meta class="foundation-data-attribute-namespace"><meta class="foundation-mq-xxlarge"><meta class="foundation-mq-xlarge"><meta class="foundation-mq-large"><meta class="foundation-mq-medium"><meta class="foundation-mq-small"><style></style><meta class="foundation-mq-topbar"></head>
+<body class="antialiased hide-extras">
+<div class="marketing off-canvas-wrap" data-offcanvas="">
+<div class="inner-wrap">
+<title>Foundation: The Most Advanced Responsive Front-end Framework from ZURB</title><meta name="description" content="Foundation from ZURB is the most advanced responsive front-end framework in the world.">
+ 
+<nav class="top-bar docs-bar hide-for-small" data-topbar="">
+<ul class="title-area">
+<li class="name">
+<h1><a href="http://foundation.zurb.com/">Foundation</a></h1>
+</li>
+</ul>
+
+<section class="top-bar-section">
+<ul class="right">
+<li class="divider"></li>
+<li class="has-dropdown not-click">
+<a href="http://foundation.zurb.com/learn/features.html" class="">Learn</a>
+<ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+<li><a href="http://foundation.zurb.com/learn/features.html">Features</a></li>
+<li><a href="http://foundation.zurb.com/learn/faq.html">FAQ</a></li>
+<li><a href="http://foundation.zurb.com/learn/case-washington-post.html">Case Studies</a></li>
+<li><a href="http://foundation.zurb.com/learn/website-examples.html">Website Examples</a></li>
+<li><a href="http://foundation.zurb.com/learn/video-started-with-foundation.html">Videos</a></li>
+<li><a href="http://foundation.zurb.com/learn/training.html">Training</a></li>
+<li><a href="http://foundation.zurb.com/learn/about.html">About</a></li>
+</ul>
+</li>
+<li class="divider"></li>
+<li class="has-dropdown not-click">
+<a href="http://foundation.zurb.com/templates.html" class="">Develop</a>
+<ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+<li><a href="http://foundation.zurb.com/templates.html">Add-ons</a></li>
+<li><a href="http://foundation.zurb.com/docs">Docs</a></li>
+<li><a href="http://foundation.zurb.com/develop/download.html">Download</a></li>
+<li><a href="http://foundation.zurb.com/develop/contribute.html">Contribute</a></li>
+<li><a href="http://foundation.zurb.com/develop/tools.html">Tools</a></li>
+</ul>
+</li>
+<li class="divider"></li>
+<li class="has-dropdown not-click">
+<a href="http://foundation.zurb.com/support/support.html" class="">Support</a>
+<ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+<li><a href="http://foundation.zurb.com/support/support.html">Support Channels</a></li>
+<li><a href="http://foundation.zurb.com/forum">Foundation Forum</a></li>
+<li><a href="http://foundation.zurb.com/support/images-and-badges.html">Images &amp; Badges</a></li>
+</ul>
+</li>
+<li class="divider"></li>
+<li>
+<a href="http://foundation.zurb.com/business/services.html" class="">Business</a>
+</li>
+<li class="divider"></li>
+<li>
+<a href="http://foundation.zurb.com/docs" class="">Docs</a>
+</li>
+<li class="divider"></li>
+<li class="has-form">
+<a href="http://foundation.zurb.com/docs" class="small button">Getting Started</a>
+</li></ul>
+</section></nav>
+<nav class="tab-bar show-for-small">
+<a class="left-off-canvas-toggle menu-icon">
+<span>Foundation</span>
+</a>
+</nav>
+<aside class="marketing-left-off-canvas-menu">
+<ul class="off-canvas-list">
+<li><label class="first">Foundation</label></li>
+<li><a href="http://foundation.zurb.com/">Home</a></li>
+</ul>
+<hr>
+<ul class="off-canvas-list">
+<li><label>Setup</label></li>
+<li><a href="http://foundation.zurb.com/docs/index.html" data-search="">Getting Started</a></li>
+<li><a href="http://foundation.zurb.com/docs/css.html" data-search="Styles">CSS</a></li>
+<li><a href="http://foundation.zurb.com/docs/sass.html" data-search="SCSS">Sass</a></li>
+<li><a href="http://foundation.zurb.com/docs/applications.html" data-search="Rails,Gem">Applications</a></li>
+<li><a href="http://foundation.zurb.com/docs/javascript.html" data-search="">Javascript</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/global.html" data-search="Global Styles,Global Mixins,Global Variables,Useful HTML Classes">Global Styles</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/kitchen_sink.html" data-search="">Kitchen Sink</a></li>
+<li><a href="http://foundation.zurb.com/docs/upgrading.html" data-search="Migration">Upgrading</a></li>
+<li class="divider"></li>
+<li><label>Structure</label></li>
+<li><a href="http://foundation.zurb.com/docs/media-queries.html" data-search="Breakpoints">Media Queries</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/visibility.html" data-search="">Visibility</a></li>
+<li><a href="./Grid   Foundation Docs_files/Grid   Foundation Docs.html" data-search="">Grid</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/block_grid.html" data-search="">Block Grid</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/interchange.html" data-search="Responsive Images">Interchange Responsive Content <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/utility-classes.html" data-search="">Utility Classes</a></li>
+<li><a href="http://foundation.zurb.com/docs/javascript-utilities.html" data-search="">Javascript Utilities</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/rtl.html" data-search="RTL">Right-to-Left Support</a></li>
+<li class="divider"></li>
+<li><label>Navigation</label></li>
+<li><a href="http://foundation.zurb.com/docs/components/offcanvas.html" data-search="Off Canvas">Offcanvas <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/topbar.html" data-search="Nav Bar,Navigation,Sticky">Top Bar <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/sidenav.html" data-search="">Side Nav</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/magellan.html" data-search="Scrollspy">Magellan Sticky Nav <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/subnav.html" data-search="">Sub Nav</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/breadcrumbs.html" data-search="Navigation Path,Cookie Crumb">Breadcrumbs</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/pagination.html" data-search="">Pagination</a></li>
+<li class="divider"></li>
+<li><label>Media</label></li>
+<li><a href="http://foundation.zurb.com/docs/components/orbit.html" data-search="Carousel,Slider,Slideshow">Orbit Slider <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/thumbnails.html" data-search="Images">Thumbnails</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/clearing.html" data-search="Responsive Lightbox,Lightbox">Clearing Lightbox <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/flex_video.html" data-search="Responsive Video">Flex Video</a></li>
+<li class="divider"></li>
+<li><label>Forms</label></li>
+<li><a href="http://foundation.zurb.com/docs/components/forms.html" data-search="">Forms</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/range_slider.html" data-search="Range Slider">Sliders <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/abide.html" data-search="Form Validation,Field Validation">Abide Validation <span class="label">JS</span></a></li>
+<li class="divider"></li>
+<li><label>Buttons</label></li>
+<li><a href="http://foundation.zurb.com/docs/components/buttons.html" data-search="">Buttons</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/button_groups.html" data-search="Button Bar">Button Groups</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/split_buttons.html" data-search="">Split Buttons <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/dropdown_buttons.html" data-search="">Dropdown Buttons <span class="label">JS</span></a></li>
+<li class="divider"></li>
+<li><label>Typography</label></li>
+<li><a href="http://foundation.zurb.com/docs/components/typography.html" data-search="Typography,Type-setting,Composition">Type</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/inline_lists.html" data-search="Lists">Inline Lists</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/labels.html" data-search="Tags">Labels</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/keystrokes.html" data-search="">Keystrokes</a></li>
+<li class="divider"></li>
+<li class="heading"><label>Callouts &amp; Prompts</label></li>
+<li><a href="http://foundation.zurb.com/docs/components/reveal.html" data-search="Modal">Reveal Modal <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/alert_boxes.html" data-search="Error,Success,Warning">Alerts <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/panels.html" data-search="Wells">Panels</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/tooltips.html" data-search="Popover">Tooltips <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/joyride.html" data-search="Tooltip Tour,Guider,Tooltip Walk-through">Joyride <span class="label">JS</span></a></li>
+<li class="divider"></li>
+<li><label>Content</label></li>
+<li><a href="http://foundation.zurb.com/docs/components/dropdown.html" data-search="">Dropdowns <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/pricing_tables.html" data-search="">Pricing Tables</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/progress_bars.html" data-search="">Progress Bars</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/tables.html" data-search="">Tables</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/accordion.html" data-search="">Accordion <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/tabs.html" data-search="">Tabs <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/equalizer.html" data-search="">Equalizer <span class="label">JS</span></a></li>
+<li class="divider"></li>
+<li><label>Support</label></li>
+<li><a href="http://foundation.zurb.com/docs/changelog.html" data-search="">Changelog</a></li>
+<li><a href="http://foundation.zurb.com/docs/compatibility.html" data-search="">Compatibility</a></li>
+<li class="divider"></li>
+<li class="heading"><label>Older Docs</label></li>
+<li><a href="http://foundation.zurb.com/docs/v/4.3.2/" data-search="">Foundation 4</a></li>
+<li><a href="http://foundation.zurb.com/docs/v/3.2.5/" data-search="">Foundation 3</a></li>
+<li><a href="http://foundation.zurb.com/docs/v/2.2.1/" data-search="">Foundation 2</a></li>
+</ul>
+<hr>
+<div class="zurb-links">
+<ul class="top">
+<li class="logo"><a href="http://zurb.com/"></a></li>
+<li><a href="http://zurb.com/about">About</a></li>
+<li><a href="http://zurb.com/blog">Blog</a></li>
+<li><a href="http://zurb.com/contact">Contact</a></li>
+</ul>
+<ul class="pillars">
+<li>
+<a href="http://www.zurb.com/studios" class="footer-link-block services">
+<span class="title">Studios</span>
+<span>Helping startups win since '98.</span>
+</a>
+</li>
+<li>
+<a href="http://foundation.zurb.com/" class="footer-link-block foundation">
+<span class="title">Foundation</span>
+<span>World's most advanced responsive framework.</span>
+</a>
+</li>
+<li>
+<a href="http://zurb.com/apps" class="footer-link-block apps">
+<span class="title">Design Apps</span>
+<span>Tools to rapidly prototype and iterate.</span>
+</a>
+</li>
+<li>
+<a href="http://zurb.com/university" class="footer-link-block expo">
+<span class="title">University</span>
+<span>Online training for smarter product design.</span>
+</a>
+</li>
+</ul>
+</div>
+
+</aside>
+<a class="exit-off-canvas" href="http://foundation.zurb.com/docs/components/grid.html#"></a>
+<section role="main" class="scroll-container">
+<div class="row">
+<div class="large-3 medium-4 columns">
+<div class="hide-for-small">
+<div class="sidebar">
+<h5>Foundation Documentation</h5>
+<form>
+ 
+<input tabindex="1" id="autocomplete" type="search" placeholder="Search Docs: e.g. forms" autocomplete="off">
+</form>
+<nav>
+<ul class="side-nav">
+<li class="heading">Setup</li>
+<li><a href="http://foundation.zurb.com/docs/index.html" data-search="">Getting Started</a></li>
+<li><a href="http://foundation.zurb.com/docs/css.html" data-search="Styles">CSS</a></li>
+<li><a href="http://foundation.zurb.com/docs/sass.html" data-search="SCSS">Sass</a></li>
+<li><a href="http://foundation.zurb.com/docs/applications.html" data-search="Rails,Gem">Applications</a></li>
+<li><a href="http://foundation.zurb.com/docs/javascript.html" data-search="">Javascript</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/global.html" data-search="Global Styles,Global Mixins,Global Variables,Useful HTML Classes">Global Styles</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/kitchen_sink.html" data-search="">Kitchen Sink</a></li>
+<li><a href="http://foundation.zurb.com/docs/upgrading.html" data-search="Migration">Upgrading</a></li>
+<li class="divider"></li>
+<li class="heading">Structure</li>
+<li><a href="http://foundation.zurb.com/docs/media-queries.html" data-search="Breakpoints">Media Queries</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/visibility.html" data-search="">Visibility</a></li>
+<li class="active"><a href="./Grid   Foundation Docs_files/Grid   Foundation Docs.html" data-search="">Grid</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/block_grid.html" data-search="">Block Grid</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/interchange.html" data-search="Responsive Images">Interchange Responsive Content <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/utility-classes.html" data-search="">Utility Classes</a></li>
+<li><a href="http://foundation.zurb.com/docs/javascript-utilities.html" data-search="">Javascript Utilities</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/rtl.html" data-search="RTL">Right-to-Left Support</a></li>
+<li class="divider"></li>
+<li class="heading">Navigation</li>
+<li><a href="http://foundation.zurb.com/docs/components/offcanvas.html" data-search="Off Canvas">Offcanvas <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/topbar.html" data-search="Nav Bar,Navigation,Sticky">Top Bar <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/sidenav.html" data-search="">Side Nav</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/magellan.html" data-search="Scrollspy">Magellan Sticky Nav <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/subnav.html" data-search="">Sub Nav</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/breadcrumbs.html" data-search="Navigation Path,Cookie Crumb">Breadcrumbs</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/pagination.html" data-search="">Pagination</a></li>
+<li class="divider"></li>
+<li class="heading">Media</li>
+<li><a href="http://foundation.zurb.com/docs/components/orbit.html" data-search="Carousel,Slider,Slideshow">Orbit Slider <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/thumbnails.html" data-search="Images">Thumbnails</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/clearing.html" data-search="Responsive Lightbox,Lightbox">Clearing Lightbox <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/flex_video.html" data-search="Responsive Video">Flex Video</a></li>
+<li class="divider"></li>
+<li class="heading">Forms</li>
+<li><a href="http://foundation.zurb.com/docs/components/forms.html" data-search="">Forms</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/range_slider.html" data-search="Range Slider">Sliders <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/abide.html" data-search="Form Validation,Field Validation">Abide Validation <span class="label">JS</span></a></li>
+<li class="divider"></li>
+<li class="heading">Buttons</li>
+<li><a href="http://foundation.zurb.com/docs/components/buttons.html" data-search="">Buttons</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/button_groups.html" data-search="Button Bar">Button Groups</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/split_buttons.html" data-search="">Split Buttons <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/dropdown_buttons.html" data-search="">Dropdown Buttons <span class="label">JS</span></a></li>
+<li class="divider"></li>
+<li class="heading">Typography</li>
+<li><a href="http://foundation.zurb.com/docs/components/typography.html" data-search="Typography,Type-setting,Composition">Type</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/inline_lists.html" data-search="Lists">Inline Lists</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/labels.html" data-search="Tags">Labels</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/keystrokes.html" data-search="">Keystrokes</a></li>
+<li class="divider"></li>
+<li class="heading">Callouts &amp; Prompts</li>
+<li><a href="http://foundation.zurb.com/docs/components/reveal.html" data-search="Modal">Reveal Modal <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/alert_boxes.html" data-search="Error,Success,Warning">Alerts <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/panels.html" data-search="Wells">Panels</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/tooltips.html" data-search="Popover">Tooltips <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/joyride.html" data-search="Tooltip Tour,Guider,Tooltip Walk-through">Joyride <span class="label">JS</span></a></li>
+<li class="divider"></li>
+<li class="heading">Content</li>
+<li><a href="http://foundation.zurb.com/docs/components/dropdown.html" data-search="">Dropdowns <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/pricing_tables.html" data-search="">Pricing Tables</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/progress_bars.html" data-search="">Progress Bars</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/tables.html" data-search="">Tables</a></li>
+<li><a href="http://foundation.zurb.com/docs/components/accordion.html" data-search="">Accordion <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/tabs.html" data-search="">Tabs <span class="label">JS</span></a></li>
+<li><a href="http://foundation.zurb.com/docs/components/equalizer.html" data-search="">Equalizer <span class="label">JS</span></a></li>
+<li class="divider"></li>
+<li class="heading">Support</li>
+<li><a href="http://foundation.zurb.com/docs/changelog.html" data-search="">Changelog</a></li>
+<li><a href="http://foundation.zurb.com/docs/compatibility.html" data-search="">Compatibility</a></li>
+<li class="divider"></li>
+<li class="heading">Older Docs</li>
+<li><a href="http://foundation.zurb.com/docs/v/4.3.2/" data-search="">Foundation 4</a></li>
+<li><a href="http://foundation.zurb.com/docs/v/3.2.5/" data-search="">Foundation 3</a></li>
+<li><a href="http://foundation.zurb.com/docs/v/2.2.1/" data-search="">Foundation 2</a></li>
+</ul>
+</nav>
+<a href="http://foundation.zurb.com/develop/download.html" class="download button expand">Download Foundation</a>
+<section id="jobs">
+<h5>Get a job, nerd!</h5>
+<script type="text/rocketscript" data-rocketsrc="http://www.zurb.com/jobs/widgets/jobs.js?limit=3" data-rocketoptimized="true"></script><ul>
+    <li>
+      <a href="http://zurb.com/jobs/1446-amazon-senior-ux-designer" target="_blank">
+        <span class="positionTitle">Senior UX Designer</span>
+        <span class="location"><span class="companyName">Amazon</span> in Seattle, WA</span>
+</a>    </li>
+    <li>
+      <a href="http://zurb.com/jobs/1452-foundation-medicine-user-experience-designer" target="_blank">
+        <span class="positionTitle">User Experience Designer </span>
+        <span class="location"><span class="companyName">Foundation Medicine </span> in Palo Alto, California </span>
+</a>    </li>
+    <li>
+      <a href="http://zurb.com/jobs/1457-bandwidth-ux-designer" target="_blank">
+        <span class="positionTitle">UX Designer </span>
+        <span class="location"><span class="companyName">Bandwidth</span> in Raleigh, NC </span>
+</a>    </li>
+</ul>
+<p class="via">via <a href="http://www.zurb.com/jobs">Job Board from ZURB</a></p>
+</section>
+</div>
+</div>
+</div>
+<div class="large-9 medium-8 columns">
+<h1 id="grid">Grid</h1>
+<h3 class="subheader">Create powerful multi-device layouts quickly and easily with the default 12-column, nest-able Foundation grid. If you're familiar with grid systems, you'll feel right at home. If not, you'll learn quickly.</h3>
+<hr>
+<h3>Basic</h3>
+<p>Start by adding an element with a class of <code>row</code>. This will create a horizontal block to contain vertical columns. Then add divs with a <code>column</code> class within that row. You can use <code>column</code> or <code>columns</code> - the only difference is grammar. Specify the widths of each column with the small-#, medium-#, and large-# classes.</p>
+<p><strong>Foundation is mobile-first</strong>. Code for small screens first, and larger devices will inherit those styles. Customize for larger screens as necessary.</p>
+<h4>HTML</h4>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-2 large-4 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-4 large-4 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-6 large-4 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-6 large-2 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-6 large-8 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-12 large-2 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-3 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-9 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-4 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-8 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-6 large-5 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-6 large-7 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-6 columns"</span>&gt;</span>...<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<h4>Rendered HTML</h4>
+<div class="row display">
+<div class="small-2 large-4 columns"><span class="show-for-small">2</span><span class="hide-for-small">4</span></div>
+<div class="small-4 large-4 columns">4</div>
+<div class="small-6 large-4 columns"><span class="show-for-small">6</span><span class="hide-for-small">4</span></div>
+</div>
+<div class="row display">
+<div class="large-3 columns"><span class="show-for-small">full</span><span class="hide-for-small">3</span></div>
+<div class="large-6 columns"><span class="show-for-small">full</span><span class="hide-for-small">6</span></div>
+<div class="large-3 columns"><span class="show-for-small">full</span><span class="hide-for-small">3</span></div>
+</div>
+<div class="row display">
+<div class="small-6 large-2 columns"><span class="show-for-small">6</span><span class="hide-for-small">2</span></div>
+<div class="small-6 large-8 columns"><span class="show-for-small">6</span><span class="hide-for-small">8</span></div>
+<div class="small-12 large-2 columns"><span class="show-for-small">full</span><span class="hide-for-small">2</span></div>
+</div>
+<div class="row display">
+<div class="small-3 columns">3</div>
+<div class="small-9 columns">9</div>
+</div>
+<div class="row display">
+<div class="large-4 columns"><span class="show-for-small">full</span><span class="hide-for-small">4</span></div>
+<div class="large-8 columns"><span class="show-for-small">full</span><span class="hide-for-small">8</span></div>
+</div>
+<div class="row display">
+<div class="small-6 large-5 columns"><span class="show-for-small">6</span><span class="hide-for-small">5</span></div>
+<div class="small-6 large-7 columns"><span class="show-for-small">6</span><span class="hide-for-small">7</span></div>
+</div>
+<div class="row display">
+<div class="large-6 columns"><span class="show-for-small">full</span><span class="hide-for-small">6</span></div>
+<div class="large-6 columns"><span class="show-for-small">full</span><span class="hide-for-small">6</span></div>
+</div>
+<hr>
+<h3 id="small-grid">Small Grid</h3>
+<p>Small grids expand to large screens easier than large grids cram into small screens.</p>
+<h4>HTML</h4>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-2 columns"</span>&gt;</span>2 columns<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-10 columns"</span>&gt;</span>10 columns<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-3 columns"</span>&gt;</span>3 columns<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-9 columns"</span>&gt;</span>9 columns<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<h4>Rendered HTML</h4>
+<div class="row display">
+<div class="small-2 columns">2 columns</div>
+<div class="small-10 columns">10 columns</div>
+</div>
+<div class="row display">
+<div class="small-3 columns">3 columns</div>
+<div class="small-9 columns">9 columns</div>
+</div>
+<hr>
+<h3 id="medium-grid">Medium Grid</h3>
+<p>Medium sized screens will inherit styles from small, unless you specify a different layout, using the medium grid classes.</p>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-2 columns"</span>&gt;</span>2 columns<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-10 columns"</span>&gt;</span>10 columns<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-3 columns"</span>&gt;</span>3 columns<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-9 columns"</span>&gt;</span>9 columns<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<h4>Rendered HTML</h4>
+<div class="row display">
+<div class="medium-2 columns">2 columns</div>
+<div class="medium-10 columns">10 columns</div>
+</div>
+<div class="row display">
+<div class="medium-3 columns">3 columns</div>
+<div class="medium-9 columns">9 columns</div>
+</div>
+<hr>
+<h3>Advanced</h3>
+<p>You can nest the grids indefinitely, though at a certain point it will get absurd.</p>
+<h4>HTML</h4>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-8 columns"</span>&gt;</span>8
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-8 columns"</span>&gt;</span>8 Nested
+        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-8 columns"</span>&gt;</span>8 Nested Again<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-4 columns"</span>&gt;</span>4<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-4 columns"</span>&gt;</span>4<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-4 columns"</span>&gt;</span>4<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<h4>Rendered HTML</h4>
+<div class="row display">
+<div class="small-8 columns">8
+<div class="row">
+<div class="small-8 columns">8 Nested
+<div class="row">
+<div class="small-8 columns">8 Nested Again</div>
+<div class="small-4 columns">4</div>
+</div>
+</div>
+<div class="small-4 columns">4</div>
+</div>
+</div>
+<div class="small-4 columns">4</div>
+</div>
+<hr>
+<h3 id="offsets">Offsets</h3>
+<p>Move blocks up to 11 columns to the right by using classes like <code>.large-offset-1</code> and <code>.small-offset-3</code>.</p>
+<h4>HTML</h4>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-1 columns"</span>&gt;</span>1<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-11 columns"</span>&gt;</span>11<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-1 columns"</span>&gt;</span>1<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-10 large-offset-1 columns"</span>&gt;</span>10, offset 1<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-1 columns"</span>&gt;</span>1<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-9 large-offset-2 columns"</span>&gt;</span>9, offset 2<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-1 columns"</span>&gt;</span>1<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-8 large-offset-3 columns"</span>&gt;</span>8, offset 3<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<h4>Rendered HTML</h4>
+<div class="row display">
+<div class="large-1 columns">1</div>
+<div class="large-11 columns">11</div>
+</div>
+<div class="row display">
+<div class="large-1 columns">1</div>
+<div class="large-10 large-offset-1 columns">10, offset 1</div>
+</div>
+<div class="row display">
+<div class="large-1 columns">1</div>
+<div class="large-9 large-offset-2 columns">9, offset 2</div>
+</div>
+<div class="row display">
+<div class="large-1 columns">1</div>
+<div class="large-8 large-offset-3 columns">8, offset 3</div>
+</div>
+<hr>
+<h3 id="incomplete-rows">Incomplete Rows</h3>
+<p>In order to work around browsers' different rounding behaviors, Foundation will float the last column in a row to the right so the edge aligns. If your row doesn't have a count that adds up to 12 columns, you can tag the last column with a class of <code>end</code> in order to override that behavior.</p>
+<h4>HTML</h4>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-3 columns"</span>&gt;</span>3<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-3 columns"</span>&gt;</span>3<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-3 columns"</span>&gt;</span>3<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-3 columns"</span>&gt;</span>3<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-3 columns"</span>&gt;</span>3<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-3 columns end"</span>&gt;</span>3 end<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<h4>Rendered HTML</h4>
+<div class="row display">
+<div class="medium-3 columns">3</div>
+<div class="medium-3 columns">3</div>
+<div class="medium-3 columns">3</div>
+</div>
+<div class="row display">
+<div class="medium-3 columns">3</div>
+<div class="medium-3 columns">3</div>
+<div class="medium-3 columns end">3 end</div>
+</div>
+<hr>
+<h3 id="centered-columns">Centered Columns</h3>
+<p>Center your columns by adding a class of <code>small-centered</code> to your <code>column</code>. Large will inherit small centering by default, but you can also center solely on large by applying a <code>large-centered</code> class. To uncenter on large screens use <code>large-uncentered</code>.</p>
+<h4>HTML</h4>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-3 small-centered columns"</span>&gt;</span>3 centered<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-6 large-centered columns"</span>&gt;</span>6 centered<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-9 small-centered large-uncentered columns"</span>&gt;</span>9 centered<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-11 small-centered columns"</span>&gt;</span>11 centered<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<h4>Rendered HTML</h4>
+<div class="row display">
+<div class="small-3 small-centered columns">3 centered</div>
+</div>
+<div class="row display">
+<div class="small-6 large-centered columns">6 centered, large</div>
+</div>
+<div class="row display">
+<div class="small-9 small-centered large-uncentered columns">9 centered small</div>
+</div>
+<div class="row display">
+<div class="small-11 small-centered columns">11 centered</div>
+</div>
+<hr>
+<h3 id="source-ordering">Source Ordering</h3>
+<p>Using these source ordering classes, you can shift columns around between our breakpoints. This means if you place sub-navigation below main content on small displays, you have the option to position the sub-navigation on either the left or right of the page for large displays. Prefix push/pull with the size of the device you want to apply the styles to. <code>medium-push-#</code>, <code>large-push-#</code> is the syntax you'll use. Use <code>large-reset-order</code> to reset pushed or pulled columns to their original position on large screens.</p>
+<h4>HTML</h4>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-10 small-push-2 columns"</span>&gt;</span>10<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"small-2 small-pull-10 columns"</span>&gt;</span>2, last<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-9 large-push-3 columns"</span>&gt;</span>9<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-3 large-pull-9 columns"</span>&gt;</span>3, last<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-8 large-push-4 columns"</span>&gt;</span>8<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"large-4 large-pull-8 columns"</span>&gt;</span>4, last<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-7 small-5 small-push-7 medium-push-5 columns"</span>&gt;</span>7<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-5 small-7 small-pull-5 medium-pull-7 columns"</span>&gt;</span>5, last<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-6 medium-push-6 columns"</span>&gt;</span>6<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"medium-6 medium-pull-6 columns"</span>&gt;</span>6, last<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+<h4>Rendered HTML</h4>
+<div class="row display">
+<div class="small-10 small-push-2 columns">10</div>
+<div class="small-2 small-pull-10 columns">2, last</div>
+</div>
+<div class="row display">
+<div class="large-9 large-push-3 columns">9</div>
+<div class="large-3 large-pull-9 columns">3, last</div>
+</div>
+<div class="row display">
+<div class="large-8 large-push-4 columns">8</div>
+<div class="large-4 large-pull-8 columns">4, last</div>
+</div>
+<div class="row display">
+<div class="medium-7 small-5 small-push-7 medium-push-5 columns">7</div>
+<div class="medium-5 small-7 small-pull-5 medium-pull-7 columns">5, last</div>
+</div>
+<div class="row display">
+<div class="medium-6 medium-push-6 columns">6</div>
+<div class="medium-6 medium-pull-6 columns">6, last</div>
+</div>
+<hr>
+<h2 id="customize-with-sass">Customize with Sass</h2>
+<p>Customizing the grid is easy with the Sass variables provided in the <code>_settings.scss</code> file.</p>
+<h4>SCSS</h4>
+<pre><code class="language-scss"><div class="code-container">$row-<span class="attribute">width</span><span class="value">: rem-calc(<span class="number">1000</span>);</span>
+$column-gutter<span class="value">: rem-calc(<span class="number">30</span>);</span>
+$total-<span class="attribute">columns</span><span class="value">: <span class="number">12</span> ;</span></div></code></pre>
+<h3>Basic</h3>
+<p>You can use the <code>grid-row()</code> and <code>grid-column()</code> mixins to create your own rows and columns with semantic markup, like so:</p>
+<div class="row">
+<div class="large-6 columns">
+<h4>SCSS</h4>
+<pre><code class="language-scss"><div class="code-container"><span class="class">.custom-row-class</span> {
+  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> grid-row</span>();</span>
+  <span class="class">.custom-column-class</span> {
+    <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> grid-column</span>(<span class="number">12</span>);</span>
+  }
+}</div></code></pre>
+</div>
+<div class="large-6 columns">
+<h4>HTML</h4>
+<pre><code class="language-html"><div class="code-container"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"your-row-class-name"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"your-column-class-name"</span>&gt;</span>
+    <span class="comment">&lt;!-- Your content goes here --&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span></div></code></pre>
+</div>
+</div>
+<h3>Advanced</h3>
+<p>You can further customize your grid columns using the provided options in the <code>grid-column()</code> mixin:</p>
+<h5 id="row-mixin-options">Row Mixin Options</h5>
+<h4>SCSS</h4>
+<pre><code class="language-scss"><div class="code-container"><span class="class">.your-class-name</span> {
+  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> grid-row</span>($behavior:<span class="preprocessor"> nest</span>) //<span class="preprocessor"> Other</span><span class="preprocessor"> options</span><span class="preprocessor"> include</span><span class="preprocessor"> collapse</span><span class="preprocessor"> and</span><span class="preprocessor"> nest-collapse.</span>
+  //<span class="preprocessor"> Default</span> $behavior<span class="preprocessor"> value</span><span class="preprocessor"> is</span><span class="preprocessor"> false</span>
+}</span></div></code></pre>
+<h5 id="column-mixin-options">Column Mixin Options</h5>
+<h4>SCSS</h4>
+<pre><code class="language-scss"><div class="code-container"><span class="class">.custom-grid-class</span> {
+  <span class="at_rule">@<span class="keyword">include</span><span class="preprocessor"> grid-column</span>(
+    //<span class="preprocessor"> Control</span><span class="preprocessor"> the</span><span class="preprocessor"> number</span><span class="preprocessor"> of</span><span class="preprocessor"> columns</span>
+    $columns:<span class="number">4</span>,
+    //<span class="preprocessor"> Specify</span><span class="preprocessor"> whether</span><span class="preprocessor"> or</span><span class="preprocessor"> not</span><span class="preprocessor"> this</span><span class="preprocessor"> is</span><span class="preprocessor"> the</span><span class="preprocessor"> last</span><span class="preprocessor"> column</span><span class="preprocessor"> in</span><span class="preprocessor"> the</span><span class="preprocessor"> row</span>
+    $last-column:true,
+    //<span class="preprocessor"> Choose</span><span class="preprocessor"> whether</span><span class="preprocessor"> or</span><span class="preprocessor"> not</span><span class="preprocessor"> to</span><span class="preprocessor"> center</span><span class="preprocessor"> this</span><span class="preprocessor"> column</span>
+    $center:true,
+    //<span class="preprocessor"> Choose</span><span class="preprocessor"> the</span><span class="preprocessor"> number</span><span class="preprocessor"> of</span><span class="preprocessor"> columns</span><span class="preprocessor"> to</span><span class="preprocessor"> offset</span><span class="preprocessor"> this</span><span class="preprocessor"> element</span><span class="preprocessor"> by</span>
+    $offset:<span class="number">3</span>,
+    //<span class="preprocessor"> Specify</span><span class="preprocessor"> how</span><span class="preprocessor"> many</span><span class="preprocessor"> columns</span><span class="preprocessor"> to</span><span class="preprocessor"> push</span><span class="preprocessor"> this</span><span class="preprocessor"> element</span><span class="preprocessor"> past</span>
+    $push:<span class="number">3</span>,
+    //<span class="preprocessor"> Specify</span><span class="preprocessor"> how</span><span class="preprocessor"> many</span><span class="preprocessor"> columns</span><span class="preprocessor"> to</span><span class="preprocessor"> pull</span><span class="preprocessor"> this</span><span class="preprocessor"> element</span><span class="preprocessor"> past</span>
+    $pull:<span class="number">9</span>,
+    //<span class="preprocessor"> Set</span><span class="preprocessor"> to</span><span class="preprocessor"> true</span><span class="preprocessor"> to</span><span class="preprocessor"> remove</span><span class="preprocessor"> column</span><span class="preprocessor"> padding</span>
+    $collapse:true,
+    //<span class="preprocessor"> Specify</span><span class="preprocessor"> the</span><span class="preprocessor"> float</span><span class="preprocessor"> direction</span>
+    $float:right
+  );</span>
+}</div></code></pre>
+<hr>
+<h5 id="sass-errors-">Sass Errors?</h5>
+<p>If the default "foundation" import was commented out, then make sure you import this file:</p>
+<h4>SCSS</h4>
+<pre><code class="language-scss"><div class="code-container"><span class="at_rule">@<span class="keyword">import</span> <span class="string">"foundation/components/grid"</span>;</span></div></code></pre>
+</div>
+</div>
+<section id="courses-banner-large">
+<div class="row">
+<div class="large-5 columns banner-image">
+<img data-cfsrc="../assets/img/images/responsive-banner-main.svg" alt="responsive design" src="./Grid   Foundation Docs_files/responsive-banner-main.svg">
+</div>
+<div class="large-7 columns banner-info">
+<h3>Get coached in responsive design</h3>
+<p>Step up your skills in our <strong>10 week responsive design course.</strong> You’ll get hands on training, detailed video lessons and valuable feedback from the product designers at ZURB who design responsively every day. <a href="http://zurb.com/university/courses" class="inline-hide">Learn more about courses »</a></p>
+<h5>Next course: May 29 - July 7</h5>
+<a href="http://zurb.com/university/responsive-design" class="button">Learn More</a>
+<a href="http://zurb.com/university/courses" class="learn-more hide-for-medium-up">Learn more about courses »</a>
+</div>
+</div>
+</section>
+<div id="newsletter">
+<div class="row">
+<div class="medium-8 columns">
+<h5>Stay on top of what’s happening in <a href="http://zurb.com/responsive">responsive design</a>.</h5>
+<p>Sign up to receive monthly Responsive Reading highlights. <a href="http://zurb.com/responsive/reading">Read Last Month's Edition »</a></p>
+</div>
+<div class="medium-4 columns">
+<form method="post" action="http://zurb.com/responsive/subscribe">
+<div class="row collapse margintop-20px">
+<div class="small-8 medium-8 columns">
+<input type="text" name="email" placeholder="signup@example.com">
+</div>
+<div class="small-4 medium-4 columns">
+<input type="submit" href="#" class="postfix small button expand" value="Sign Up">
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div class="zurb-footer-top bg-fblue">
+<div class="row property">
+<div class="medium-4 columns">
+<div class="property-info">
+<h3>Foundation</h3>
+<p>Foundation is made by <a href="http://zurb.com/">ZURB, a product design</a> company in Campbell, California. We've put more than 15 years of experience building web products, services and websites into this framework.
+</p>
+</div>
+</div>
+<div class="medium-8 columns">
+<div class="row collapse">
+<div class="medium-4 columns">
+<div class="learn-links">
+<h4 class="hide-for-small">Want more?</h4>
+<ul>
+<li><a href="http://foundation.zurb.com/business/services.html">Foundation Business</a></li>
+<li><a href="http://zurb.com/responsive">Responsive</a></li>
+<li><a href="http://zurb.com/apps">Design Apps</a></li>
+<li><a href="http://foundation.zurb.com/learn/training.html">Foundation Training</a></li>
+</ul>
+</div>
+</div>
+<div class="medium-4 columns">
+<div class="support-links">
+<h4 class="hide-for-small">Talk to us</h4>
+<p>Tweet us at <br> <a href="https://twitter.com/foundationzurb">@foundationzurb</a></p>
+<p>Email us at <br> <a href="mailto:foundation@zurb.com">foundation@zurb.com<script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l,b=document.getElementsByTagName("script");l=b[b.length-1].previousSibling;a=l.getAttribute('data-cfemail');if(a){s='';r=parseInt(a.substr(0,2),16);for(j=2;a.length-j;j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}s=document.createTextNode(s);l.parentNode.replaceChild(s,l);}}catch(e){}})();
+/* ]]> */
+</script></a><br> or check our <a href="http://foundation.zurb.com/support/support.html">support page</a></p>
+</div>
+</div>
+<div class="medium-4 columns">
+<div class="connect-links">
+<h4 class="hide-for-small">Stay in touch</h4>
+<p>Keep up with the latest on Foundation. Find us on <a href="https://github.com/zurb/foundation">Github</a>.</p>
+<a href="http://zurb.com/news" class="small button">Stay Connected</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row global">
+<div class="medium-3 small-6 columns">
+<a href="http://zurb.com/studios" class="footer-link-block services">
+<span class="title">Studios</span>
+<span>Helping more than 200 startups succeed since 1998.</span>
+</a>
+</div>
+<div class="medium-3 small-6 columns">
+<a href="http://foundation.zurb.com/" class="footer-link-block foundation">
+<span class="title">Foundation</span>
+<span>The most advanced front-end framework in the world.</span>
+</a>
+</div>
+<div class="medium-3 small-6 columns">
+<a href="http://zurb.com/apps" class="footer-link-block apps">
+<span class="title">Design Apps</span>
+<span>Prototype, iterate and collect feedback on your products.</span>
+</a>
+</div>
+<div class="medium-3 small-6 columns">
+<a href="http://zurb.com/university" class="footer-link-block expo">
+<span class="title">University</span>
+<span>Ideas, thoughts and design resources shared with you.</span>
+</a>
+</div>
+</div>
+</div>
+<div class="zurb-footer-bottom">
+<div class="row">
+<div class="medium-4 medium-4 push-8 columns">
+<ul class="home-social">
+<li><a href="http://www.twitter.com/ZURB" class="twitter"></a></li>
+<li><a href="http://www.facebook.com/ZURB" class="facebook"></a></li>
+<li><a href="http://zurb.com/contact" class="mail"></a></li>
+</ul>
+</div>
+<div class="medium-8 medium-8 pull-4 columns">
+<a href="http://www.zurb.com/" class="zurb-logo regular"></a>
+<ul class="zurb-links">
+<li><a href="http://zurb.com/about">About</a></li>
+<li><a href="http://zurb.com/blog">Blog</a></li>
+<li><a href="http://zurb.com/news">News<span class="show-for-medium-up"> &amp; Events</span></a></li>
+<li><a href="http://zurb.com/contact">Contact</a></li>
+<li><a href="http://zurb.com/sitemap">Sitemap</a></li>
+</ul>
+<p class="copyright">© 1998‐2014 ZURB, Inc. All rights reserved.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script data-rocketsrc="../assets/js/templates.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+<script data-rocketsrc="../assets/js/all.js" type="text/rocketscript" data-rocketoptimized="true"></script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+      var _gaq = _gaq || [];
+      _gaq.push(
+        ['_setAccount', 'UA-2195009-2'],
+        ['_trackPageview'],
+        ['b._setAccount', 'UA-2195009-27'],
+        ['b._trackPageview']
+      );
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+<script type="text/rocketscript" data-rocketoptimized="true">
+      $(document).foundation().foundation('joyride', 'start');
+    </script>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&"www.cloudflare.com/email-protection"==a.substr(7 ,35)){s='';j=43;r=parseInt(a.substr(j,2),16);for(j+=2;a.length-j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+/* ]]> */
+</script>
+
+
+<div id="krOPPVdhx8kHsGOGRogVpjzgOnFnmwNLrqjBRq8KrpNMfRGbZO" style="display:none !important;"></div><div class="autocomplete-suggestions" style="position: absolute; display: none; top: 147.1875px; left: 33.328125px; max-height: 300px; z-index: 9999;"></div></body></html>
