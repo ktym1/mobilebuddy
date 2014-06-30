@@ -33,8 +33,8 @@ class Scraper
 			puts " Saved: #{s.device.name} #{s.device.model}"
 
 		rescue => ex
-           puts e.message 
-		   puts e.code
+           puts ex.message 
+		   puts ex.code
 		end
 	end
 
@@ -45,8 +45,8 @@ class Scraper
 		begin
 	        retailer = Retailer.find_by_name(name)
 		rescue => ex
-			puts e.message 
-		    puts e.code
+			puts ex.message 
+		    puts ex.code
 		end
 		retailer
 	end
@@ -58,8 +58,8 @@ class Scraper
 		begin
 	        contract = Contract.find_by_name(name)
 		rescue => ex
-		    puts e.message 
-		    puts e.code
+		    puts ex.message 
+		    puts ex.code
 		end
 		contract
 	end

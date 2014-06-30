@@ -9,6 +9,9 @@
 #creating the contracts(carriers)
 Contract.create(name: "Rogers")
 Contract.create(name: "Bell")
+
+Contract.create(name: "Telus")
+Contract.create(name: "Fido")
 Contract.create(name: "Virgin")
 
 #creating the devices
@@ -91,4 +94,12 @@ Metadata.create(device_id: iphone_5c.id, retailer_id: virgin.id, detail: "iphone
 # Metadata.create(device_id: galaxy_ace2, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=samsungace&colour=Black&contractTerm=SP7")
 # Metadata.create(device_id: htc_desire, retailer_id: virgin.id, detail: "http://www.virginmobile.ca/en/phones/phone-details.html?model=htcdesire601&colour=Black&contractTerm=SP8")
 
-
+# Fido
+fido = Retailer.create(name: "Fido", website: "www.fido.ca")
+Metadata.create(device_id: iphone_5s.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/iPhones#iphone5s_tab")
+Metadata.create(device_id: galaxy_5.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=GS5WHT")
+Metadata.create(device_id: galaxy_4.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=GS416BLK")
+Metadata.create(device_id: galaxy_4_mini.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=GS4MINIWHT")
+Metadata.create(device_id: iphone_5c.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/iPhones#iphone5c_tab")
+Metadata.create(device_id: nexus_5.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=NEXUS5BLK")
+Metadata.create(device_id: htc_desire.id, retailer_id: fido.id, detail: "http://www.fido.ca/web/page/portal/Fido/devices?PhoneSKU=DESIREWHT")
