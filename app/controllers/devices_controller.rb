@@ -72,7 +72,7 @@ class DevicesController < ApplicationController
 
   private
   def device_params
-    params.require(:device).permit(:name, :description, :model, :image)
+    params.require(:device).permit(:name, :description, :model, :image, :remote_image_url)
   end
 
 end
