@@ -13,9 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
 //= require_tree .
-//= require foundation
 
 $(document).ready(function(){
 	$(document).foundation(); 
@@ -32,6 +30,10 @@ $(document).ready(function(){
 		$('#myModal').foundation('reveal', 'open');
     });
     
+ //    $('#table').dataTable({
+	//   "sPaginationType": "foundation"
+	// });
+   $('#table').dataTable();
 
     $( "#news" ).click(function() {
 	  $( "#contentDrop" ).toggle();

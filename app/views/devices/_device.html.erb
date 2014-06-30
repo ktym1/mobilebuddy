@@ -1,3 +1,4 @@
+<% cache do %>
 <li>
 	<div class="device-block" id="dev"> 
 		<%= link_to search_url(:dev => device.id),  {:remote => true} do %> 
@@ -14,5 +15,6 @@
 		<% end %>
 	</div>
 </li>
+<% end %>
 	
 
