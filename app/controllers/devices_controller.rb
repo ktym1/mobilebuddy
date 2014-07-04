@@ -33,7 +33,7 @@ class DevicesController < ApplicationController
 
   def search
     if params[:dev]
-      @summaries = Summary.unscoped.where(device_id: params[:dev]).group(:contract_id,:retailer_id, :device_id)
+      @summaries = Summary.current(Date.today, params[:dev]) 
       @summaries = @summaries.group_by { |d| d.contract }
       respond_to do |format|
         format.js

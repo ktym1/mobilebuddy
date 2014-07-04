@@ -4,9 +4,13 @@ class Device < ActiveRecord::Base
 	belongs_to :user
 
 	mount_uploader :image, ImageUploader
+	
+	def self.active 
+		where(active: true)
+	end
 
 	def minimum_price
-		price = Summary.where(device_id: self.id, created_at: (Time.now-2.day)..Time.now).minimum(:price)
+		price = Summary.where("created_at >= ? and device_id = ?", Date.today, self.id).minimum(:price)
 		price
 	end
 
