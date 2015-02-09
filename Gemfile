@@ -47,6 +47,7 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'gibbon'
+gem 'pry', '~> 0.10.1'
 
 group :production, :staging do
   gem 'pg'
