@@ -1,6 +1,6 @@
 class DevicesController < ApplicationController
   def index
-   @devices = Device.where(active: true).order(:name)
+   @devices = Device.where("active = ?", true).order(:name)
     respond_to do |format|
       format.html
       format.js
