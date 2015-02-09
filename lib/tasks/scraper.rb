@@ -14,13 +14,13 @@ class Scraper
 		#setting a random user agent 		
 		agent = Mechanize.new{ |agent| agent.user_agent_alias = 'Mac Safari' }
 		agent.follow_meta_refresh_self
-	    agent.redirect_ok
+	    agent.redirect_ok = true
 		agent.log = Logger.new('log/scraping.log')
 	    agent
 	end
 
     protected
-	def save_summary(contract_id, retailer_id,price,dev_id,link, gift_card = "")
+	def save_summary(contract_id, retailer_id, price, dev_id, link, gift_card = "")
 		begin 
 
 			s =	Summary.create(   price: price, 
