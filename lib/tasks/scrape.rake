@@ -1,10 +1,6 @@
 require_relative 'bell'
-require_relative "rogers"
-require_relative 'wirelesswave'
-require_relative 'virgin'
 require_relative 'telus'
-require_relative 'fido'
-
+require_relative 'wirelesswave'
 
 namespace :scrape do
   
@@ -14,23 +10,10 @@ namespace :scrape do
 		bell.run
 	end
 
-	desc "Get data from Roger's website"
-	task rogers: :environment do 
-		rogers = Rogers.new
-		rogers.run
-	end
-
 	desc "Get data from Wireless Wave's website"
 	task wave: :environment do
 		w = WirelessWave.new
 		w.run
-	end
-
-
-	desc "Get data from Virgin's website"
-	task virgin: :environment do
-		virgin = Virgin.new
-		virgin.run
 	end
 
 	desc "Get data from Telus' website"
@@ -39,9 +22,4 @@ namespace :scrape do
 		telus.run     
 	end
 
-	desc "Get data from Fido's website"
-	task fido: :environment do 
-		fido = Fido.new
-		fido.run
-	end
 end
