@@ -1,6 +1,7 @@
 class Device < ActiveRecord::Base
 	has_many :summaries
 	has_many :retailers, through: :summaries
+	has_many :metadatas
 	belongs_to :user
 
 	mount_uploader :image, ImageUploader
