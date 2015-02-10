@@ -1,3 +1,4 @@
 LOG:  database system was shut down at 2015-02-10 15:28:30 EST
 LOG:  autovacuum launcher started
 LOG:  database system is ready to accept connections
+FATAL:  database "store_development" does not exist
