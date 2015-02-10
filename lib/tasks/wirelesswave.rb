@@ -17,8 +17,9 @@ class WirelessWave < Scraper
            	 page =	get_agent.get(m.detail)
            	 price = page.at(".phoneDetail-price")
            	 get_carrier(m.detail)
-           	 gift_card = page.at("phoneDetail-hotOffer").text if page.at("phoneDetail-hotOffer") != nil
-
+             
+           	 gift_card = page.at(".phoneDetail-hotOffer").text || []
+             binding.pry
              save_summary(@contract.id, @retailer.id,price,dev.id,m.detail,gift_card)
            end
 		end
@@ -28,12 +29,6 @@ class WirelessWave < Scraper
 	def get_carrier(contract_name)
 		if(contract_name.include? "bell")
 			@contract = get_contract('Bell')
-		elsif (contract_name.include? "rogers")
-			@contract = get_contract('Rogers')
-		elsif (contract_name.include? "virgin")
-			@contract = get_contract('Virgin')
-		elsif (contract_name.include? "fido")
-			@contract = get_contract('Fido')
 		end	
 	end
 
