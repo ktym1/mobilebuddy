@@ -14,7 +14,7 @@ class Scraper
 			#setting a random user agent 		
 			agent = Mechanize.new{ |agent| agent.user_agent_alias = 'Mac Safari' }
 			agent.follow_meta_refresh_self
-		    agent.redirect_ok = true
+		    agent.redirect_ok
 			agent.log = Logger.new('log/scraping.log')
 		    agent
 		end

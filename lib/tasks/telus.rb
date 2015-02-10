@@ -15,9 +15,8 @@ class Telus < Scraper
 
 			metadatas.each do |m|
 				page = get_agent.get(m.detail)
-
-				price = page.at('.price span').text.delete('$')
-				save_summary(@contract.id, @retailer.id,price,dev.id,m.detail)
+				price = page.at('.price-text').text.delete('$')
+				save_summary(@contract.id, @retailer.id, price, dev.id, m.detail)
 			end
 		end
 	end
