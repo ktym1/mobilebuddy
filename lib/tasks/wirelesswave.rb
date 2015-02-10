@@ -15,9 +15,9 @@ class WirelessWave < Scraper
 
            metadatas.each do |m|
            	 page =	get_agent.get(m.detail)
-           	 price = page.at("#contractprice-lg").text.delete('$')
+           	 price = page.at(".phoneDetail-price")
            	 get_carrier(m.detail)
-           	 gift_card = page.at("#contractbonus").text if page.at("#contractbonus") != nil
+           	 gift_card = page.at("phoneDetail-hotOffer").text if page.at("phoneDetail-hotOffer") != nil
 
              save_summary(@contract.id, @retailer.id,price,dev.id,m.detail,gift_card)
            end
