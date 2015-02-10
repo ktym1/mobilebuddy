@@ -5,7 +5,7 @@ ruby "2.0.0"
 gem 'rails', '4.1.0'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-	gem 'sqlite3'
+	gem 'pg'
 end
 
 
@@ -48,7 +48,8 @@ gem 'carrierwave'
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'gibbon'
 gem 'pry', '~> 0.10.1'
-gem 'que'
+
+# gem 'que'
 
 group :production, :staging do
   gem 'pg'
