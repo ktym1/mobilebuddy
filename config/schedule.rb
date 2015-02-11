@@ -26,10 +26,6 @@ every :day, :at => '07:30am' do
 end
 
 every :day, :at => '07:30am' do
-rake "scrape:rogers" 
-end
-
-every :day, :at => '07:30am' do
 rake "scrape:telus" 
 end
 
@@ -37,10 +33,4 @@ every :day, :at => '07:30am' do
 rake "scrape:wave" 
 end
 
-every :day, :at => '07:30am' do
-rake "scrape:virgin" 
-end
-
-every :day, :at => '07:30am' do
-rake "scrape:fido" 
 end
