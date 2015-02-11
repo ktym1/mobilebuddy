@@ -39,3 +39,34 @@ STATEMENT:  do $$ begin
 	
 	CREATE INDEX idx_qc_on_name_only_unlocked ON queue_classic_jobs (q_name, id) WHERE locked_at IS NULL;
 	
+FATAL:  database "kerrymui" does not exist
+FATAL:  database "kerrymui" does not exist
+FATAL:  database "kerrymui" does not exist
+FATAL:  database "kerrymui" does not exist
+ERROR:  role "kerrymui" already exists
+STATEMENT:  CREATE USER kerrymui WITH password 'thepassword';
+FATAL:  database "kerrymui" does not exist
+ERROR:  role "kerrymui" already exists
+STATEMENT:  CREATE ROLE kerrymui PASSWORD 'md5538605268c201a5e8aa7fafeb582c994' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
+	
+ERROR:  role "kerrymui" already exists
+STATEMENT:  CREATE ROLE kerrymui PASSWORD 'md5538605268c201a5e8aa7fafeb582c994' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
+	
+ERROR:  role "kerrymui" already exists
+STATEMENT:  CREATE ROLE kerrymui PASSWORD 'md5538605268c201a5e8aa7fafeb582c994' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
+	
+ERROR:  syntax error at or near "DROP" at character 14
+STATEMENT:  Select users
+	DROP ROLE kerrymui
+	SELECT 1 FROM pg_roles WHERE rolname='kerrymui'
+	;
+ERROR:  current user cannot be dropped
+STATEMENT:  DROP ROLE kerrymui;
+FATAL:  database "kerrymui" does not exist
+FATAL:  database "kerrymui" does not exist
+FATAL:  database "kerrymui" does not exist
+FATAL:  database "kerrymui" does not exist
+ERROR:  role "kerrytmui" already exists
+STATEMENT:  CREATE ROLE kerrytmui PASSWORD 'md5a106f902ad0beef4fd01c851b767dfbc' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
+	
+FATAL:  database "kerrymui" does not exist
