@@ -7,7 +7,7 @@ class Device < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 	
 	def self.active 
-		where(active: true)
+		where(active: true).order(:name)
 	end
 
 	def minimum_price
