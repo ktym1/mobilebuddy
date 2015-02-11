@@ -70,3 +70,5 @@ ERROR:  role "kerrytmui" already exists
 STATEMENT:  CREATE ROLE kerrytmui PASSWORD 'md5a106f902ad0beef4fd01c851b767dfbc' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
 	
 FATAL:  database "kerrymui" does not exist
+ERROR:  argument of WHERE must be type boolean, not type integer at character 45
+STATEMENT:  SELECT "metadata".* FROM "metadata"  WHERE (4)

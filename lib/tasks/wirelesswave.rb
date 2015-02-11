@@ -11,11 +11,13 @@ class WirelessWave < Scraper
 		devices = Device.where(active: true)
 
 		devices.each do |dev|
+       raw_text = page.at(".phoneDetail-price").text
        metadatas =  Metadata.where(retailer_id: @retailer.id, device_id: dev.id)
 
        metadatas.each do |m|
        	 page =	get_agent.get(m.detail)
-       	 price = page.at(".phoneDetail-price")
+         price = get_price(raw_text)
+          
        	 get_carrier(m.detail)
        	 gift_card = page.at(".phoneDetail-hotOffer").text || []
          save_summary(@contract.id, @retailer.id, price, dev.id, m.detail, gift_card)
@@ -23,6 +25,11 @@ class WirelessWave < Scraper
 		end
 	end
 
+  def get_price(string)
+    raw_text_array = string.split(//)
+    price_elements = raw_text_array[2..4]
+    price_elements.join.to_i
+  end
 
 	def get_carrier(contract_name)
 		if(contract_name.include? "bell")
