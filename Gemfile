@@ -48,6 +48,7 @@ gem 'carrierwave'
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'gibbon'
 gem 'pry', '~> 0.10.1'
+gem 'figaro'
 
 group :production, :staging do
   gem 'taps'
