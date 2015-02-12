@@ -1,7 +1,7 @@
 require 'mailchimp'
 
 class ApplicationController < ActionController::Base
-	 before_action :setup_mcapi
+	 # before_action :setup_mcapi
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
     protect_from_forgery with: :exception
