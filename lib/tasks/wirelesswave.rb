@@ -7,18 +7,22 @@ class WirelessWave < Scraper
 	end
 
 	def run
+    summaries = []
 		get_pages.each do |p|
-        
+      device_summary = {}
+      device_summary[:price] = get_price(p)
+      device_summary[:gift_card] = get_gift_card(p)
+      device_summary[:retailer_id] = @retailer.id
+      device_summary[:contract_id] = get_carrier(p.title)
+
+
     end
-        
-        
-        
+            
  #         price = get_price(page)
  #       	 get_carrier(m.detail)
  #       	 gift_card =  get_gift_card(page)
  #         save_summary(@contract.id, @retailer.id, price, dev.id, m.detail, gift_card)
-      # end
-		# end
+    
 	end
 
   def active_devices
@@ -44,12 +48,14 @@ class WirelessWave < Scraper
     price_elements.join.to_i
   end
 
-	def get_carrier(contract_name)
-		if(contract_name.include? "bell")
-			@contract = get_contract('Bell')
-		end	
-	end
-
+#Brittle since it depends on page title
+  def get_carrier(title)
+    if title.include?("Bell")
+      @contract = get_contract('Bell')
+      contract_id = @contract.id
+    end
+  end
+  
   def get_gift_card(page)
     if page.at(".phoneDetail-hotOffer").nil?
       puts "-"
@@ -57,6 +63,7 @@ class WirelessWave < Scraper
       page.at(".phoneDetail-hotOffer").text
     end
   end
+
 
 
 end
