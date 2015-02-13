@@ -7,7 +7,7 @@ require File.expand_path('../../../config/environment',  __FILE__)
 
 class Scraper
 	
-  protected
+	protected
 		def get_agent
 			agent_aliases = Mechanize::AGENT_ALIASES.to_a
 			# agent_aliases[Random.rand(Mechanize::AGENT_ALIASES.length)][0]
