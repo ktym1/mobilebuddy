@@ -1,7 +1,7 @@
 class Device < ActiveRecord::Base
-	has_many :summaries
+	has_many :summaries, dependent: :destroy
 	has_many :retailers, through: :summaries
-	has_many :metadatas
+	has_many :metadatas, dependent: :destroy
 	belongs_to :user
 
 	mount_uploader :image, ImageUploader
