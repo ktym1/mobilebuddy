@@ -6,6 +6,7 @@ class WirelessWave < Scraper
 	    @contract = "" 
 	end
 
+  #loop through summaries and save to db
 	def run
     get_summary.each do |s|
       save_summary(s[:contract_id], s[:retailer_id], s[:price], s[:device_id], s[:promotion_link], s[:gift_card])
@@ -13,6 +14,7 @@ class WirelessWave < Scraper
     end
   end
 
+  #go to wave pages, get device info, and save into an array
   def get_summary
     summary = []
     get_pages.each do |p|
@@ -33,6 +35,7 @@ class WirelessWave < Scraper
     Device.where(active:true)
   end
 
+  #get the page_links for devices and save to an array
   def get_pages
     page_array = []
     active_devices.each do |dev|
