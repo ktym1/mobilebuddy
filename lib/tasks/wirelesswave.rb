@@ -7,23 +7,27 @@ class WirelessWave < Scraper
 	end
 
 	def run
-    summaries = []
-		get_pages.each do |p|
-      device_summary = {}
-      device_summary[:price] = get_price(p)
-      device_summary[:gift_card] = get_gift_card(p)
-      device_summary[:retailer_id] = @retailer.id
-      device_summary[:contract_id] = get_carrier(p.title)
-
-
+    get_summary.each do |s|
+      save_summary(s[:contract_id], s[:retailer_id], s[:price], s[:device_id], s[:promotion_link], s[:gift_card])
+      binding.pry
     end
-            
- #         price = get_price(page)
- #       	 get_carrier(m.detail)
- #       	 gift_card =  get_gift_card(page)
- #         save_summary(@contract.id, @retailer.id, price, dev.id, m.detail, gift_card)
-    
-	end
+  end
+
+  def get_summary
+    summary = []
+    get_pages.each do |p|
+      summary_attr = {}
+      summary_attr[:price] = get_price(p)
+      summary_attr[:gift_card] = get_gift_card(p)
+      summary_attr[:retailer_id] = @retailer.id
+      summary_attr[:contract_id] = get_carrier(p.title)
+      summary_attr[:device_id] = get_device(p.uri)
+      summary_attr[:promotion_link] = get_promotion_link(p.uri)
+  
+      summary << summary_attr
+    end
+      return summary     
+  end
 
   def active_devices
     Device.where(active:true)
@@ -48,7 +52,15 @@ class WirelessWave < Scraper
     price_elements.join.to_i
   end
 
-#Brittle since it depends on page title
+  def get_gift_card(page)
+    if page.at(".phoneDetail-hotOffer").nil?
+      puts "No GC"
+    else
+      page.at(".phoneDetail-hotOffer").text
+    end
+  end
+
+  #Brittle since it depends on page title
   def get_carrier(title)
     if title.include?("Bell")
       @contract = get_contract('Bell')
@@ -56,14 +68,17 @@ class WirelessWave < Scraper
     end
   end
   
-  def get_gift_card(page)
-    if page.at(".phoneDetail-hotOffer").nil?
-      puts "-"
-    else
-      page.at(".phoneDetail-hotOffer").text
+  def get_device(url)
+    metadatas = Metadata.where(retailer_id: @retailer.id)
+    metadatas.each do |m|
+      if url.to_s.include?(m.detail)
+        return m.device_id
+      end
     end
   end
 
-
+  def get_promotion_link(url)
+    return url.to_s
+  end
 
 end

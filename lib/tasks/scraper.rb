@@ -20,14 +20,14 @@ class Scraper
 		end
 
   protected
-		def save_summary(contract_id, retailer_id, price, dev_id, link, gift_card = "")
+		def save_summary(contract_id, retailer_id, price, dev_id, promotion_link, gift_card)
 			begin 
 
 				s =	Summary.create(	contract_id: contract_id, 
 							           retailer_id: retailer_id,
 							           price: price,
 							           device_id: dev_id,
-							           promotion_link: link.to_s,
+							           promotion_link: promotion_link.to_s,
 							           gift_card: gift_card
 							       )
 				puts " Saved: #{s.device.name} #{s.device.model}"
