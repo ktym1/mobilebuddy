@@ -18,7 +18,7 @@ class Bell < Scraper
        	 array = page.search('.priceGroup').children()
          price = array[3].text.delete('$')
          
-        save_summary(@contract.id, @retailer.id, price, dev.id, m.detail)
+        save_summary(@contract.id, @retailer.id, price, dev.id, m.detail, nil)
   
       end
 		end
