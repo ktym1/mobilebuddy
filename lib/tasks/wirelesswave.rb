@@ -10,7 +10,6 @@ class WirelessWave < Scraper
 	def run
     get_summary.each do |s|
       save_summary(s[:contract_id], s[:retailer_id], s[:price], s[:device_id], s[:promotion_link], s[:gift_card])
-      binding.pry
     end
   end
 
