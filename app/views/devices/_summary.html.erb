@@ -2,44 +2,50 @@
 <div class="large-12 columns">
   <div class="row">
     <table id="table" class="display responsive" style="text-align:center">    
-     
-      <tr>
-         <td>Carrier</td>
-        <% summaries.each do |contract, infos| %>
-            <th colspan="<%= infos.length %>"><%= contract.name %></th> 
-        <% end %>
-      </tr>
-      <tr>
-         <td>Store</t>
-        <% summaries.each do |contract, infos| %>
-          <%=  render partial: 'info', locals: { summaries:  infos } %>
-        <% end %>
-      </tr>
-      
-      <tr>
-        <td>Price</td>
-        <% summaries.each do |contract, infos| %>
-          <% infos.each do |i| %>
-           <td> <%= number_to_currency(i.price) %> </td>
+      <thead>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Carrier</td> 
+          <% summaries.each do |contract, infos| %>
+              <th colspan="<%= infos.length %>"><%= contract.name %></th> 
           <% end %>
-        <% end %>
-      </tr>
-      <tr>
-        <td>Gift-card</td>
-        <% summaries.each do |contract, infos| %>
-          <% infos.each do |i| %>
-           <td> <small><%= i.gift_card %><small> </td>
+        </tr>
+        
+        <tr>
+          <td>Store</td>
+          <% summaries.each do |contract, infos| %>
+            <%=  render partial: 'info', locals: { summaries:  infos } %>
           <% end %>
-        <% end %>
-      </tr>
-       <tr>
-        <td>website</td>
-        <% summaries.each do |contract, infos| %>
-          <% infos.each do |i| %>
-           <td> <a href="<%= i.promotion_link %>"> Website</a>  </td>
+        </tr>
+
+        <tr>
+          <td>Price</td>
+          <% summaries.each do |contract, infos| %>
+            <% infos.each do |i| %>
+             <td> $<%= i.price.to_i %> </td>
+            <% end %>
           <% end %>
-        <% end %>
-      </tr>   
+        </tr>
+
+        <tr>
+          <td>Gift-card</td>
+            <% summaries.each do |contract, infos| %>
+            <% infos.each do |i| %>
+             <td><%= i.gift_card %></td>
+            <% end %>
+          <% end %>
+        </tr>
+        
+        <tr>
+          <td></td>
+          <% summaries.each do |contract, infos| %>
+            <% infos.each do |i| %>
+             <td> <a href="<%= i.promotion_link %>"> Source</a>  </td>
+            <% end %>
+          <% end %>
+        </tr>   
+      </tbody>
     </table>
   </div>
 </div>
