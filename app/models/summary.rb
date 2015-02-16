@@ -12,11 +12,8 @@ class Summary < ActiveRecord::Base
     end 
 
 	def has_gift_card?
-		result = self.gift_card == nil
-		if result
-			self.gift_card = "None."
-		end
-		result
+		result = self.gift_card
+		result.nil? ? self.gift_card = "None." : result
 	end
 	
 end
