@@ -12,7 +12,7 @@ class Device < ActiveRecord::Base
 
 	def minimum_price
 		price = Summary.where("created_at >= ? and device_id = ?", Date.today, self.id).minimum(:price)
-		price
+		price.to_i
 	end
 
 	def display_name
