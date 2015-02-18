@@ -2,16 +2,13 @@
 <li>
 	<div class="device-block" id="dev"> 
 		<%= link_to search_url(:dev => device.id),  {:remote => true} do %> 
-		
-		<div class="device-image">
-			<%= image_tag device.image_url(:main) if device.image? %>
-		</div>
-
-			<h4 class="device-name"> <%= device.name + " " + device.model %> </h4>
-
-				<span class="from">From </span> 
-					<h5 class="device-price"> $<%= device.minimum_price %> </h5> <p class="contract">On a 2-year term</p>
-				
+			<div class="device-image">
+				<%= image_tag device.image_url(:main) if device.image? %>
+			</div>
+			<h2 class="device-name"> <%=device.name + " " + device.model%> </h2>
+			<p class="text-detail">From </p> 
+				<h5 class="device-price"> $<%= device.minimum_price %> </h5> 
+			<p class="text-detail">On a 2-year term</p>
 		<% end %>
 	</div>
 </li>

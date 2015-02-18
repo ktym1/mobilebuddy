@@ -1,12 +1,99 @@
 // Place all the styles related to the Devices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 .wrapper-about{
-	height:80%;
+  height:80%;
 }
-.bottom{
-	height:20%;
+
+
+.hero-image{
+  background-image: image-url('Hero3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
-#devices{
-	min-height:100%;
+
+.hero-content {
+  max-width: 750px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 25%;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+
+.hero-title {
+  color: #000000;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-size: 3vmin;
+  font-weight: 400;
+  color: #000000;
+}
+
+.text-green {
+  color: #00c96d;
+}
+
+.breakline {
+  font-size: 38px;
+  font-size: 4.9vmin;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: block;
+  line-height: 1.1; 
+}
+
+.wrapper {
+  max-width: 53vw;
+}
+
+.pane-content {
+  display: block;
+  margin-top: 21px;
+  margin-bottom: 10.5px;
+  text-align: center;  
+}
+
+.pane-title {
+  font-weight: 800;
+  line-height: 1.1;
+  color: #000000;
+  font-size: 32px;
+  font-size: 4.0vmin;
+}
+
+.pane-subtitle {
+  font-size: 20px;
+  font-size: 2vmin;
+  font-weight: 500;
+  color: #303030; 
+}
+
+.device-name {
+  font-size: 32px;
+  font-size: 4.0vmin;
+  font-weight: 800;
+}
+
+.device-price {
+  font-size: 38px;
+  font-size: 4.9vmin;
+  font-weight: 500;
+  display: block;
+  line-height: 1.1; 
+  color: #00c96d;
+}
+
+.text-detail {
+  font-size: 20px;
+  font-size: 2vmin; 
+  font-weight: 100;
+  color: #B8B8B8;
 }
