@@ -33,7 +33,7 @@ $(document).ready(function(){
  //    $('#table').dataTable({
 	//   "sPaginationType": "foundation"
 	// });
-   $('#table').dataTable();
+   // $('#table').dataTable();
 
     $( "#news" ).click(function() {
 	  $( "#contentDrop" ).toggle();
