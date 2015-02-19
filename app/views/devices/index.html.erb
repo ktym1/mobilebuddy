@@ -14,10 +14,11 @@
     <p class="pane-subtitle"> Popular phones recommended for you. </p> 
   </div>
   <!-- <div id="devices" class="row"> -->
+  <div class="row" data-match-height>
       <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-4">      
-          <%= render @devices.active %>
+        <%= render @devices.active %>
       </ul>
-    
+  </div>  
     <div id="myModal" class="reveal-modal medium" data-reveal >
       <div id="summaries" class="row">
       </div>
@@ -29,5 +30,5 @@
 </div>
   
 <div class="footer-image">
-  <p class="copyright"> © Mobile Buddy 2014</p>
+  <p class="copyright"></p>
 </div>
