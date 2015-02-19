@@ -49,6 +49,7 @@ gem 'mailchimp-api', require: 'mailchimp'
 gem 'gibbon'
 gem 'pry', '~> 0.10.1'
 gem 'figaro'
+gem 'puma'
 
 group :production, :staging do
   gem 'taps'
