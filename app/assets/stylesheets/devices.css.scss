@@ -2,12 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-.wrapper-about{
-  height:80%;
-}
-
-
 .hero-image{
   background-image: image-url('Hero3.jpg');
   background-size: cover;
@@ -71,7 +65,7 @@
 
 .pane-subtitle {
   font-size: 20px;
-  font-size: 2vmin;
+  font-size: 3vmin;
   font-weight: 500;
   color: #303030; 
 }
@@ -97,3 +91,4 @@
   font-weight: 100;
   color: #B8B8B8;
 }
+
