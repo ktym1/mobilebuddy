@@ -1,47 +1,49 @@
-<%= render partial: "shared/newsletter" %>
-<div class="large-12 columns">
-  <div class="row">
-    <table id="table" class="display responsive" style="text-align:center">    
+<%#= render partial: "shared/newsletter" %>
+<div class="small-12 large-12 columns">
+    <div class="table_center">
+    <table class="display responsive">    
       <thead>
       </thead>
       <tbody>
-        <tr>
-          <td>Carrier</td> 
+        <tr class="border_bottom">
+          <th class="border_sides">Carrier</td> 
           <% summaries.each do |contract, infos| %>
-              <th colspan="<%= infos.length %>"><%= contract.name %></th> 
+              <td colspan="<%= infos.length %>"><div id="center"><%= contract.name %></div></td>
           <% end %>
         </tr>
         
-        <tr>
-          <td>Store</td>
+        <tr class="border_bottom">
+          <th class="border_sides">Store</th>
           <% summaries.each do |contract, infos| %>
-            <%=  render partial: 'info', locals: { summaries:  infos } %>
+            <% infos.each do |i| %>
+            <td class="center"><%= i.retailer.name %></td>
+          <% end %>
           <% end %>
         </tr>
 
-        <tr>
-          <td>Price</td>
+        <tr class="border_bottom">
+          <th class="border_sides">Price</th>
           <% summaries.each do |contract, infos| %>
             <% infos.each do |i| %>
-             <td> $<%= i.price.to_i %> </td>
+             <td class="center"> $<%= i.price.to_i %> </td>
             <% end %>
           <% end %>
         </tr>
 
-        <tr>
-          <td>Gift-card</td>
+        <tr class="border_bottom">
+          <th class="border_sides">Gift-card</th>
             <% summaries.each do |contract, infos| %>
             <% infos.each do |i| %>
-             <td><%= i.gift_card %></td>
+             <td class="center"><%= i.gift_card %></td>
             <% end %>
           <% end %>
         </tr>
         
         <tr>
-          <td></td>
+          <td class="border_sides"></th>
           <% summaries.each do |contract, infos| %>
             <% infos.each do |i| %>
-             <td> <a href="<%= i.promotion_link %>"> Source</a>  </td>
+             <td class="center"> <a href="<%= i.promotion_link %>"> Source</a>  </td>
             <% end %>
           <% end %>
         </tr>   
