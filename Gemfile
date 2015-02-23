@@ -4,9 +4,9 @@ ruby "2.0.0"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0'
 
-group :development, :test do
-	gem 'pg'
-end
+
+	
+
 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -50,10 +50,10 @@ gem 'gibbon'
 gem 'pry', '~> 0.10.1'
 gem 'figaro'
 gem 'puma'
+gem 'pg'
 
 group :production, :staging do
   gem 'taps'
-  gem 'thin'
   gem 'rails_12factor'
 end
 
