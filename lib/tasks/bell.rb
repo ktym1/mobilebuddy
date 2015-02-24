@@ -5,6 +5,7 @@ class Bell < Scraper
 	def initialize
 	    @retailer = get_retailer('Bell')
 	    @contract = get_contract('Bell')
+      @active_devices = Device.where(active:true)
 	end
 
 

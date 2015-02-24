@@ -4,6 +4,7 @@ class WirelessWave < Scraper
 	def initialize
 	    @retailer = get_retailer('Wireless Wave')
 	    @contract = "" 
+      @active_devices = Device.where(active:true)
 	end
 
   #loop through summaries and save to db
