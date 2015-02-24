@@ -8,7 +8,6 @@ class Telus < Scraper
 	end
 
 	def run
-		devices = Device.active
 		@active_devices.each do |dev|
 
 			metadatas = Metadata.where(retailer_id: @retailer.id, device_id: dev.id)
