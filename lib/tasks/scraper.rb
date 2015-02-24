@@ -6,6 +6,10 @@ require File.expand_path('../../../config/environment',  __FILE__)
 
 
 class Scraper
+
+	def initialize
+		@active_devices = Device.where(active:true)
+	end
 	
 	protected
 		def get_agent
@@ -19,7 +23,6 @@ class Scraper
 		    agent
 		end
 
-  protected
 		def save_summary(contract_id, retailer_id, price, dev_id, promotion_link, gift_card)
 			begin 
 
@@ -38,7 +41,6 @@ class Scraper
 			end
 		end
 
-	protected
 		def get_contract(name)
 		    contract = nil
 			begin
@@ -50,7 +52,7 @@ class Scraper
 			contract
 		end
 		
-	protected
+
 		def get_retailer(name)
 		  retailer = nil
 			begin

@@ -9,8 +9,7 @@ class Bell < Scraper
 
 
 	def run
-		devices = Device.active
-		devices.each do | dev | 
+		@active_devices.each do | dev | 
       metadatas =  Metadata.where(retailer_id: @retailer.id, device_id: dev.id)
       
         metadatas.each do |m|

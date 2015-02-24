@@ -30,14 +30,10 @@ class WirelessWave < Scraper
       return summary     
   end
 
-  def active_devices
-    Device.where(active:true)
-  end
-
   #get the page_links for devices and save to an array
   def get_pages
     page_array = []
-    active_devices.each do |dev|
+    @active_devices.each do |dev|
       metadatas =  Metadata.where(retailer_id: @retailer.id, device_id: dev.id)
       metadatas.each do |m|
         page = get_agent.get(m.detail)
