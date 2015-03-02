@@ -47,7 +47,7 @@ class WirelessWave < Scraper
   def get_price(page)
     raw = page.at(".phoneDetail-price")
     char_array = raw.text.split(//)
-    price_elements = char_array[2..4]
+    price_elements = char_array[2..3]
     price_elements.join.to_i
   end
 
