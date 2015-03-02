@@ -33,7 +33,7 @@ class DevicesController < ApplicationController
 
   def search
     if params[:dev]
-      @summaries = Summary.current(Date.today, params[:dev]) 
+      @summaries = Summary.current(Date.yesterday, params[:dev]) 
       @summaries = @summaries.group_by { |d| d.contract }
       respond_to do |format|
         format.js
