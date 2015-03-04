@@ -34,20 +34,13 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-gem 'rspec-rails'
-
-gem "factory_girl", "~> 4.0"
-gem "factory_girl_rails", "~> 4.0"
 gem 'mechanize'
 gem 'watir-webdriver'
-
 gem 'foundation-rails'
-
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'mailchimp-api', require: 'mailchimp'
 gem 'gibbon'
-gem 'pry', '~> 0.10.1'
 gem 'figaro'
 gem 'puma'
 gem 'pg'
@@ -59,6 +52,13 @@ group :production, :staging do
 end
 
 gem 'whenever', :require => false
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'pry', '~> 0.10.1'
+  gem "factory_girl", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.0"
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
