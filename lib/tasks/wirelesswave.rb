@@ -44,19 +44,11 @@ class WirelessWave < Scraper
     return page_array
   end
 
-  #get price from page; parse # of characters and return price integer 
+  #get price from page; strip return carriage, delete $, remove last 2 array characters, converto to integer
   def get_price(page)
-    raw = page.at(".phoneDetail-price")
-    char_array = raw.text.split(//)
-    case char_array.count 
-      when 6
-        price_elements = char_array[2] 
-      when 7
-        price_elements = char_array[2..3].join    
-      when 8
-        price_elements = char_array[2..4].join    
-      end
-    price_elements.to_i
+    full_price_string = page.at(".phoneDetail-price").text.strip.delete("$")
+    price_string = full_price_string.lines.map{|n| p n[0,(n.length-2)]}
+    price_string[0].to_i
   end
 
   def get_gift_card(page)
