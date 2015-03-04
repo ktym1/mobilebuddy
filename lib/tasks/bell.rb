@@ -1,5 +1,4 @@
 require_relative 'scraper'
-require 'pry'
 class Bell < Scraper
 
 	def initialize
