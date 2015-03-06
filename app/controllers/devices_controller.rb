@@ -34,11 +34,13 @@ class DevicesController < ApplicationController
   def search
     if params[:dev]
       @summaries = Summary.current(Date.yesterday, params[:dev]) 
-      @summaries = @summaries.group_by { |d| d.contract }
+      hash = @summaries.group_by {|s| s.retailer_id}
+      recent = hash.map {|k,v| hash[k].last}
+      @summaries = recent.group_by { |d| d.contract }
+    end
       respond_to do |format|
         format.js
       end
-    end
   end
 
   def update
