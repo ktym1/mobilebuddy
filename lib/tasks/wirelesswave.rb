@@ -10,7 +10,7 @@ class WirelessWave < Scraper
   #loop through summaries and save to db
 	def run
     get_summary.each do |s|
-      save_summary(s[:contract_id], s[:retailer_id], s[:price], s[:device_id], s[:promotion_link], s[:gift_card])
+    #  save_summary(s[:contract_id], s[:retailer_id], s[:price], s[:device_id], s[:promotion_link], s[:gift_card])
     end
   end
 
@@ -55,7 +55,9 @@ class WirelessWave < Scraper
     if page.at(".phoneDetail-hotOffer").nil?
       puts "No GC"
     else
-      page.at(".phoneDetail-hotOffer").text
+      full_string = page.at(".phoneDetail-hotOffer").text
+      matchdata = /\d\d/.match(full_string)
+      matchdata[0].to_i
     end
   end
 
