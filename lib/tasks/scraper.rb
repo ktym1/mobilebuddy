@@ -7,6 +7,12 @@ require File.expand_path('../../../config/environment',  __FILE__)
 
 class Scraper
 
+	attr_reader :active_devices
+	
+	def initialize
+		@active_devices = Device.where(active:true)
+	end
+
 	protected
 		def get_agent
 			agent_aliases = Mechanize::AGENT_ALIASES.to_a

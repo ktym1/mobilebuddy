@@ -3,8 +3,6 @@ require 'open-uri'
 require 'watir-webdriver'
 require 'logger'
 
-
-
 class Scraper
 
 	attr_reader :active_devices
