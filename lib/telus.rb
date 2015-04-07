@@ -3,9 +3,9 @@ require "scraper"
 class Telus < Scraper
 
 	def initialize
+		super
 		@retailer = get_retailer("Telus")
 		@contract = get_contract("Telus")
-		@active_devices = Device.where(active:true)
 	end
 
 	def run
