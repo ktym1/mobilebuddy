@@ -1,6 +1,6 @@
-require_relative 'bell'
-require_relative 'telus'
-require_relative 'wirelesswave'
+require 'bell'
+require 'telus'
+require 'wirelesswave'
 
 namespace :scrape do
   
